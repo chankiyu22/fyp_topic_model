@@ -1,5 +1,7 @@
 #ifndef strcell_h
 #define strcell_h
+#include <cstddef>
+#include "string.h"
 
 class Str_cell {
 public:

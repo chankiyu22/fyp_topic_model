@@ -1,5 +1,6 @@
 #include "Str_cell.h"
 #include "string.h"
+#include <string>
 
 Str_cell::Str_cell() {
   _str = NULL;
