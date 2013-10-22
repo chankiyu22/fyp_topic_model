@@ -1,25 +1,43 @@
 #include "Intstr.h"
 
+/**
+ * Default Constructor
+ */
 Intstr::Intstr() {
   sum = 0;
   _str_cell = NULL;
   _next = NULL;
 }
 
+/**
+ * Constructor using character sum and that string.
+ */
 Intstr::Intstr(int sum, char* str){
   this->sum = sum;
   _str_cell = new Str_cell(str);
   _next = NULL;
 }
 
+/**
+ * Function strSum
+ * RETURN   the sum of that series of strings
+ */
 int Intstr::strSum() {
   return sum;
 }
 
+/**
+ * Function strCell
+ * RETURN a pointer to the corresponding Str_cell
+ */
 Str_cell* Intstr::strCell() {
   return _str_cell;
 }
 
+/**
+ * Function next
+ * RETURN a pointer to next Intstr Cell
+ */
 Intstr* Intstr::next() {
   return _next;
 }
