@@ -31,22 +31,32 @@ Intstr* extractVocab(ifstream& ifs) {
             int l = findEndPosition(str + i); 
 
             string vocab(str + i, l);
-            char* vocab_cstr = new char[vocab.length() + 1];
-            strcpy(vocab_cstr, vocab.c_str());
-            int sum = 0;
-            for (int z = 0; z < strlen(vocab_cstr); z++) {
-              sum += (int)vocab_cstr[z];
-            }
 
+            /** string s for stemming process **/
+            char* vocab_cstr = new char[vocab.length() + 1];
+            char* s = new char[vocab.length() + 1];
+
+            strcpy(vocab_cstr, vocab.c_str());
+            strcpy(s, vocab.c_str());
+
+            s[stem(s, 0, vocab.size() - 1) + 1] = 0;
+            
+            int sum = 0;
+
+            for (int z = 0; z < vocab.size(); z++) {
+              sum += (int)s[z];
+            }
+        
             if (start == NULL)
               start = new Intstr(sum, vocab_cstr);
             else
-              insert(start, vocab_cstr);
+              insert(start, sum, vocab_cstr);
 
             if (!strncmp(str + i + l, "\"]", 2))
               break;
 
             i = i + l;
+            delete[] s, vocab_cstr;
           }
         }
         break;

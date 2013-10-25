@@ -14,21 +14,31 @@ void linkVocabToCount(Intstr* head, int* vocab_count) {
   }
 } 
 
-void addCount(string word, Intstr* head) {
+void addCount(const string& word, Intstr* head) {
+  char* s = new char[word.size() + 1];
+  strcpy(s, word.c_str());
+  s[stem(s, 0, word.size() - 1) + 1] = 0;
   int sum = 0;
+
   for (int i = 0; i < word.size(); i++) {
-    sum += (int)word[i];
+    sum += (int)s[i];
   }
   for (Intstr* it = head; it != NULL; it = it->next()) {
     if (sum == it->strSum()) {
       for (Str_cell* sit = it->strCell(); sit != NULL; sit = sit->next()) {
-        if (!strcmp(word.c_str(), sit->str())) {
+        char* t = new char[strlen(sit->str()) + 1];
+        strcpy(t, sit->str());
+        t[stem(t, 0, strlen(sit->str()) - 1) + 1] = 0;
+        if (!strcmp(s, t)) {
           sit->addCount();
+          delete t, s;
           return;
         }
+        delete t;
       }
     }
   }
+  delete s;
 }
 
 void initializeCount(Intstr* intstr) {
@@ -69,14 +79,14 @@ int getExistVocab(int* count_list, int max) {
 void printCounts(Intstr* intstr, int* count_list, ofstream& ofs) {
   ofs << getExistVocab(count_list, getNumVocab(intstr)) << ' ';
   Intstr* it = intstr;
-  for (int i = 1; i <= getNumVocab(intstr); i++) {
-    if (count_list[i - 1] != 0)
-      ofs  << i << ':' << count_list[i - 1] << ' ';
+  for (int i = 0; i < getNumVocab(intstr); i++) {
+    if (count_list[i] != 0)
+      ofs  << i << ':' << count_list[i] << ' ';
   }
   ofs << endl;
 }
 
-int findEndPosition(string start) {
+int findEndPosition(const string& start) {
   int p = 0;
     for (p; start[p] != ' ' && 
           start[p] != '\"' &&
@@ -102,8 +112,6 @@ void countVocabs(ifstream& ifs, Intstr* intstr) {
   int* vocab_count = new int[total_num_vocab];
 
   linkVocabToCount(intstr, vocab_count);
-
-  int z = 1;
 
   while (!ifs.eof()) {
     ifs >> token;

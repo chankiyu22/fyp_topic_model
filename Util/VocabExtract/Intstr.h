@@ -38,5 +38,5 @@ private:
  * Insert a new string into the original tree
  * according to the character sum.'
  */
-void insert(Intstr*& start, char* str);
+void insert(Intstr*& start,int sum, char* str);
 #endif

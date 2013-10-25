@@ -2,6 +2,8 @@
 #define vocabextract_h
 
 #include "../Intstr.h"
+#include "../porter/porter.h"
+#include <iostream>
 #include <fstream>
 using namespace std;
 

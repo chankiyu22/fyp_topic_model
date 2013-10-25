@@ -61,20 +61,14 @@ Str_cell* tail(Intstr* intstr_cell) {
   return it;
 }
 
-void insert(Intstr*& start, char* str) {
-  int strsum = 0;
+void insert(Intstr*& start, int sum, char* str) {
   /** TODO: Cal the string sum **/
-  int size = strlen(str);
-  for (int i = 0; i < size; i++) {
-    strsum += (int)str[i];
-  }
-
   for (Intstr* it = start; it != NULL; it = it->next()) {
-    if (it == start && strsum < it->strSum()) {
-      Intstr* new_cell = new Intstr(strsum, str);
+    if (it == start && sum < it->strSum()) {
+      Intstr* new_cell = new Intstr(sum, str);
       new_cell->setNext(start);
       start = new_cell;
-    } else if (strsum == it->strSum()) {
+    } else if (sum == it->strSum()) {
       if (exists(it, str)) ;
       else{
         /** TODO: create new Str_cell **/
@@ -82,13 +76,13 @@ void insert(Intstr*& start, char* str) {
         Str_cell* new_cell = new Str_cell(str);
         end->setNext(new_cell);
       }
-    } else if (strsum > it->strSum() && it->next() == NULL) {
+    } else if (sum > it->strSum() && it->next() == NULL) {
       /** TODO: create new Intstr cell and Str_cell **/
-      Intstr* new_cell = new Intstr(strsum, str);
+      Intstr* new_cell = new Intstr(sum, str);
       it->setNext(new_cell);
-    } else if (strsum > it->strSum() && strsum < it->next()->strSum()) {
+    } else if (sum > it->strSum() && sum < it->next()->strSum()) {
       /** TODO: insert Intstr cell between two cells **/
-      Intstr* new_cell = new Intstr(strsum, str);
+      Intstr* new_cell = new Intstr(sum, str);
       new_cell->setNext(it->next());
       it->setNext(new_cell);
     }

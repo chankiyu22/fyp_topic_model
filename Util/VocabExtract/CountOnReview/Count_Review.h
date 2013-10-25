@@ -2,6 +2,7 @@
 #define count_review_h
 #include "../Intstr.h"
 #include "../VocabExtract/vocabextract.h"
+#include "../porter/porter.h"
 #include <locale>
 #include <string.h>
 #include <algorithm>
@@ -16,7 +17,7 @@ using namespace std;
  */
 void linkVocabToCount(Intstr*, int*);
 
-void addCount(char*, Intstr*);
+void addCount(const string&, Intstr*);
 
 void countVocabs(ifstream&, Intstr*);
 

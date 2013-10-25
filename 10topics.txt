@@ -1,0 +1,232 @@
+alpha = 1, #topics = 10
+
+topic 000
+   Hot
+   Breakfast
+   Kids
+   Parts
+   Family
+   Tea
+   Plus
+   Sandwiches
+   Goods
+   Wings
+   Fruits
+   Veggies
+   Cafes
+   Sports
+   Traditional
+   Greek
+   Stations
+   Children
+   Adult
+   Trucks
+
+
+topic 001
+   Flavor
+   Cream
+   Desserts
+   Chips
+   Fish
+   Ice
+   Car
+   Cards
+   Spices
+   Phones
+   Seafood
+   Tires
+   Bagels
+   Nail
+   Credit
+   Interior
+   Driving
+   Gelato
+   Goods
+   Discount
+
+
+topic 002
+   Bars
+   Salad
+   Beer
+   Special
+   Wine
+   Sushi
+   Soup
+   Thai
+   Party
+   Shared
+   Glass
+   Chefs
+   Donuts
+   Japanese
+   Specialty
+   Raw
+   Crafts
+   Gay
+   Karaoke
+   Champagne
+
+
+topic 003
+   Cheese
+   Burgers
+   Home
+   Shops
+   High
+   Real
+   Decor
+   Goods
+   Dry
+   Change
+   Oil
+   Hair
+   Yogurt
+   Blues
+   Frozen
+   Gifts
+   Bikes
+   Delis
+   Mini
+   Lighting
+
+
+topic 004
+   Pizza
+   Parking
+   Dog
+   Care
+   Game
+   Street
+   Kitchen
+   Italian
+   Parks
+   Watch
+   Sitting
+   Life
+   Office
+   Stands
+   Airports
+   Window
+   Personal
+   Dive
+   Screen
+   Training
+
+
+topic 005
+   New
+   Small
+   Plates
+   Live
+   Used
+   Local
+   Music
+   Restaurants
+   Fast
+   French
+   Event
+   Markets
+   Vegetarian
+   Modern
+   Vegan
+   Diners
+   Professional
+   Comfort
+   High
+   Public
+
+
+topic 006
+   Day
+   Rooms
+   Door
+   Hotels
+   Pools
+   Spaces
+   Books
+   Clubs
+   Outdoor
+   Schools
+   Art
+   Building
+   Guest
+   Bed
+   Resorts
+   Centers
+   Air
+   Spas
+   Massage
+   Gyms
+
+
+topic 007
+   Food
+   Chicken
+   Meat
+   Mexican
+   Chinese
+   Buffets
+   Asian
+   Brunch
+   Indian
+   Cooking
+   Vietnamese
+   Sum
+   Dim
+   Korean
+   Mediterranean
+   Mongolian
+   Cuban
+   Fusion
+   Cheesesteaks
+   Ethnic
+
+
+topic 008
+   Goods
+   Go
+   Coffee
+   Check
+   Middle
+   American
+   Baby
+   Juice
+   General
+   IT
+   Bowling
+   Lakes
+   Eastern
+   Houses
+   European
+   Blinds
+   Caribbean
+   Cambodian
+   Burmese
+   Sitting
+
+
+topic 009
+   Service
+   Stores
+   Goods
+   Size
+   Shopping
+   Eye
+   Cocktail
+   Grocery
+   Shoe
+   Women
+   Men
+   Candy
+   Fashion
+   Wear
+   Herbs
+   Department
+   Clothing
+   DJs
+   Toy
+   Vintage
+
+
