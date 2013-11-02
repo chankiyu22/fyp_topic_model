@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[5.2126164532, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [4.8503031442, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [4.2187921965, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [3.9518539765, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.5859676996, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.2043432671, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [2.2424529512, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [2.2350851669, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [2.2195935225, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.4383077552, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>We freaking love Paisley Violin. Now, my five star</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">We freaking love Paisley Violin. Now, my five star</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    We freaking love Paisley Violin. Now, my five stars does not mean it is perfect, it has flaws that I will mention, but I do not believe your Phoenix experience is complete without a Friday or Saturday night visit to this lovely establishment. <br /><br />The first time we walked in it felt like Cheers, everyone said hello, the musicians, the bartenders, the bar patrons, as if we were old friends returning from a long trip. Now look, it isn't pretty inside, it's divey, a weird fish tank and ventriloquist doll are kind of strangely displayed, but look past that and see this place for what it is, a local joint with real honest to goodness people serving you. Good drink, great food, great music, great atmosphere, great service.<br /><br />The toasted pesto brie was delicious, the brie was not overpowering, and it complimented the pesto just right. Their vegetable stew was very good with huge chunks of vegetables and a hearty sauce, the peppered raspberry turkey is magic in your mouth, the royal is a wonderful sandwich with roast beef, mozzarella and garlic pepper and the venice violin, with soppressata, pepperoncini, balsamic vinegar and dijon mustard on a baguette is practically inspired. The desserts are good too, but not all house made, we destroyed the baklava, it's highly recommended.<br /><br />Now the bad, aside from the place being divey, which isn't bad to me but I know it is to some, is that the parking is kind of a nightmare. Last I went I had to park in front of a very ghetto looking house with a guy cleaning his shotgun on the porch. Paisley Violin is not in a "nice" part of town, and with only a couple actual parking spots, you will be parking in a strange neighborhood in front of a stranger's house... sorry. But it's worth it, check with the Paisley Violin website and go on a night they have entertainment. <br /><br />Check this place out with a good friend and an open mind, we love it.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

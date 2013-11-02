@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[5.8426751771, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [4.2159358948, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [4.2159262441, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.5891827383, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.2159317188, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2159372017, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [1.215932083, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2159317669, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2159316732, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2159316351, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Let me start by saying that I love a bloody mary i</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Let me start by saying that I love a bloody mary i</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Let me start by saying that I love a bloody mary in the morning!  Not every morning, mind you, but definitely a lazy weekend morning when I'm enjoying some brunch time with my crew.  I like mine with pretty much any tasty veggie tucked in - pickles, olives, celery, whatever...  So imagine how pleased I was when I ordered Culinary Dropout's bacon-infused Bloody Mary -- FREAKIN' YUMMY!  A little spicy, rich, delicious and fragrant... A BLT in a glass with vodka on top -- and a big ol' slice of bacon stickin' out.  But hold on, I got a little anxious -- let me back up for just a minute...<br /><br /><br /><br />Culinary Dropout is in the location formerly known as Pink Taco.  I never went to Pink Taco because I'm just not going to eat in such a ridiculously trendy Scottsdale hangout, especially one named after a euphemism for female anatomy, so when I found out that trash hole of a restaurant was gone and this new gastropub opened in its place, I was anxious to check it out.  I have no idea what the decor used to look like there, so I can't compare (which I think is less biased anyway), but I really like the giant tin tiles lining the ceiling/walls, the gigantic glass chandeliers, and the comfortable and homey wood furniture.  The place is comfy casual but totally upscale.<br /><br /><br /><br />When I arrived at the restaurant the hostess greeted me in a friendly manner, immediately disarming me and making me comfortable.  I was at a table of 10 girls, and our server was just awesome - friendly, funny, and helpful with the menu.  As an accompaniment to the earlier mentioned "BLT in a glass" I ordered the shrimp po' boy.  Wow!  Typically po' boys come on toasted baguette like buns that always seem to rip up my mouth.  I usually end up picking the shrimp off with my fork and leaving the brick bread to rot... Not so here!  My shrimp po'boy was on a soft roll, and the shrimp was chopped and mixed with a slightly smokey remoulade, so no shrimps rollin' off my plate! Definitely a big meal, as I couldn't even finish the second half, but my sweet server girl so pleasantly offered to box it up for me so no complaints here!  Not too pricey, as I think for 2 drinks and a sammich it came to about $30 total.<br /><br /><br /><br />An extra bonus here is the patio, which lines the outside of the restaurant, looking out across Camelback toward Fashion Square mall.  There were both seats and benches (with backs) so the tables looked cozy and pleasant.  And our server said there's live music on Friday and Saturday nights.  May have to hit this place up again in the evening!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

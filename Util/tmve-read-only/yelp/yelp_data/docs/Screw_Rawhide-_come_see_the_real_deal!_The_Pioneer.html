@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[5.2160488334, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [4.6567109924, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.284125619, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.2189786299, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [3.1977522027, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.7046239507, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [1.2288286376, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2193989063, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2168965882, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2159517727, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Screw Rawhide- come see the real deal! The Pioneer</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Screw Rawhide- come see the real deal! The Pioneer</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Screw Rawhide- come see the real deal! The Pioneer Living History Village is similiar to Rawhide, except real cowboys once walked its land.  You'll get to visit an opera house, 1890's dress shop, jail, blacksmith's shop, and a sheriff's office and you might even see some cowboys and old-fashioned ladies roaming the streets dressed up in costumes. <br /><br /><br /><br />I went with my cousins from Switzerland when they were here visiting.  They always like to see the cowboy-ish attractions when they come because apparently quite a few people overseas seem to think we're all still gun-slinging cowfolk. <br /><br /><br /><br />It was fun though and there's plenty of land to cover, so bring comfy shoes. Not so sure you should go when it's hot though since you're going to be outside most of the day, so maybe wait until fall and go check it out.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

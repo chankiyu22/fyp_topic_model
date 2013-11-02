@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[7.979654966, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [4.2130357141, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [3.2090288778, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.1971734103, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.4725315928, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.2160620209, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [2.2159308141, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2231923916, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2166097827, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2160965626, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Need fig preserves? They've got it. Fennel? It's b</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Need fig preserves? They've got it. Fennel? It's b</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Need fig preserves? They've got it. Fennel? It's beautifully packed on ice and extremely fresh in the produce department. Need boneless pork loin roast from the blade end? The butcher has your back. Duck fat? Just take a peek in the freezer section. Sometimes, it's the little things that normally go unnoticed that gets you five stars...<br /><br /><br /><br />AJ's closed early the other night in lieu of the holidays and I ran around to FOUR different stores looking for something as simple as whole grain mustard and fennel. I came up empty handed on both items. I say "simple" items - but it's amazing when you rely on a grocer like this as much as I do and realize that most items are out of reach otherwise. AJ's carries practically anything my culinary desires could ask for!<br /><br /><br /><br />Although I had to wait a day to go shopping again and to make the recipe i was wanted, it was during my adventures to the 4 stores that I realized how much I truly appreciate this grocer. How is it I can get wireless internet via laptop on the I-10 freeway courtesy of my phone company, but can't find fennel within a 10 mile radius?<br /><br /><br /><br />This my friends, is why I love AJ's. And as someone who watches America's Test Kitchen as though it were food porn, I can say that any other grocer doesn't stand a chance against Eddie Bashas' high end store.<br /><br /><br /><br />You truly do get what you pay for. For all the employees at AJ's I say "THANK YOU!!" for the great service you provide and the products you offer.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

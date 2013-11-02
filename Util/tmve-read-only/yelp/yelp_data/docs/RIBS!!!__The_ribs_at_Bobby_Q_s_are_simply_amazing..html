@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[7.2224516138, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [6.2159358589, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [4.2235865339, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [4.0496272056, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.3561475628, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.2159230727, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2278473376, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2159331329, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [1.2159321053, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [1.2159317095, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>RIBS!!!  The ribs at Bobby Q's are simply amazing.</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">RIBS!!!  The ribs at Bobby Q's are simply amazing.</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    RIBS!!!  The ribs at Bobby Q's are simply amazing.  Let me start at the beginning.<br /><br /><br /><br />This restaurant is very inviting.  Open  yet cozy and the patio is nice too.  They bring you hot corn bread when you sit down that is to die for.  They bring butter with it but I think it is already drenched in butter.  Very rich and delicious.  Not your typically dry corn bread by a long shot.<br /><br /><br /><br />My husband and I ordered the 3 meat combo that comes with 2 sides.  We ordered the short ribs, pulled pork and "Broasted" chicken with Macaroni and Cheese and cole slaw with pecans.  The ribs were are absolutely our favorite.  Best ribs we've ever had.  The pulled pork was equally good and the chicken was great too although we would have liked a piece of white meat.  As someone else stated, they bring their two sauces in warming containers so that the sauce is warm and doesn't cool your meat.  The spicy sauce was our favorite and we used the entire container.  My husband said the mac-n-cheese was the best he had ever had.  It was good, I'm just not an expert on that dish.  I liked the pecans on the cole slaw.<br /><br /><br /><br />My son was with us and he ordered the cheeseburger off of the kids menu.  The adult menu claimed to have some sort of fantastic burger and he was not happy that we made him get the kids burger.  Until it came.  They do not skimp on the kids!  His burger was huge, hand formed, and absolutely delicious!  He kept going on about how great it was so I had to have a bite.  Grilled deliciousness.<br /><br /><br /><br />The fresh made donuts they give you on the way out are a nice touch but I was way to full to even comtemplate trying one.  My husband and son said they were great.<br /><br /><br /><br />Only disappointment-Shoestring Fries.  I like big steak fries.  <br /><br /><br /><br />We will be back!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

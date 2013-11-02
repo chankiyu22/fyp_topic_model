@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[12.2438270709, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [10.9376813841, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [7.292801123, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [6.2356945855, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [5.2153549612, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.368832065, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.1927541668, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2402864826, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2161275004, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [1.2159567935, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>This is all American food.  I'm calling it Ethnic,</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">This is all American food.  I'm calling it Ethnic,</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    This is all American food.  I'm calling it Ethnic, because American is an ethnic group too and they don't have a fast food grouping.<br /><br /><br /><br />Hey!  I'm a California girl; we love our burgers the In & Out way.  Always fresh, always made to order and always made right. <br /><br /><br /><br />Drive through or dine in.  The drive through is surprisingly fast.  The inside dining gets crowded at meal times but it usually works out that by the time your food is ready a table opens up.  On a nice day there are plenty of outside tables to take advantage of.<br /><br /><br /><br />Kid friendly dining with lots of high chairs.  They keep it pretty clean even when it's busy.<br /><br /><br /><br /> Best fries on the planet because they are made ultra fresh right before your eyes.  Watch the guy take a  fresh potatoe and slice it and then fry it.  I like mine extra well done.  Not a problem at I&O.  They make it the way you want it. <br /><br /><br /><br /> Add on grilled onions with or without your slice of raw onion.  No prob.<br /><br />Full slices of onions (none of those dehydrated minced things that look like lice on your burger), rich ripe red tomatoes (not pink; red and ripe)and whole leaves of lettuce (none of that shredded stuff with brown edges).  The buns are baked fresh everyday too.  Fresh, fresh, fresh and juicy.<br /><br /><br /><br />On a diet?  In and Out invented the protein burger over 40 years ago.  All the other fast food places are imitators.  In California we called it a Rabbit Burger.  All your burger goodies stacked on whole lettuce leaves and lovingly wrapped.  Messy and yummy.<br /><br /><br /><br />Animal Style - it's not on the menu but you can make your burger or fries Animal Style - adds grilled onions and more condiments.<br /><br />On your fries it adds cheese, onions and thousand island sauce - Wow!  They (unfortunately) charge extra for it now.  Oh well, if you tell em to leave off the cheese they will not charge the extra $1.85 on to the fries though.<br /><br /><br /><br />Top off your meal with a real made from ice cream shake.  Everyone else has finally followed suit on this one too.  Used to be you could only find ice milk being used.  I & O always used ice cream and still does.<br /><br /><br /><br />Nice fat straws too - not those skinny ones that you have to suck your brains out to get a good slurp.<br /><br /><br /><br />Pick up a cool t shirt and bumper sticker while you are there and show your burger love to the world!<br /><br /><br /><br />Dang!  I've made myself hungry writting this reveiw.  Think I will head on over for some comfort food!<br /><br /><br /><br /><br /><br />Sunday through Thursday 10:30 a.m.-1:00 a.m.<br /><br />Friday and Saturday 10:30 a.m.-1:30 a.m.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

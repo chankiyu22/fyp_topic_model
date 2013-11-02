@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[17.2173379914, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [8.2838301003, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [5.2169950253, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [4.2159597294, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [3.7824210822, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.6059085336, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [2.2457988601, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [2.222684858, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.0874211731, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2809587794, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I was a skeptic at first, thinking that this place</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I was a skeptic at first, thinking that this place</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I was a skeptic at first, thinking that this place was luring people in with it's glossy exterior only to fall short when it comes to actual quality. I was wrong. The Valley Ho is not only fun to utilize as a word-play, it's also a fantastic hotel. <br /><br /><br /><br />I will start with the things I didn't like...because there are only a couple and they are relatively minor. <br /><br />#1 The in-room coffee. It's by far, THE WORST coffee I've ever had. I've had better cups of instant coffee. The V-Ho is trying real hard on this and I give them an A for effort. But whoever was in charge of selecting the coffee system cares a lot more about appearance and, I'd venture to guess, is not even a recreational coffee drinker. This "thing" makes a cup of coffee that looks like sewar water and tastes like dasani. <br /><br />Please, V-Ho, I beg of you to re-think your in-room coffee system. <br /><br /><br /><br />#2 Smoking at the pool. Yes, the pool is a scene, but I'm really not into having cigarette and cigar smoke wafting in my face all day. <br /><br /><br /><br />#3 There is no #3. But I wasn't really crazy about the town of Scottsdale itself. Yes, in March the weather is perfect. But the town is a you-could-be-anywhere town. All the chain restaurants. It feels a little like Disneyland, with everything setup for the tourists. Unless you're here to by art, there's nothing that you will find interesting about this place. After 1 day of looking around, I was content just to hang out and eat at the hotel.<br /><br /><br /><br />This hotel has great rooms, the beds are superior with delicate, soft linens, a mattress that is both soft & firm, an amazing tub in the middle of the room, ample balcony space, great tv with ipod hookup, and they even brought a DVD player into my room so I could watch movies. <br /><br /><br /><br />They also don't nickel & dime you like other hotels: wireless is free and using the gym at the spa (which is pretty good) is free. I like these little touches.<br /><br /><br /><br />The layout of the rooms is great, you wouldn't think a tub in the middle of the room would work but it does. There's a curtain for privacy if you want it. <br /><br /><br /><br />Lastly, the hotel staff were great. Helpful and friendly but not in that "I am here to be your servant" kind of way. Maybe it's just me, but they actually seemed genuine. And even if that's an act, I rather liked it.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[6.2159360516, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [5.2183167762, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [4.0927419409, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.3027161602, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.2454686781, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.2164727593, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [2.2186461804, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2171349125, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [1.215943851, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2159388228, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Probably one of the best restaurants I've been to </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Probably one of the best restaurants I've been to </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Probably one of the best restaurants I've been to in a long time, but it's not cheap to visit.<br /><br /><br /><br />Taggia has recently changed chefs and I believe it is for the better.  The new menu is, although we did have to ask about some of the items on it, delicious and impossible to resist.  We sat outside because it was quieter and we had our own two giant flame-tube heaters which were pretty neat to keep our table area warm in the dark Arizona evening.<br /><br /><br /><br />For appetizers I tried the duck carpaccio (I had the mushrooms swapped for prosciutto) and it was absolutely amazing with a light sauce and spring greens that you wrapped up in the strips of duck with little slivers of olive...so tasty!  I also got to try my bf's meat plate which had the best soppresatta salami I've ever had, prosciutto, and two other meats paired with lightly seasoned and grilled strips of bread topped with sauteed onion bits.  We had this paired with a lovely riesling.<br /><br /><br /><br />Between courses the chef sent us out a plate of his Burrata to try - it was absolutely delicious and had a nice kick to it.  I would have a hard time deciding between that and the carpaccio next time we go.<br /><br /><br /><br />For the main course I tried the rabbit fettucini.  The pasta had a light red wine sauce, my mushrooms were swapped by the chef for lovely sweet peas, the rabbit was done as a confit in such a way that it almost became a chunky sauce for the pasta, and it just tasted so good I couldn't stop eating!  The bf had one of the pizzas, topped with anchovy, olives, capers, and tomatoes and I don't normally like anchovy but it was a beautiful thin crust pizza!  We had an amazing Pinot Noir with dinner.<br /><br /><br /><br />Just fyi by this time the cat on my desk has opened the google chrome help tab six times...this is a very difficult review to type!<br /><br /><br /><br />For dessert, i couldn't decide between the prickly pear cheesecake and the zabaglione...so what did the server suggest?  COMBINE THEM!  Epic win.  Seriously.  Why has no one done this sooner?  It was quite honestly the best dessert ever...cheesecake, with the layer of the prickly pear sauce on top, topped again with the zabaglione sauce, and surrounded by a ton of fresh berries...The only thing keeping me from ordering a second round was the parents were paying for it.....<br /><br /><br /><br />I got to see the tiramisu when my sister ordered it...it was the most unique looking tiramisu I've ever seen - wrapped in a cylinder of chocolate and beautifully done.  Supposedly it tasted phenomenal...after that oober epic cheesecake combo I may never get to try it but I'm okay with that.<br /><br /><br /><br />All in all, I honestly hope they keep the new chef and I get to go again on my next trip to Scottsdale!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

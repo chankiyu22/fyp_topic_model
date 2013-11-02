@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[17.399557976, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [9.1876899272, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [8.30553609, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [5.2411221415, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [5.2269414601, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [5.2080420179, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [4.2150451487, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [3.2184469242, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [2.2157656426, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [1.9411688045, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>santisis is a place for any sports fan. this looks</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">santisis is a place for any sports fan. this looks</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    santisis is a place for any sports fan. this looks like some stupid little place from the outside, but it's large and is divided into 2 bar areas. one are is the main large bar with a variety of tables, the big bar, and numerous tvs. the other area is a smaller bar area with tables, darts, pool tables, and a smaller bar. <br /><br /><br /><br />THERE ARE POSITIVES AND NEGATIVES. <br /><br />the positives:  there are NUMEROUS FLOOR TO CEILING, AND WALL TO WALL tvs. there's tvs on every inch of the walls, large and small. you will see all sports all over the place.  the menu is extensive ranging from your typical wings, to italian, to seafood, to pizza, to barbeque. they are known for their excellent pizza. they do have a happy hour, but i only believe it's for their draft beer and they are known for their monster beers, i think $3.00 or $3.50. the bar is big with alot of tables. large outdoor smokers patio. <br /><br /><br /><br />the negatives:  it's very dark, almost like a big cave. there are no windows. it gets very crowded and the tables are practically on top of one another. there is zero room to manuever around all of the different tables without knocking into someone. there are alot of really drunk people in here so it doesn't help that there is super limited room to get around.  there are no reduced food prices for happy hour. COME ON, every bar in the entire area accept for padre murphys has reduced food prices or free food during happy hour. they have a $9.00 buffet on fridays from 11-1 with all you can eat wings, pizza, and a couple other things.  their happy hour drink prices are fairly limited depending on what you drink. regular priced drinks are on a higher end. the beer is ok, but if you start drinking shots and mixed drinks, it's higher then other sports bars. their menu items are pricey. just a basket of chicken strips is over $9.00 .  other items range from $7.50-$16.00 .  if you want to watch sports here, GET HERE ATLEAST 1 1/2  HOURS EARLY. gamedays are extremely crowded. the service is actually pretty good considering how busy they are. even though they have tons of tvs, they'll have something stupid on some of them that no one wants to watch, and have the important games on the others, so just because there's alot of tvs, doesn't mean you'll have a clear view of the game you want. and they won't turn the stupid things off. BEWARE, if you are a soda or iced tea drinker, they will give you 1 free refill and charge you for all the rest. they DON'T tell you that until you see multiple charges on your bill. <br /><br /><br /><br />so, sports,  really good.  tons of tvs. quality food, but pricey.  no food specials for happy hour. ok drink specials on happy hour only. otherwise, drinks are higher then other places. great pizza. very cramped. <br /><br />suggestion; GO TO RT OSULLIVANS 59 AVE & BELL RD if you want a nicer sports bar with better pricing and also has a huge amount of plasmas everywhere.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

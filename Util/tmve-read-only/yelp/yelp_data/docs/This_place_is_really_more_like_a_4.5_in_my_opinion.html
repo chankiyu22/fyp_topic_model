@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[11.228451355, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [5.2159360942, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [5.172068009, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [5.152617656, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.2202687298, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.2158408728, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2918348088, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2304069368, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2159537159, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [1.2159379545, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>This place is really more like a 4.5 in my opinion</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">This place is really more like a 4.5 in my opinion</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    This place is really more like a 4.5 in my opinion. I just went there tonight for reverse happy hour/ dinner with the BF after both of us having school for around 12 hours today (ugh). We needed a drink. Well, we decided on Sakebomber because it is close to our house and because the place we were originally going to try (Saketini) didn't have reverse happy hour until ten. Anyway, I'm glad we gave this place a shot. It looked a little sketchy from the outside, but the inside was nice and comfortable. We got ID'd at the door and given bracelets, which was a bit weird, but fine with me. Also, the hostess was a really sweet girl, so it made it less weird. We were sat, and our awesome waitress, Joy, came by to get drink orders fairly quickly. The BF got a beer (asaki... I think) and I got the Bahama Mama on Joy's recommendation. They cost 4 and 5$ respectively. My drink was wonderful! It was all banana-y and coconutish and just delicious. <br /><br /><br /><br />So we ordered cucumber rolls, gyoza, spring salad, and the chimichanga rolls. The BF liked the cucumber rolls (I didn't try them), The gyoza were clearly generic gyoza, but at least this place had good sauce and they were crispy, which was pleasant. The salad was alright, a bit too peppery, but good and fresh tasting. <br /><br /><br /><br />So chimichanga rolls you may ask. They are rolls that have fried chicken (true story), avocado, jalapeno, rice, cream cheese, wrapped in seaweed and then the whole thing is fried and served with habanero sauce. This sounds like a food eaten on dare or thought up by a very drunk person. Good for them, though, because these were wonderful!!!! I have never enjoyed a sushi roll, mainly because I do not usually like the flavor of seaweed, but it was a lot more subtle in this roll (probably due to the deep fry) and I really liked them. The sauce was super yummy! <br /><br /><br /><br />So we eat all of our food.....all of it..... and are still nursing our drinks, when Joy comes over and says 'oh, you're still drinking, would you like me bring you some free toasted marshmallows... I thought I heard wrong, but I did hear free, so I said.... ok..... She brought out these delicious toasted marshmallows on whipped cream with strawberry sauce. It was great!... albeit very weird. <br /><br /><br /><br />The whole meal (two alcoholic drinks, gyoza, two sushi rolls, a salad, and a dessert) cost 30$. Overall, this place was great and I will most definitely be back with as many people as I can introduce to this great place!<br /><br /><br /><br />Update: Went back tonight for a 'snack' and for the BF's dinner. Got the chimichanga roll..... Even better than last time, if that's possible! The more habanero sauce... the better! We also split the tempura ice cream.... Also super delicious. It's ice cream wrapped in cake and then fried with chocolate sauce and whipped cream on top.... yes it is as delicious as it sounds. <br /><br />Oh... we had Joy again, and she rocks my socks! Probably the coolest waitress I've ever met, so major props on that!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

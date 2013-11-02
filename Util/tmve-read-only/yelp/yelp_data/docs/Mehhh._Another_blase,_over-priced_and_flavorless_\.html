@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[8.2060865651, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [8.1243723992, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.2161879837, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [5.2154045248, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [5.209370742, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [4.3090015552, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [4.2303992718, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.2160817486, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2163285967, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2160827457, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Mehhh. Another blase, over-priced and flavorless \</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Mehhh. Another blase, over-priced and flavorless \</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Mehhh. Another blase, over-priced and flavorless "Italian" eatery, and they did an awful job trying to "correct" my undercooked meal.<br /><br /><br /><br />I was out with my lady friends seeing an event at the Jobing.com arena, and the Westgate City Center has an array of restaurants... one of every theme. An Irish pub, Mexican, Steakhouse, Japanese, etc. Italian was the only thing we all agreed on, so off we went.<br /><br /><br /><br />The area was packed, not only because of the event, but the Cardinals game at the stadium next door.  The hostess was unprofessional and kind of rude, but seated us immediately.  The menus were abbreviated for "special events" which left the selections lacking.  <br /><br /><br /><br />The best part of the experience was the server, who was actually also the main part of the problem.  He was enthusiastic, sincere and helpful... but he talked me into ordering the Gnocchi instead of the Pappardelle with tomato cream sauce, and then when the food arrived, said he forgot to change the order in the computer.  <br /><br /><br /><br />The pappardelle was extremely bland, and the "home-made" pasta tasted soggy and undercooked and was really unappetizing.  He must have noticed that I hadn't eaten much of my dish (as my friends were feeding my bites of theirs, which were better than mine, though still not excellent by any means) and he came by and said he'd fix it in a flash.  He took it back to the kitchen, and then came by to say that he would not be charging me for my pappardelle and would be bringing me the gnocchi.<br /><br /><br /><br />The check was dropped off and credit cards were ran. He then came back by to ask for the credit cards back and explained that "the chef was irritated because the gnocchi wasn't on the special event menu" so I wouldn't be getting it at all. Also, the gnocchi had been charged for, though he said that my meal would be free of charge.  He re-ran the cards, we re-signed and left.<br /><br /><br /><br />The entire experience was sub-par, and for the pricey dishes, you'd expect a better menu, better flavor and better service.  I will not be back.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

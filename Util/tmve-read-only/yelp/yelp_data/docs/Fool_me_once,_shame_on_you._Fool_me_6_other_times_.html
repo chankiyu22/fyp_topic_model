@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[10.1683419549, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [3.2890823939, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.2524233985, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.9619426099, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.4012277094, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.2276189054, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.2093950943, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2170066933, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2161793076, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [1.2160980657, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Fool me once, shame on you. Fool me 6 other times </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Fool me once, shame on you. Fool me 6 other times </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Fool me once, shame on you. Fool me 6 other times because I tried to give your restaurant the benefit of the doubt, and I will not return. Despite one experience with good service, there have been six other times when I have had  incredibly awful service. That's not a good ratio and at this point, I just can't justify coming back nor would I recommend RnR at all.<br /><br /><br /><br />My most recent experience sealed the one star review. First, there was no one to greet us at the door and seat us. We sat ourselves. Then, we sat at a table for about 10 minutes. No waiter to be seen. No one even came around to serve the other tables around us with patrons. Ah ha! Next, we spot a waiter. After inquiring with this individual as to where our waiter was/if they were closing or something (trying to give them benefit of the doubt) the waiter looked at us begrudgingly, gave us a half eye roll and said, "I guess I can serve you."<br /><br /><br /><br />Well, after that remark I just wanted to get up and walk out. But I stayed (a decision that I now regret) only to experience more poor service. <br /><br /><br /><br />We needed more drinks, our waiter was nowhere to be found. Then we noticed all the waiters hanging out near the order input computers. The restaurant wasn't crowded, and I know my order wasn't being taken or put into the computer... instead it looked like social hour. Unprofessional. <br /><br /><br /><br />This is not the first time that I have experienced inattentive and no-where-to-be-seen service at RnR, and I guess I should have known better. I don't even think my request to be seated so that I could have a waiter take my order was THAT outlandish.<br /><br /><br /><br />I work very hard for my money to be able to enjoy some "RnR" on the weekends. So, with lots of other places (like AZ88, Old Town Tavern, Mabel's on Main, Firehouse, Pattie's, The Lodge, Geshia-A-Go-Go, and the list could go on) where I can count on being served... by an actual live body nonetheless... who doesn't even make me feel like they hate me just because I walked through the door... there's no reason to come here.<br /><br /><br /><br />It was especially awful to be treated so poorly when I'm a Giants fan, and my team's flag is hanging out front of the establishment!! I'm going to pass on anymore of this place's "RnR," as I'm pretty sure it actually stands for "Really Rude" service.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

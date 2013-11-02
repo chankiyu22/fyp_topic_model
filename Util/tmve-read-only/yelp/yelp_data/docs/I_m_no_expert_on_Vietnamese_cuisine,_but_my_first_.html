@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[8.2728668774, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [6.1261268027, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [3.4289854288, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.2035188235, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [2.2287800273, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [2.2095346486, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.9989962103, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2404024904, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [1.2311153156, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2189895083, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I'm no expert on Vietnamese cuisine, but my first </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I'm no expert on Vietnamese cuisine, but my first </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I'm no expert on Vietnamese cuisine, but my first experience at Little Saigon made me want to learn more.  This place is wonderful, and you should try it next time you find yourself in Glendale.  The fun begins before you're even seated, as the restaurant is in a little old house.  The tables aren't jammed together and the artwork is eye-pleasing and relaxing.<br /><br /><br /><br />Friend and I were impressed by the friendly, quick service.  But the food impressed us even more.  We had the potsticker appetizer, one of the best ever... not the sticky white dough typically found in a Chinese restaurant potsticker, these wraps are more like a thin French crepe, beautifully browned, filled with pork and veggies.  The dipping sauce on the side was delicious, though we also made use of the condiments provided at every table, namely fish sauce, sriracha, chili-garlic paste, and soy sauce.<br /><br /><br /><br />We had two salads... #96, jellyfish salad with shrimp, pork, julienned  carrots and other veggies, and some herbs... and the #97, the lotus root and shrimp salad, also containing pork and julienned veggies.  Either salad could pass as a meal and we got the SMALL versions.  The flavors are off the charts on both, savory, herby, ginger, fennel, just delicious.  <br /><br /><br /><br />For entrees we got the #51, lemongrass chicken, and #55, bite size pork ribs with caramelized onions.  Both arrived at the table in clay hotpots, still bubbling, and were savory and satisfying.<br /><br /><br /><br />We have resolved to go back to try the pho (which looked very good as we ogled our neighbors' tables) and other tempting offerings.  This place deserves the 5 stars, and your business.  You'll thank<br /><br /> me!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[9.2756427797, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [8.2798888082, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [5.2154442825, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [4.2033261568, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [3.6916413413, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.5917240264, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.2065982938, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [2.2354229744, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.2335965631, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [1.2260309067, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>With so many choices for a good breakfast, it can </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">With so many choices for a good breakfast, it can </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    With so many choices for a good breakfast, it can be kind of hard to stand apart. Bright, urban, funky and cool Scramble is a breath of fresh air to the breakfast scene.<br /><br /><br /><br />The concept is great -- order and pay at the counter, then you're issued a number, take a seat in the dining space, then relax and wait for the food to arrive. Or choose to sit outdoors on the patio that is also dog-friendly.<br /><br /><br /><br />Judging by several quotations of egg humor painted along the walls of the restaurant, Scramble doesn't take itself too seriously. But one slogan on the menu hits close to home: "We're local and so are our ingredients." Locally sourced ingredients hits high marks when local businesses need our support.<br /><br /><br /><br />There are so many tastily described items on the menu that being decisive first thing in the morning is difficult. A case filled with Cinnamon Rolls ($3) may help in the decision-making process. I've met many a cinnamon roll, but I've never encountered one like Scramble's. The addition of lemon juice to the frosting distinguishes what would have already been a deliciously tender and gooey roll. It took everything in my power not to order a six-pack to go ($16).<br /><br /><br /><br />When I scan a menu I try to find the most unique item. At Scramble, one of those standouts is the Brizza ($8). The unlikely combination of two words -- breakfast and pizza -- make for a creative selection. Smoked Gouda and Cherrywood Bacon atop a tender thin crust are well paired, and there wasn't a bite left on the plate. If the spicy kick of the chorizo with peppers and jalapeno cream cheese version doesn't wake you up, then be sure to add a cup of Bold Bottomless Coffee ($2.25).<br /><br /><br /><br />French French Toast ($6.50) takes thick slices of French baguette, dipped into vanilla custard then cooked on a griddle. The slabs of baguette were tender and had a certain creaminess that made dunking into the maple syrup a real winner. If you like it savory and sweet, add a side of their Cherrywood Smoked Bacon ($3) to the French French Toast for some fun with your food. Bacon dunked into maple syrup is such a childhood pastime.<br /><br /><br /><br />Scramble also offers lunch after 11 a.m. with a menu of sandwiches, wraps, soups and salads, but breakfast is served all day. This is great because I could eat one of those cinnamon rolls anytime!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

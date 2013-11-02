@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[7.2079674829, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [6.244150772, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [4.4342613353, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.2841679614, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.2511943315, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [3.0598415058, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.9300720029, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [2.2177045684, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.303873485, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2260826876, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I'm modifying my original 2-star review because I </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I'm modifying my original 2-star review because I </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I'm modifying my original 2-star review because I just went back to the Compass and had what my wife and I consider to be the meal of our lifetime. I'm not kidding . . . it was as good as good gets. It makes me think that my original experience, where we were very disappointed by a 45 minute wait past our reservation hour, must have been a fluke. As long as you remember to use the Regency Garage and not the hotel valet, you'll have a great night. They will validate you for two hours at the Garage, but at the valet in front they will only give you a $2 discount.<br /><br /><br /><br />My wife and I both ordered the "Filet Oscar," which was the best piece of meat we've ever had in any restaurant. It was cooked to perfection, with a generous helping of crab meat on top of the steak. The large, generous portion of asparagus the steak was served atop (nearly 1/2 inch thick stalks) was steamed just right. <br /><br /><br /><br />The side dishes are a value at $5 and were healthy portions. My wife loved the corn bread, which is a special recipe, and the waitress (a very special gal named Patty) came back to us with a copy of the recipe.<br /><br /><br /><br />The wine selection by the glass is excellent and Patty recommended a wonderful Argentinian malbec that was just great with the steak. Wines by the glass here are available in two sizes -- they are expensive, but it looks like they are upgraded bottles than most restaurants serve by the glass.<br /><br /><br /><br />The food is pricey here also but you'd expect to be paying for the view. Speaking of the view, WOW. There's Phoenix laid out in front of you for your inspection, making for wonderful dinner table conversation. it would be a great place for couples and special evenings, or because of the view, a great place to bring a business acquaintance where you want to impress them with some wonderful views of the Valley of the Sun.<br /><br /><br /><br />The ride up the elevator is great, too. As I said in the beginning, however, don't use the valet unless you want to fork over some serious change to park. The Compass needs to work out a deal with valet parking in my opinion -- that's the only hitch. I hope your night is as special as ours was.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

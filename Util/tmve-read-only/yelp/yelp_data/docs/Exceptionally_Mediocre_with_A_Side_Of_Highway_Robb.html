@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[10.1862588496, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [7.1583684352, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [6.2708352269, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [6.2700344024, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [4.3701466973, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.9491327979, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [2.2171733114, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2871536297, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2313303029, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2188824796, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Exceptionally Mediocre with A Side Of Highway Robb</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Exceptionally Mediocre with A Side Of Highway Robb</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Exceptionally Mediocre with A Side Of Highway Robbery<br /><br /><br /><br />My wife and I went here for midweek dinner.   First time.<br /><br /><br /><br />Nothing to look at on outside.  Valet charges $2... okay.  Either let people park their own cars or offer free valet like most decent restaurants.<br /><br /><br /><br />Inside, it's like an older, dated, run down french restaurant.  Tables were not exceptionally comfortable, were close together.<br /><br /><br /><br />Wait staff was just okay.  Not formal enough, nor timely.  Not unfriendly, but not friendly either really.  <br /><br /><br /><br />I ordered the Lobster Bisque ($8) while my wife ordered the Smoked Salmon Quesadilla ($11).  Bisque was rich, savory, but a small portion   Not upsettingly small, but small.  The quesadilla was perhaps the standout of the evening, but just a simple cheese quesadilla (and no longer hot when it arrived), covered with cream sauce, and then overlayed with common smoked salmon.  It was unusual as well as tasty, and the portion was a nice size.   It was the only thing I would order again. <br /><br /><br /><br />For the main course, I had the boar ($36).  My wife had the three fish entree ($32).  <br /><br /><br /><br />My boar was medium rare, but it was about 2.5 ounces of meat with a few veggies and about a 1/2 cup of common mashed potatoes.  The meat was good, don't get me wrong, and drenched in a pool of spicy sauce.  The sauce was the only thing great about the entree.  I was done and licking my chops and eying the bread bowl to see if I could get filled in no time, given the quantity of food.<br /><br /><br /><br />My wife had the three fresh.  To their credit, they did seem like fresh fish, and were properly cooked.  She thought it was okay.  I asked her for a comparison to our "baseline" fish restaurant, Roy's, with it's predictably good fish, and she answered that it was "nowhere near as good."<br /><br /><br /><br />The bread bowl was grilled bread you could get at Safeway, and butter croissants that tasted surprisingly like the breakfast toaster pastries I had in the 80's as a kid.<br /><br /><br /><br />We were not impressed.  If the entrees had been $20, I would have given this an extra couple stars probably.  But at $36, I expect to be "wowed".  <br /><br /><br /><br />And I surely wasn't.<br /><br /><br /><br />The clientele was mostly 50-80 year olds.   Clearly, some people had been coming here for special occasions for the last few decades, and had to no problem with the food or prices.   <br /><br /><br /><br />But this restaurant struck me as a chef/owner that was milking a reputation that was earned long ago, laughing every week on the way to the bank.<br /><br /><br /><br />My bill was $90 before tip.  I was still hungry. <br /><br /><br /><br />And honestly, I wouldn't have paid $45 for it.<br /><br /><br /><br />I surely won't be back.  And I can't in good faith recommend it to you.  Dine at your own risk.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

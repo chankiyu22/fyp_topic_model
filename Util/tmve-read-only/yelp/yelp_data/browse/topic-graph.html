@@ -1,0 +1,360 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+    <script type="text/JavaScript">
+    <!--
+    function init() {
+        browser_adjust();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Yelp Topics</title>
+<link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+  <body onload="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+<div id="top"></div>
+<div id="header">
+<h1>Yelp Topics</h1>
+<h2>Term Distributions Per Topic</h2>
+<hr noshade>
+</div>
+<div id="graph">
+<table width="100.0%">
+<tr><td>
+
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr></table>
+<table width="250px"><tr><td class="dark-hover" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr></table>
+
+</td><td class="bars">
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="56.2950971508%" title="Food" onclick="window.location.href='../terms/Food.html'"></td>
+<td class="clickable" width="8.36575101046%" title="Special" onclick="window.location.href='../terms/Special.html'"></td>
+<td class="clickable" width="6.01523024461%" title="Sushi" onclick="window.location.href='../terms/Sushi.html'"></td>
+<td class="clickable" width="4.45731145505%" title="Fish" onclick="window.location.href='../terms/Fish.html'"></td>
+<td class="clickable" width="4.30945440269%" title="Restaurants" onclick="window.location.href='../terms/Restaurants.html'"></td>
+<td class="clickable" width="2.9058529254%" title="Kitchen" onclick="window.location.href='../terms/Kitchen.html'"></td>
+<td class="clickable" width="2.44631208507%" title="Chefs" onclick="window.location.href='../terms/Chefs.html'"></td>
+<td class="clickable" width="2.11872482549%" title="Real" onclick="window.location.href='../terms/Real.html'"></td>
+<td class="clickable" width="1.82887634529%" title="Cafes" onclick="window.location.href='../terms/Cafes.html'"></td>
+<td class="clickable" width="1.50340374578%" title="Seafood" onclick="window.location.href='../terms/Seafood.html'"></td>
+<td class="clickable" width="1.27523149393%" title="American" onclick="window.location.href='../terms/American.html'"></td>
+<td class="clickable" width="1.20247784499%" title="Traditional" onclick="window.location.href='../terms/Traditional.html'"></td>
+<td class="clickable" width="1.19085075684%" title="Vegan" onclick="window.location.href='../terms/Vegan.html'"></td>
+<td class="clickable" width="1.18479254032%" title="Diners" onclick="window.location.href='../terms/Diners.html'"></td>
+<td class="clickable" width="0.887585665751%" title="Japanese" onclick="window.location.href='../terms/Japanese.html'"></td>
+<td class="clickable" width="0.674064401734%" title="Tours" onclick="window.location.href='../terms/Tours.html'"></td>
+<td class="clickable" width="0.560091591655%" title="Korean" onclick="window.location.href='../terms/Korean.html'"></td>
+<td width="2.77889151411%" title="Flowers, Mediterranean, Tapas, Cuban, Fusion, Ethnic, Filipino, Latin, Florists, Persian, Turkish, Steakhouses, African, Brokers, Peruvian, Taiwanese, Burmese...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="57.989115822%" title="Goods" onclick="window.location.href='../terms/Goods.html'"></td>
+<td class="clickable" width="12.5650033059%" title="Cheese" onclick="window.location.href='../terms/Cheese.html'"></td>
+<td class="clickable" width="7.66514836343%" title="Breakfast" onclick="window.location.href='../terms/Breakfast.html'"></td>
+<td class="clickable" width="6.12111839675%" title="Plates" onclick="window.location.href='../terms/Plates.html'"></td>
+<td class="clickable" width="5.09106294437%" title="Mexican" onclick="window.location.href='../terms/Mexican.html'"></td>
+<td class="clickable" width="3.11079646787%" title="Shared" onclick="window.location.href='../terms/Shared.html'"></td>
+<td class="clickable" width="1.94674384073%" title="Cocktail" onclick="window.location.href='../terms/Cocktail.html'"></td>
+<td class="clickable" width="1.51441672964%" title="Brunch" onclick="window.location.href='../terms/Brunch.html'"></td>
+<td class="clickable" width="1.01856289657%" title="Food" onclick="window.location.href='../terms/Food.html'"></td>
+<td class="clickable" width="0.692909084841%" title="Pubs" onclick="window.location.href='../terms/Pubs.html'"></td>
+<td class="clickable" width="0.58543271981%" title="Comfort" onclick="window.location.href='../terms/Comfort.html'"></td>
+<td class="clickable" width="0.538506284052%" title="Irish" onclick="window.location.href='../terms/Irish.html'"></td>
+<td width="1.16118314405%" title="Spanish, Fondue, Service, Tex-Mex, Accountants, Cardiologists, Gastropubs, Size, Hindu, Real, Plus, Fast, Juice, Traditional, Go, Small, Parts, Party, Chips...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="33.4646534233%" title="Service" onclick="window.location.href='../terms/Service.html'"></td>
+<td class="clickable" width="10.2321176731%" title="Rooms" onclick="window.location.href='../terms/Rooms.html'"></td>
+<td class="clickable" width="5.63331735917%" title="Parts" onclick="window.location.href='../terms/Parts.html'"></td>
+<td class="clickable" width="5.32546283349%" title="Door" onclick="window.location.href='../terms/Door.html'"></td>
+<td class="clickable" width="4.0113618808%" title="Hotels" onclick="window.location.href='../terms/Hotels.html'"></td>
+<td class="clickable" width="3.48328747647%" title="Party" onclick="window.location.href='../terms/Party.html'"></td>
+<td class="clickable" width="3.26457077925%" title="Pools" onclick="window.location.href='../terms/Pools.html'"></td>
+<td class="clickable" width="2.17982230586%" title="Phones" onclick="window.location.href='../terms/Phones.html'"></td>
+<td class="clickable" width="1.97282400947%" title="Hair" onclick="window.location.href='../terms/Hair.html'"></td>
+<td class="clickable" width="1.81444069102%" title="Building" onclick="window.location.href='../terms/Building.html'"></td>
+<td class="clickable" width="1.74704995558%" title="Airports" onclick="window.location.href='../terms/Airports.html'"></td>
+<td class="clickable" width="1.61045899964%" title="Guest" onclick="window.location.href='../terms/Guest.html'"></td>
+<td class="clickable" width="1.45462327039%" title="Bed" onclick="window.location.href='../terms/Bed.html'"></td>
+<td class="clickable" width="1.40299095038%" title="Resorts" onclick="window.location.href='../terms/Resorts.html'"></td>
+<td class="clickable" width="1.29221615294%" title="Spas" onclick="window.location.href='../terms/Spas.html'"></td>
+<td class="clickable" width="1.21054321212%" title="Bikes" onclick="window.location.href='../terms/Bikes.html'"></td>
+<td class="clickable" width="1.18284951317%" title="Gyms" onclick="window.location.href='../terms/Gyms.html'"></td>
+<td class="clickable" width="0.997911835662%" title="Management" onclick="window.location.href='../terms/Management.html'"></td>
+<td class="clickable" width="0.970547919989%" title="Mountain" onclick="window.location.href='../terms/Mountain.html'"></td>
+<td class="clickable" width="0.913883110563%" title="Classes" onclick="window.location.href='../terms/Classes.html'"></td>
+<td class="clickable" width="0.893453781324%" title="Design" onclick="window.location.href='../terms/Design.html'"></td>
+<td class="clickable" width="0.860830005584%" title="Keys" onclick="window.location.href='../terms/Keys.html'"></td>
+<td class="clickable" width="0.765097105748%" title="Golf" onclick="window.location.href='../terms/Golf.html'"></td>
+<td class="clickable" width="0.704546475813%" title="Private" onclick="window.location.href='../terms/Private.html'"></td>
+<td class="clickable" width="0.697975085423%" title="Travel" onclick="window.location.href='../terms/Travel.html'"></td>
+<td class="clickable" width="0.61630214548%" title="Security" onclick="window.location.href='../terms/Security.html'"></td>
+<td class="clickable" width="0.548710746408%" title="Property" onclick="window.location.href='../terms/Property.html'"></td>
+<td class="clickable" width="0.544955667539%" title="Weight" onclick="window.location.href='../terms/Weight.html'"></td>
+<td class="clickable" width="0.541200590716%" title="Equipment" onclick="window.location.href='../terms/Equipment.html'"></td>
+<td class="clickable" width="0.536506743481%" title="Internet" onclick="window.location.href='../terms/Internet.html'"></td>
+<td class="clickable" width="0.524772125284%" title="Fitness" onclick="window.location.href='../terms/Fitness.html'"></td>
+<td class="clickable" width="0.51632306054%" title="Apartments" onclick="window.location.href='../terms/Apartments.html'"></td>
+<td width="8.08439311429%" title="Bus, Karaoke, Tub, Social, Carpet, Halls, Bath, Session, Stylists, Swimming, Buildings, Riding, Trainers, Rinks, Conditioning, Loss, Laundry, Instruction...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="16.962532923%" title="Day" onclick="window.location.href='../terms/Day.html'"></td>
+<td class="clickable" width="16.1499811322%" title="Salad" onclick="window.location.href='../terms/Salad.html'"></td>
+<td class="clickable" width="10.3421065491%" title="Hot" onclick="window.location.href='../terms/Hot.html'"></td>
+<td class="clickable" width="6.53131084751%" title="Soup" onclick="window.location.href='../terms/Soup.html'"></td>
+<td class="clickable" width="6.20041311378%" title="Parking" onclick="window.location.href='../terms/Parking.html'"></td>
+<td class="clickable" width="5.72787836336%" title="Family" onclick="window.location.href='../terms/Family.html'"></td>
+<td class="clickable" width="4.24159167431%" title="Size" onclick="window.location.href='../terms/Size.html'"></td>
+<td class="clickable" width="2.5446347095%" title="Event" onclick="window.location.href='../terms/Event.html'"></td>
+<td class="clickable" width="2.47752892415%" title="Office" onclick="window.location.href='../terms/Office.html'"></td>
+<td class="clickable" width="2.35776938325%" title="Eye" onclick="window.location.href='../terms/Eye.html'"></td>
+<td class="clickable" width="2.33156141979%" title="Buffets" onclick="window.location.href='../terms/Buffets.html'"></td>
+<td class="clickable" width="2.3183255583%" title="Vegetarian" onclick="window.location.href='../terms/Vegetarian.html'"></td>
+<td class="clickable" width="2.28627174843%" title="Outdoor" onclick="window.location.href='../terms/Outdoor.html'"></td>
+<td class="clickable" width="2.1888235215%" title="Schools" onclick="window.location.href='../terms/Schools.html'"></td>
+<td class="clickable" width="1.96566270199%" title="Art" onclick="window.location.href='../terms/Art.html'"></td>
+<td class="clickable" width="1.81183976878%" title="Window" onclick="window.location.href='../terms/Window.html'"></td>
+<td class="clickable" width="1.26570477267%" title="Greek" onclick="window.location.href='../terms/Greek.html'"></td>
+<td class="clickable" width="0.980137480224%" title="Wedding" onclick="window.location.href='../terms/Wedding.html'"></td>
+<td class="clickable" width="0.786657068461%" title="Doctors" onclick="window.location.href='../terms/Doctors.html'"></td>
+<td class="clickable" width="0.766574291444%" title="Museums" onclick="window.location.href='../terms/Museums.html'"></td>
+<td class="clickable" width="0.728122704454%" title="Cleaning" onclick="window.location.href='../terms/Cleaning.html'"></td>
+<td class="clickable" width="0.68450739253%" title="Community" onclick="window.location.href='../terms/Community.html'"></td>
+<td class="clickable" width="0.541742921352%" title="Artists" onclick="window.location.href='../terms/Artists.html'"></td>
+<td class="clickable" width="0.535368355306%" title="Planning" onclick="window.location.href='../terms/Planning.html'"></td>
+<td class="clickable" width="0.501388879645%" title="Tax" onclick="window.location.href='../terms/Tax.html'"></td>
+<td width="6.77156379491%" title="Dentists, Boot, Champagne, Ear, Lessons, Insurance, Teachers, Casinos, Horse, Instruments, Medical, Piano, Ethiopian, Surgery, Venues, Talent, Musical...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="14.2238381506%" title="New" onclick="window.location.href='../terms/New.html'"></td>
+<td class="clickable" width="11.3147280892%" title="Small" onclick="window.location.href='../terms/Small.html'"></td>
+<td class="clickable" width="10.1911577573%" title="Home" onclick="window.location.href='../terms/Home.html'"></td>
+<td class="clickable" width="8.09251122167%" title="Check" onclick="window.location.href='../terms/Check.html'"></td>
+<td class="clickable" width="5.56496538116%" title="Music" onclick="window.location.href='../terms/Music.html'"></td>
+<td class="clickable" width="5.34005260364%" title="Car" onclick="window.location.href='../terms/Car.html'"></td>
+<td class="clickable" width="4.76197944357%" title="Thai" onclick="window.location.href='../terms/Thai.html'"></td>
+<td class="clickable" width="4.20836730397%" title="Street" onclick="window.location.href='../terms/Street.html'"></td>
+<td class="clickable" width="3.25471139237%" title="Cards" onclick="window.location.href='../terms/Cards.html'"></td>
+<td class="clickable" width="3.21495421295%" title="Sitting" onclick="window.location.href='../terms/Sitting.html'"></td>
+<td class="clickable" width="2.4512133692%" title="Clubs" onclick="window.location.href='../terms/Clubs.html'"></td>
+<td class="clickable" width="2.38045149028%" title="Spices" onclick="window.location.href='../terms/Spices.html'"></td>
+<td class="clickable" width="2.21713260796%" title="Middle" onclick="window.location.href='../terms/Middle.html'"></td>
+<td class="clickable" width="1.89462226856%" title="Centers" onclick="window.location.href='../terms/Centers.html'"></td>
+<td class="clickable" width="1.38717181966%" title="Credit" onclick="window.location.href='../terms/Credit.html'"></td>
+<td class="clickable" width="1.36080484989%" title="Air" onclick="window.location.href='../terms/Air.html'"></td>
+<td class="clickable" width="1.27723693567%" title="Driving" onclick="window.location.href='../terms/Driving.html'"></td>
+<td class="clickable" width="1.23247627098%" title="Garden" onclick="window.location.href='../terms/Garden.html'"></td>
+<td class="clickable" width="1.22297960626%" title="Juice" onclick="window.location.href='../terms/Juice.html'"></td>
+<td class="clickable" width="1.12917636089%" title="Wash" onclick="window.location.href='../terms/Wash.html'"></td>
+<td class="clickable" width="1.10322413088%" title="Vietnamese" onclick="window.location.href='../terms/Vietnamese.html'"></td>
+<td class="clickable" width="1.09538197876%" title="Systems" onclick="window.location.href='../terms/Systems.html'"></td>
+<td class="clickable" width="1.0813428423%" title="Dance" onclick="window.location.href='../terms/Dance.html'"></td>
+<td class="clickable" width="0.88186689205%" title="Trucks" onclick="window.location.href='../terms/Trucks.html'"></td>
+<td class="clickable" width="0.628451016332%" title="DJs" onclick="window.location.href='../terms/DJs.html'"></td>
+<td class="clickable" width="0.563733116198%" title="Entertainment" onclick="window.location.href='../terms/Entertainment.html'"></td>
+<td class="clickable" width="0.529730775894%" title="Gay" onclick="window.location.href='../terms/Gay.html'"></td>
+<td width="7.39573811177%" title="Rental, Cleaners, Theatre, Vendors, Zoos, Cajun, Eastern, Print, Jazz, Nose, Public, Smoothies, Radio, Fabric, Web, Dealers, Size, Comedy, Washing, Russian...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="21.4493198634%" title="Chicken" onclick="window.location.href='../terms/Chicken.html'"></td>
+<td class="clickable" width="12.6352478156%" title="Flavor" onclick="window.location.href='../terms/Flavor.html'"></td>
+<td class="clickable" width="9.95641934029%" title="Meat" onclick="window.location.href='../terms/Meat.html'"></td>
+<td class="clickable" width="9.64880267837%" title="Coffee" onclick="window.location.href='../terms/Coffee.html'"></td>
+<td class="clickable" width="6.93579456354%" title="Cream" onclick="window.location.href='../terms/Cream.html'"></td>
+<td class="clickable" width="6.7622246312%" title="Desserts" onclick="window.location.href='../terms/Desserts.html'"></td>
+<td class="clickable" width="5.65405844684%" title="Ice" onclick="window.location.href='../terms/Ice.html'"></td>
+<td class="clickable" width="4.10315773061%" title="Sandwiches" onclick="window.location.href='../terms/Sandwiches.html'"></td>
+<td class="clickable" width="3.19312387049%" title="Dry" onclick="window.location.href='../terms/Dry.html'"></td>
+<td class="clickable" width="3.02970075214%" title="French" onclick="window.location.href='../terms/French.html'"></td>
+<td class="clickable" width="2.50365728303%" title="Fruits" onclick="window.location.href='../terms/Fruits.html'"></td>
+<td class="clickable" width="2.47642098364%" title="Veggies" onclick="window.location.href='../terms/Veggies.html'"></td>
+<td class="clickable" width="1.62460052838%" title="Bagels" onclick="window.location.href='../terms/Bagels.html'"></td>
+<td class="clickable" width="1.60804477026%" title="Nail" onclick="window.location.href='../terms/Nail.html'"></td>
+<td class="clickable" width="1.36291273789%" title="Delis" onclick="window.location.href='../terms/Delis.html'"></td>
+<td class="clickable" width="1.22096612192%" title="Cooking" onclick="window.location.href='../terms/Cooking.html'"></td>
+<td class="clickable" width="1.06213218916%" title="Salons" onclick="window.location.href='../terms/Salons.html'"></td>
+<td class="clickable" width="0.757822947039%" title="Herbs" onclick="window.location.href='../terms/Herbs.html'"></td>
+<td width="4.01559274616%" title="Hawaiian, Southern, Polish, Soul, Mongolian, Cheesesteaks, Houses, Barbeque, Size, Caribbean, Brazilian, Real, Goods, Kosher, Bakeries, Smoothies, Plus...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="12.7487140728%" title="Stores" onclick="window.location.href='../terms/Stores.html'"></td>
+<td class="clickable" width="7.37238958715%" title="Used" onclick="window.location.href='../terms/Used.html'"></td>
+<td class="clickable" width="7.12910179749%" title="Kids" onclick="window.location.href='../terms/Kids.html'"></td>
+<td class="clickable" width="6.62464228889%" title="Dog" onclick="window.location.href='../terms/Dog.html'"></td>
+<td class="clickable" width="4.99903818477%" title="Game" onclick="window.location.href='../terms/Game.html'"></td>
+<td class="clickable" width="3.88733831205%" title="Wings" onclick="window.location.href='../terms/Wings.html'"></td>
+<td class="clickable" width="3.3823232349%" title="Parks" onclick="window.location.href='../terms/Parks.html'"></td>
+<td class="clickable" width="3.16953909711%" title="Shopping" onclick="window.location.href='../terms/Shopping.html'"></td>
+<td class="clickable" width="3.04837882642%" title="Life" onclick="window.location.href='../terms/Life.html'"></td>
+<td class="clickable" width="3.0223124832%" title="Books" onclick="window.location.href='../terms/Books.html'"></td>
+<td class="clickable" width="2.47575970165%" title="Stands" onclick="window.location.href='../terms/Stands.html'"></td>
+<td class="clickable" width="1.8978124043%" title="Gifts" onclick="window.location.href='../terms/Gifts.html'"></td>
+<td class="clickable" width="1.7983870418%" title="Grocery" onclick="window.location.href='../terms/Grocery.html'"></td>
+<td class="clickable" width="1.68838375676%" title="Shoe" onclick="window.location.href='../terms/Shoe.html'"></td>
+<td class="clickable" width="1.24892618796%" title="Children" onclick="window.location.href='../terms/Children.html'"></td>
+<td class="clickable" width="1.2256435435%" title="Women" onclick="window.location.href='../terms/Women.html'"></td>
+<td class="clickable" width="1.21903023253%" title="Screen" onclick="window.location.href='../terms/Screen.html'"></td>
+<td class="clickable" width="1.19662043536%" title="Training" onclick="window.location.href='../terms/Training.html'"></td>
+<td class="clickable" width="1.17781211863%" title="Men" onclick="window.location.href='../terms/Men.html'"></td>
+<td class="clickable" width="1.11281101061%" title="Teams" onclick="window.location.href='../terms/Teams.html'"></td>
+<td class="clickable" width="1.07558767786%" title="Pets" onclick="window.location.href='../terms/Pets.html'"></td>
+<td class="clickable" width="1.05614261947%" title="Adult" onclick="window.location.href='../terms/Adult.html'"></td>
+<td class="clickable" width="1.03725319967%" title="Animal" onclick="window.location.href='../terms/Animal.html'"></td>
+<td class="clickable" width="1.00725230368%" title="Fashion" onclick="window.location.href='../terms/Fashion.html'"></td>
+<td class="clickable" width="0.999474293617%" title="Stadiums" onclick="window.location.href='../terms/Stadiums.html'"></td>
+<td class="clickable" width="0.980029243638%" title="Furniture" onclick="window.location.href='../terms/Furniture.html'"></td>
+<td class="clickable" width="0.977806978214%" title="Wear" onclick="window.location.href='../terms/Wear.html'"></td>
+<td class="clickable" width="0.898914886166%" title="Tree" onclick="window.location.href='../terms/Tree.html'"></td>
+<td class="clickable" width="0.771134140921%" title="Department" onclick="window.location.href='../terms/Department.html'"></td>
+<td class="clickable" width="0.758352562977%" title="Post" onclick="window.location.href='../terms/Post.html'"></td>
+<td class="clickable" width="0.741133244942%" title="Clothing" onclick="window.location.href='../terms/Clothing.html'"></td>
+<td class="clickable" width="0.720021503018%" title="Child" onclick="window.location.href='../terms/Child.html'"></td>
+<td class="clickable" width="0.715973876791%" title="Size" onclick="window.location.href='../terms/Size.html'"></td>
+<td class="clickable" width="0.643352538301%" title="Shades" onclick="window.location.href='../terms/Shades.html'"></td>
+<td class="clickable" width="0.601647873221%" title="Banks" onclick="window.location.href='../terms/Banks.html'"></td>
+<td class="clickable" width="0.600017919238%" title="Video" onclick="window.location.href='../terms/Video.html'"></td>
+<td class="clickable" width="0.595017770131%" title="Toy" onclick="window.location.href='../terms/Toy.html'"></td>
+<td class="clickable" width="0.593351053705%" title="Vintage" onclick="window.location.href='../terms/Vintage.html'"></td>
+<td class="clickable" width="0.561683441288%" title="Records" onclick="window.location.href='../terms/Records.html'"></td>
+<td class="clickable" width="0.555991223563%" title="Garage" onclick="window.location.href='../terms/Garage.html'"></td>
+<td class="clickable" width="0.525571251673%" title="Lakes" onclick="window.location.href='../terms/Lakes.html'"></td>
+<td class="clickable" width="0.514459807128%" title="Hats" onclick="window.location.href='../terms/Hats.html'"></td>
+<td width="12.6448662729%" title="Jewelry, T-Shirt, Outlet, Convenience, Public, Centers, Leather, Supplies, Accessories, Law, Hiking, Gear, Boat, Arenas, Junk, Sporting, Activities, Supply...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="15.043628216%" title="Burgers" onclick="window.location.href='../terms/Burgers.html'"></td>
+<td class="clickable" width="13.8236725787%" title="Beer" onclick="window.location.href='../terms/Beer.html'"></td>
+<td class="clickable" width="11.2710792662%" title="Wine" onclick="window.location.href='../terms/Wine.html'"></td>
+<td class="clickable" width="6.33362496785%" title="Local" onclick="window.location.href='../terms/Local.html'"></td>
+<td class="clickable" width="6.06753891025%" title="Fast" onclick="window.location.href='../terms/Fast.html'"></td>
+<td class="clickable" width="5.56626310208%" title="Tea" onclick="window.location.href='../terms/Tea.html'"></td>
+<td class="clickable" width="5.07506380414%" title="Decor" onclick="window.location.href='../terms/Decor.html'"></td>
+<td class="clickable" width="3.90420297362%" title="Glass" onclick="window.location.href='../terms/Glass.html'"></td>
+<td class="clickable" width="3.56316694389%" title="Spaces" onclick="window.location.href='../terms/Spaces.html'"></td>
+<td class="clickable" width="2.83774786953%" title="Markets" onclick="window.location.href='../terms/Markets.html'"></td>
+<td class="clickable" width="2.37552150752%" title="Blues" onclick="window.location.href='../terms/Blues.html'"></td>
+<td class="clickable" width="1.94284696408%" title="Modern" onclick="window.location.href='../terms/Modern.html'"></td>
+<td class="clickable" width="1.61098457443%" title="Professional" onclick="window.location.href='../terms/Professional.html'"></td>
+<td class="clickable" width="1.60629319141%" title="Baby" onclick="window.location.href='../terms/Baby.html'"></td>
+<td class="clickable" width="1.57060396677%" title="Personal" onclick="window.location.href='../terms/Personal.html'"></td>
+<td class="clickable" width="1.50108582655%" title="Massage" onclick="window.location.href='../terms/Massage.html'"></td>
+<td class="clickable" width="1.46888920309%" title="Interior" onclick="window.location.href='../terms/Interior.html'"></td>
+<td class="clickable" width="1.35563358628%" title="Gelato" onclick="window.location.href='../terms/Gelato.html'"></td>
+<td class="clickable" width="1.18355977764%" title="Mini" onclick="window.location.href='../terms/Mini.html'"></td>
+<td class="clickable" width="1.04978065274%" title="Lighting" onclick="window.location.href='../terms/Lighting.html'"></td>
+<td class="clickable" width="0.972742290706%" title="Skin" onclick="window.location.href='../terms/Skin.html'"></td>
+<td class="clickable" width="0.954257775977%" title="Services" onclick="window.location.href='../terms/Services.html'"></td>
+<td class="clickable" width="0.929621162565%" title="Raw" onclick="window.location.href='../terms/Raw.html'"></td>
+<td class="clickable" width="0.92271869353%" title="Body" onclick="window.location.href='../terms/Body.html'"></td>
+<td class="clickable" width="0.808896124692%" title="Yoga" onclick="window.location.href='../terms/Yoga.html'"></td>
+<td class="clickable" width="0.772906771301%" title="Health" onclick="window.location.href='../terms/Health.html'"></td>
+<td class="clickable" width="0.754279652667%" title="Studios" onclick="window.location.href='../terms/Studios.html'"></td>
+<td class="clickable" width="0.674942447164%" title="Crafts" onclick="window.location.href='../terms/Crafts.html'"></td>
+<td class="clickable" width="0.608828000165%" title="Farmers" onclick="window.location.href='../terms/Farmers.html'"></td>
+<td class="clickable" width="0.532347784425%" title="Practice" onclick="window.location.href='../terms/Practice.html'"></td>
+<td width="2.917271414%" title="Beauty, Spirits, European, Tattoo, Comic, Goods, Physical, Uniforms, Therapy, Breweries, Production, Mental, Piercing, Chiropractors, Lawyers, Funeral...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="45.063783699%" title="Go" onclick="window.location.href='../terms/Go.html'"></td>
+<td class="clickable" width="22.6080201342%" title="Bars" onclick="window.location.href='../terms/Bars.html'"></td>
+<td class="clickable" width="7.42629559234%" title="Goods" onclick="window.location.href='../terms/Goods.html'"></td>
+<td class="clickable" width="7.16505420657%" title="Chips" onclick="window.location.href='../terms/Chips.html'"></td>
+<td class="clickable" width="3.79698359308%" title="Chinese" onclick="window.location.href='../terms/Chinese.html'"></td>
+<td class="clickable" width="2.26440269586%" title="Sports" onclick="window.location.href='../terms/Sports.html'"></td>
+<td class="clickable" width="2.18214105211%" title="Asian" onclick="window.location.href='../terms/Asian.html'"></td>
+<td class="clickable" width="1.90979393102%" title="Indian" onclick="window.location.href='../terms/Indian.html'"></td>
+<td class="clickable" width="1.61013897479%" title="Donuts" onclick="window.location.href='../terms/Donuts.html'"></td>
+<td class="clickable" width="1.39800403422%" title="Dive" onclick="window.location.href='../terms/Dive.html'"></td>
+<td class="clickable" width="1.32002351287%" title="General" onclick="window.location.href='../terms/General.html'"></td>
+<td class="clickable" width="1.04154778168%" title="Sum" onclick="window.location.href='../terms/Sum.html'"></td>
+<td class="clickable" width="0.976632171465%" title="Dim" onclick="window.location.href='../terms/Dim.html'"></td>
+<td width="1.23717862086%" title="Bowling, German, British, Food, Pakistani, Nutritionists, Service, Nightlife, Real, Karaoke, Size, Ethnic, Watch, Stands, Plus, Parts, Mongolian, Eye, Laotian...">&nbsp;</td>
+</tr></table>
+<table width="100%" class="high-contrast-table"><tr>
+<td class="clickable" width="22.1532163091%" title="Pizza" onclick="window.location.href='../terms/Pizza.html'"></td>
+<td class="clickable" width="9.25440790673%" title="Live" onclick="window.location.href='../terms/Live.html'"></td>
+<td class="clickable" width="8.49331732207%" title="Shops" onclick="window.location.href='../terms/Shops.html'"></td>
+<td class="clickable" width="7.07571777144%" title="High" onclick="window.location.href='../terms/High.html'"></td>
+<td class="clickable" width="6.67719748455%" title="Care" onclick="window.location.href='../terms/Care.html'"></td>
+<td class="clickable" width="5.24677346657%" title="Plus" onclick="window.location.href='../terms/Plus.html'"></td>
+<td class="clickable" width="4.39586140921%" title="Italian" onclick="window.location.href='../terms/Italian.html'"></td>
+<td class="clickable" width="3.66942121732%" title="Change" onclick="window.location.href='../terms/Change.html'"></td>
+<td class="clickable" width="3.55419828513%" title="Watch" onclick="window.location.href='../terms/Watch.html'"></td>
+<td class="clickable" width="2.90704411464%" title="Oil" onclick="window.location.href='../terms/Oil.html'"></td>
+<td class="clickable" width="2.68949710461%" title="Yogurt" onclick="window.location.href='../terms/Yogurt.html'"></td>
+<td class="clickable" width="2.53483944562%" title="Frozen" onclick="window.location.href='../terms/Frozen.html'"></td>
+<td class="clickable" width="2.28833814645%" title="Real" onclick="window.location.href='../terms/Real.html'"></td>
+<td class="clickable" width="2.1273402295%" title="Tires" onclick="window.location.href='../terms/Tires.html'"></td>
+<td class="clickable" width="1.52154545644%" title="Stations" onclick="window.location.href='../terms/Stations.html'"></td>
+<td class="clickable" width="1.51376386933%" title="Goods" onclick="window.location.href='../terms/Goods.html'"></td>
+<td class="clickable" width="1.43555258203%" title="Discount" onclick="window.location.href='../terms/Discount.html'"></td>
+<td class="clickable" width="1.34442627482%" title="Delivery" onclick="window.location.href='../terms/Delivery.html'"></td>
+<td class="clickable" width="1.24046706383%" title="Candy" onclick="window.location.href='../terms/Candy.html'"></td>
+<td class="clickable" width="1.13904095065%" title="Specialty" onclick="window.location.href='../terms/Specialty.html'"></td>
+<td class="clickable" width="1.03960507658%" title="Gas" onclick="window.location.href='../terms/Gas.html'"></td>
+<td class="clickable" width="0.963880852094%" title="Repair" onclick="window.location.href='../terms/Repair.html'"></td>
+<td class="clickable" width="0.924093463185%" title="Self" onclick="window.location.href='../terms/Self.html'"></td>
+<td class="clickable" width="0.799596314199%" title="IT" onclick="window.location.href='../terms/IT.html'"></td>
+<td class="clickable" width="0.621919224003%" title="Control" onclick="window.location.href='../terms/Control.html'"></td>
+<td class="clickable" width="0.607920241282%" title="Computer" onclick="window.location.href='../terms/Computer.html'"></td>
+<td class="clickable" width="0.524936441503%" title="Film" onclick="window.location.href='../terms/Film.html'"></td>
+<td class="clickable" width="0.506520331607%" title="Shaved" onclick="window.location.href='../terms/Shaved.html'"></td>
+<td width="2.74956164555%" title="Auto, Gluten-Free, Barbers, Mass, Advertising, Go, Injury, Racing, Ballet, Motor, Personal, Technical, Local, Pest, Service, Internal, Automotive, Size...">&nbsp;</td>
+</tr></table>
+
+</td></tr>
+</table>
+</div>
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>

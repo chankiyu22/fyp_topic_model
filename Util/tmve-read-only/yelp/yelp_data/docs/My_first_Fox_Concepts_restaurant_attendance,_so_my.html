@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[7.2159189109, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [6.2511462342, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [6.2159960237, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [5.2158699455, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.1923821982, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [5.0173218629, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.215931882, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [2.3876119325, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2303137223, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2168234208, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>My first Fox Concepts restaurant attendance, so my</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">My first Fox Concepts restaurant attendance, so my</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    My first Fox Concepts restaurant attendance, so my friend and I decided to check it out for lunch.<br /><br /><br /><br />The restaurant:<br /><br />As soon as you walk in, you notice the layout is very open, kitchen and everything. The bar is a couple of steps to the left from the entrance and right behind it is the kitchen. <br /><br />The restaurant has a very casual yet modern vintage look.<br /><br />The seating is somewhat private with a classy diner setting with booths. <br /><br />There were small matching things in a unique and not in an obnoxious way. Copper salt & pepper shakers and water pitchers, different vintage style light-bulbs.<br /><br />I noticed they had two small private party rooms and one large room that looks like it can accommodate up to 50 people.<br /><br /><br /><br />Staff:<br /><br />Our server was very nice willing to answer our questions about the menu and the restaurant. The wait staff looked very hip but still classy with their white button up collared shirts, black ties and dark blue jean attire.<br /><br />The kitchen staff also, black collared shirts with red aprons. <br /><br />Both staff were also able to be individuals, as I noticed showing of tattoos and piercings, which personally I think it should become more accepting.<br /><br /><br /><br />My only dislike was that there was a gentleman with somewhat neat dreadlocks on the kitchen staff. Tattoos and piercings yes, dreads not so much.<br /><br /><br /><br />Lunch experience<br /><br />We made reservations ahead of time just in case it was busy. It might not have been jam packed but the business was steady through out our lunch, which is pretty good around 2pm.<br /><br />We were seated in a cute little booth. Immediately we were greeted by our server who looked a bit nervous. He asked for our drink order then went off while we looked over the menu.<br /><br />My friend and I shared the potato fritters, then she had the salmon and kale salad while I had the green apples beet salad.<br /><br />Potato fritters were fresh, straight out of the frier. Our salads were good but we both felt that both were light on the dressing. My friend's salmon salad also fell a bit short for the salmon since it was chopped and the lack of califlower.<br /><br />Our bill was $50 including tip, which was two drinks, fritters, and the salads. Good for a every once in a while nice lunch, but not a couple times a week.<br /><br /><br /><br />Overall the Arrogant Butcher was a pleasant experience. I will be sure to try out it for dinner and drinks, then hopefully lunch again soon. In the meantime, I'll be sure to check out Sam Fox's other restaurants.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

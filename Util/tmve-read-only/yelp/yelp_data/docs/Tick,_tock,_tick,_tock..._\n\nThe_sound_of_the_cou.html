@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[9.4867995936, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [7.2161789879, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [4.9220021181, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [3.2222665102, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.2202755734, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2214582643, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [1.2207471304, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2174457667, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2161176894, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [1.2160244991, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Tick, tock, tick, tock... \n\nThe sound of the cou</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Tick, tock, tick, tock... \n\nThe sound of the cou</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Tick, tock, tick, tock... <br /><br /><br /><br />The sound of the countdown till the inevitable closure of this pretentious shithole. Don't get me wrong: I'm not going to write a review lambasting the evils of a $400 made-in-China t-shirt. For a girl as into gross consumerism as I, one would think Barney's would represent the ultimate altar at which to worship.<br /><br /><br /><br />That said, I still work hard to earn every damn penny, and still expect a certain level of service at this price point. I will tell you that the customer service at my ghetto Target is heads and shoulders superior to that of Barney's. I have walked in with photos of an item, knowing they carry the designer, and asked them to find it for me. They take my number and email and smile and nod, but then........... crickets. I attempt to return a defective handbag (GASP!) past the sacred 30-day window in which returns are accepted. Much hemming and hawing and excuses and the bag is surrendered, mysteriously sans refund, with promises of a call from the manager. Again............. crickets. I have to stalk the handbag department to see how the Queen Manager has deigned to handle my quandary (for those dying to know, they sent the bag back to the manufacturer for repair without telling me). I walk through the shoe department, clearly lingering over a certain item, and.............. crickets. I can see a sullen young man with waxed eyebrows giving me the side eye from the back room, but............ crickets. Is it me? It's not Foot Locker, for fuck's sake. I'm not going to wave the shoe at him from across the room and holler out my size. Sorry. I'm not sure why the staff goes MIA. I'm certain that gossiping and doing each other's makeup does not take up a disproportionate chunk of their workday. I'm not 18 (read: will not make you bring out every shoe for me to try on for fun) and I'm carrying the same bag you're selling 20 feet away (read: have AMEX/will shop), so I'm not really sure what else I need to do to get some damn help.<br /><br /><br /><br />Additionally, against my better judgement, I also sent my poor SO here to have all his suits and grown-up stuff altered when he lost weight and decided he wanted to pretend he was a J. Crew model. I figured the average tailor was not going to be on the cutting edge (heh) of this season's suit cut, but surely of-the-moment Barney's tailor would! Sadly, the seamstress, while perfectly friendly and competent, had just as many challenges with English and as little knowledge of trends as the $10-hem-while-you-wait place on the corner. The only difference was that the changing room was fancier -- she still needed an excess amount of direction, when we came to her hoping she would have the expertise to run the show. <br /><br /><br /><br />Sorry, Barney's. I realize you carry a lot of niche labels and items not otherwise available in retail locations in this state. In the golden age of the Interwebs, though, your benefit of exclusivity is gone. Now who wants to place bets on what store will fill their empty space!?
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

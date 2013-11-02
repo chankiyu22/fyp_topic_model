@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[11.2952978926, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [4.2159288357, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [2.3605319193, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.2177561376, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [2.2159366104, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [2.2159353167, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [2.2055867643, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [2.1413611885, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.061908358, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2290731097, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I have had good and bad experiences at Hana in the</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I have had good and bad experiences at Hana in the</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I have had good and bad experiences at Hana in the past, and overall, I like their sashimi choices, but last night was the final straw. The wait staff is very hit and miss, with most being fun and friendly but a few being the typical 'cooler than thou' hipster wanna-be types that seem to plague Central Phoenix restaurants these days. <br /><br /><br /><br />I can overlook the BYOB (which honestly I find annoying in a sushi/Japanese restaurant since I love an ice cold martini with raw fish) and the sometimes attitudey service, and even the ho-hum rolls offered (nothing special, really). But what I cannot overlook is the ridiculously overpriced items and the blatant overcharging. My partner and I were going to order the oysters, and when we were told it was $9 for 2 oysters we politely declined with more than a bit of amusement. 2 oysters, really? Durants, which has amazingly fresh oysters, presented incredibly, and is one of the priciest restaurants in the area charges $13 for a half dozen- in a far better atmosphere. <br /><br /><br /><br />Ok, so then I order the Chirashi bowl, which apparently is not on the menu but they will do it anyway. I always get the Chirashi as it is my favorite item at sushi restaurants, and Hana does a very nice one indeed- for $35!!! Of course you don't know this until AFTER you get the check since it's not listed anywhere. I understand that I ordered it and I should have asked, but honestly I have ordered this a hundred times from SF to LA to NY (and even at HANA before!!) and have NEVER seen it more than about $20-22. Locally, it goes for $19 at Stingray, and $17 at Sakana (which btw is much better). <br /><br /><br /><br />Anyway, I have never in my life complained about food prices before so it is a little weird having to write this, but I truly feel Hana is fleecing people and since they were the only game in the area for a long time, they think they can get away with it.  We'll see what happens now with Stingray opening up nearby, and Moira downtown, along with a few other newbies scheduled for openings in 2010. Competition is a great thing! <br /><br /><br /><br />Some advice for sushi lovers: it's a bit of a drive, but Sakana is still hands down the best sushi in town- with a full bar and dinner for two in the $50 range, including drinks.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

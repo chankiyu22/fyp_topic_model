@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[12.4193947859, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [11.0317920176, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [8.5088966252, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [5.2161097599, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [4.121401709, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [3.4613745914, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.7495148988, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.2182264539, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.216672398, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2159328932, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>You're going to go to whatever grocery store is cl</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">You're going to go to whatever grocery store is cl</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    You're going to go to whatever grocery store is closest to you, but usually you have 2 or 3 options within the same radius. If you live in the area, you should really consider making this your store. And here's why...<br /><br /><br /><br />1. No member cards.<br /><br />Albertson's started doing member cards a few years ago much to my dismay... I protested and pissed and moaned because I knew what it meant... At the time, they were the last store to not have such a program and I would've gone miles out of my way to shop there for that reason alone. These savings cards are bullshit - first of all, they take personal info from you and use it to market to you and monitor what you buy. It's a privacy issue and a spam issue. Second, these fucking cards cost money - you really think you're saving anything? It costs them millions to launch such a campaign - they have to get that money somewhere. They get it by raising the prices of shit. I noticed it right away as soon as the cards were implimented. Even with the savings card, my groceries were more expensive than before. Fuck that. Anyway, they finally got rid of the cards again - so I love them again. Thank you Albertson's.<br /><br /><br /><br />2. This place is a den of hot chicks. <br /><br />Strippers, college students, hot nurses, and all sorts of sexy singles shop here. I've never seen such a hot group of 20-30somethings shopping for groceries in one place. Now, I shop later at night usually - but it doesn't seem to matter too much what time of day you go. It's a good looking crowd. Single people, take your carts and smash into someone you find attractive and strike up a conversation... ask some cutie if they know the best way to squeeze a melon (even though you thunk em, I think).<br /><br /><br /><br />3. Selection... <br /><br />this place has a decent selection of wine and organic products and produce and deli and whatever else. It's not the best store I've ever been to, but it's good. In fact, that's where that 5th star went - this place could be a little better if it was a little bigger or newer... Still, it's got everything I'm ever looking for which is all you can really ask for from a grocery store. They stopped carrying the bread I like and I had to ask a few times and submit a few cards, but they started carrying it again. So I can't help but like this store. <br /><br /><br /><br />4. Prices...<br /><br />It doesn't have the best prices on everything, but for someone like me who doesn't do coupons, my grocery bill is smaller here than it is at Fry's with their savings card. <br /><br /><br /><br />You can also get gas here and their gas isn't that bad. It's also normally pretty cheap. If you live in the area, give this shopping center a try...
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

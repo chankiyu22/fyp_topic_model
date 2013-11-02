@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[8.0388560718, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [5.7389374478, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [5.1745175077, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [3.6137544979, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [3.4890080506, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.2283219779, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [3.0554106431, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [2.2159436963, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.3831677942, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2213984456, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Oh how it pains me to be the negative guy on this </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Oh how it pains me to be the negative guy on this </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Oh how it pains me to be the negative guy on this one... but I have to!<br /><br /><br /><br />A buddy and I just hit this place up for lunch because of the high rating here on Yelp...<br /><br /><br /><br />We sit down and are immediately greeted, by one of the waitresses, with, "Hi. What do you want?"<br /><br /><br /><br />Okay...<br /><br /><br /><br />"Well, we're not sure... we're newbies... what do you recommend?"<br /><br /><br /><br />"I don't know.  The ....... is good ...... start, ...... guess."<br /><br /><br /><br />"I'm sorry, what?"  (no... we're not jerks... she was shy, looking at her feet and whispering to two half-deaf guys from our Army days together)<br /><br /><br /><br />"Ceviche is good start."<br /><br /><br /><br />"Oh, okay... we're a couple of deaf guys, here.  Gotta shout at us; haha.  [WE laugh... SHE does not...]  Give us a couple of those, if you say they're good!"<br /><br /><br /><br />Straight walks away...<br /><br /><br /><br />We actually looked at each other and laughed...... gee we're thirsty... but I guess that's all she wanted from us......<br /><br /><br /><br />Another server comes by and drops off waters... maybe that's all they have to drink, we're thinking?  Nope... as we open the menus, it's got great pictures of margaritas and mixed drinks........ oh, no, wait...... those are smoothies..... no alcohol served here, at all, but they DO have weird smoothies that are specifically made to LOOK like alcoholic drinks and even garnished just like them........ hmm... still might have tried one of those........<br /><br /><br /><br />Ceviche arrives...<br /><br /><br /><br />Walks away again...<br /><br /><br /><br />"Excuse me, miss?"  I grab some other server walking by...  "Do you all have horchata here?"<br /><br /><br /><br />"Yes."<br /><br /><br /><br />"Awesome!  Can I try on of those?"<br /><br /><br /><br />"Yep."<br /><br /><br /><br />Walks away, of course...<br /><br /><br /><br />We both actually laugh out loud at this point...... my buddy STILL hasn't ordered a drink yet...... settles on the water that's now been refilled.<br /><br /><br /><br />We try the ceviche....... and it's ABSOLUTELY DELICIOUS!!!  Whew!!!  So THAT'S why people love this place... the food is FANTASTIC!<br /><br /><br /><br />Oh, there she is again...<br /><br /><br /><br />"You ........ order ..... ........?"<br /><br /><br /><br />"Senorita, lo siento, pero mis orejas son MUY mala... ?que dijo?"  Yeah... I thought Spanish would help.<br /><br /><br /><br />"?Que ....... ustedes?"  STILL WHISPERING!!!  But, okay... I think she just wants us to order.... forget asking for a recommendation at this point........<br /><br /><br /><br />"I'll take the carne quesadilla."  My buddy: "I'll take a shrimp quesadilla?"<br /><br /><br /><br />"Corn?"  Hey, she speaks a real word out loud!<br /><br /><br /><br />No, flour for both of us, please...<br /><br /><br /><br />Quesadillas arrive...... and are STINKIN' WONDERFULLY PHENOMENAL!!!  DANG IT the food here is CRAZY GOOD!!!<br /><br /><br /><br />We flagged our other waitress for some flan at the end... which was ALSO perfect!<br /><br /><br /><br />She finally brought the bill...... we paid and hurried out (dang us and our generosity on the tip, too... but the food was so good it was hard to leave her less than 20 percent).<br /><br /><br /><br />I dunno, folks........<br /><br /><br /><br />No beer... no margarita... no tequila... nada?  Just a... a.... a weird smoothie bar at a Mexican joint?  And then lousy service?  And then a dirty bathroom?<br /><br /><br /><br />I'm a total foodie and I WILL be back here for the FOOD...... but c'mon...... it can't be that hard to give good service to a couple of 30-something guys at lunchtime on a Monday, right?........  It can't be too busy to actually make sure you've cleaned the restroom at least once today, right?  ?Verdad?<br /><br /><br /><br />Maybe she was just shy about her English?  Maybe she was just shy cuz we're friendly dudes?  Maybe she's just stinkin' SHY and doesn't belong serving customers and should be the cashier or smoothie-maker?<br /><br /><br /><br />I'll edit the review on my next visit if the service and cleanliness improves........ but right now it's just a dingy, dirty Mexican-food dive joint with lousy service and no alcohol (not even a beer? really?!)........ but it DOES have EXCELLENT food.........<br /><br /><br /><br />Cheers!
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

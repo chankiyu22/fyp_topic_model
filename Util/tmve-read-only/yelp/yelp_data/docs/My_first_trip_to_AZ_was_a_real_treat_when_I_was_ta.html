@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[7.2783438434, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [6.3336317724, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [5.2827582707, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [5.2188732867, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.2139343544, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [5.2013847967, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.9563838998, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.2353391222, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.22270869, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.2159580966, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>My first trip to AZ was a real treat when I was ta</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">My first trip to AZ was a real treat when I was ta</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    My first trip to AZ was a real treat when I was taken to La Grande Orange Grocery. Charming from the moment you start driving past it! Lets get the not so cool things about this place out of the way first...<br /><br /><br /><br />Cons:<br /><br />-Parking lot is silly small for how popular (and amazing) this place is. Although, this well NEVER deter me from going here. Even if its just to grab a quick coffee.<br /><br /><br /><br />Ok.. now that I really sit and think about it, that is the only Con to this delightful establishment. Walking through the shop you can find the most darling and useful items including: funny/witty random items, coffee mugs, to go cups for iced drinks (a MUST in AZ), t-shirts, books, art, calendars, magazines, etc... You can also purchase cold beverages outside of the restaurant or coffee bar and they also have a huge selection of wine for a small store. I purchased a darling La Grande Orange to-go coffee mug and if an art piece my boyfriend loves is still there when I arrive next friday.. I will be getting that for him.<br /><br /><br /><br />The coffee bar smells amazing and even though I have only had one  iced toddy (AZ friends, i'm catching on ;))  from them, I am in love. The barista was super knowledgable and friendly and guess what ? She managed to not screw up something as simply as an iced beverage. I also purchased a bag of their Organic Ethiopian coffee. It is sitting in the apartment in AZ just waiting for me to come back! They bake all sorts of delicious treats daily and they have a food menu outside of the restaurant. They offer lots of quick fast goodies to take on the go as well as breakfast options for all of us loungey-coffee/brunch/patio-with-our-laptops people. ME. <br /><br /><br /><br />While I was there I dined in the restaurant and our experience was great. We ordered cocktails while we waited for our table and they were fresh and delicious! So nice to have a real drink outside of UT. We were seated quickly and our server was very helpful, friendly but also very laid back which I love. We ordered the  grilled artichoke which was of course amazing, a vegetable pizza and another round of drinks. As we finished up our dinner we walked around the shop one more time to take in all the amazing random stuff they sell all while a great AZ storm was starting to brew outside. <br /><br /><br /><br />This place is amazing. If you live in Phoenix you should be addicted and if you are visiting, you better make a special trip. Or two.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

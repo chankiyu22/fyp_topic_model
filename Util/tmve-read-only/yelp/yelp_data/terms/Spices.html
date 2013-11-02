@@ -1,0 +1,153 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[-3.7378800145, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [-10.5196643935, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [-18.7778359473, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [-20.6967205912, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [-22.2484387296, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [-25.3419070295, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [-26.7667123527, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [-26.8237462938, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [-37.6452721599, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [-40.8629069603, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+    }
+    //-->
+    </script>
+
+<title>Spices</title>
+<link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+  <body onload="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+<div id="top"></div>
+<h1 id="header">
+<table><tr>
+<td id="title">Spices</td>
+</tr></table></span>
+<hr noshade></h1>
+
+<div id="main">
+<table><tr>
+<td width="20.0%">
+<table class="dark">
+<tr class="title">
+<td>related words</td>
+</tr>
+<tr class="list"><td onclick="window.location.href='../terms/Clubs.html'">Clubs</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Middle.html'">Middle</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Sitting.html'">Sitting</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Cards.html'">Cards</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Credit.html'">Credit</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Driving.html'">Driving</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Garden.html'">Garden</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Air.html'">Air</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Juice.html'">Juice</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Wash.html'">Wash</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Vietnamese.html'">Vietnamese</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Systems.html'">Systems</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Dance.html'">Dance</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Street.html'">Street</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Trucks.html'">Trucks</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Thai.html'">Thai</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Centers.html'">Centers</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/DJs.html'">DJs</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Car.html'">Car</a></td></tr>
+<tr class="list"><td onclick="window.location.href='../terms/Entertainment.html'">Entertainment</a></td></tr>
+
+</table>
+</td>
+
+<td width="50.0%">
+<table class="light">
+<tr class="title">
+<td>related documents</td>
+</tr>
+<tr class="list"><td onclick="window.location.href='../docs/Anyone_who_says_this_store_is_overpriced_is_just_a.html'">Anyone who says this store is overpriced is just a</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/Firstly,_this_is_Arizona_turn_the_air_conditiionin.html'">Firstly, this is Arizona turn the air conditiionin</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/This_was_my_first_time_here_and_my_server_Jacob_wa.html'">This was my first time here and my server Jacob wa</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/100+_reviews_and_this_is_my_worst.\n\nDinner_at_Mi.html'">100+ reviews and this is my worst.\n\nDinner at Mi</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/This_place_is_wonderful.__My_boyfriend_used_to_wor.html'">This place is wonderful.  My boyfriend used to wor</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/We_knew_it_was_opening_up--_we_watched_and_waited_.html'">We knew it was opening up-- we watched and waited </td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/I_know,_its_annoying_to_all_you_AZ_peeps_when_I_sa.html'">I know, its annoying to all you AZ peeps when I sa</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/I_had_read_the_reviews_on_Yelp_of_Marcellino_s,_an.html'">I had read the reviews on Yelp of Marcellino's, an</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/Wow,_this_place_is_just_not_good.__Went_there_for_.html'">Wow, this place is just not good.  Went there for </td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/This_is_the_best_place_to_get_homemade_Mexican_foo.html'">This is the best place to get homemade Mexican foo</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/Hubby_has_been_eating_mostly_vegetarian_lately,_so.html'">Hubby has been eating mostly vegetarian lately, so</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/3-14-10\n\nLiked_the_ambience!___Beautiful_wooden_.html'">3/14/10\n\nLiked the ambience!   Beautiful wooden </td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/Whoops,_I_forgot_the_name_to_this_place_and_review.html'">Whoops, I forgot the name to this place and review</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/Love_Thai_House!_It_is_down_the_street_from_me,_so.html'">Love Thai House! It is down the street from me, so</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/the_food_here_has_the_right_touch_of_spice_that_i_.html'">the food here has the right touch of spice that i </td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/This_was_our_second_time_here._The_menu_is_drastic.html'">This was our second time here. The menu is drastic</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/~Jesus_Serves_up_@_FEZ!~\n\nFriday,_Christmas_Eve..html'">~Jesus Serves up @ FEZ!~\n\nFriday, Christmas Eve.</td></tr>
+<tr class="list"><td onclick="window.location.href='../docs/I_love_this_place!__it_s_a_cultural_experience!__I.html'">I love this place!  it's a cultural experience!  I</td></tr>
+
+</table>
+</td>
+
+<td width="30.0%">
+<table class="dark">
+<tr class="title">
+<td>related topics</td>
+</tr>
+<tr class="list"><td onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+
+</table>
+</td>
+</tr></table>
+</div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</tr>
+</table>
+</div>
+  </body>
+</html>

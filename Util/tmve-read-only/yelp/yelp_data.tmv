@@ -1,0 +1,3 @@
+template: Yelp
+database: ../../../yelp_dataset.db
+title: Yelp

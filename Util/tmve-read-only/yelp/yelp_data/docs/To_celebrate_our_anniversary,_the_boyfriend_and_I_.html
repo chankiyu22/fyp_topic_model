@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[9.1881529251, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [7.2282802664, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [7.2137762492, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [6.2154672678, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.9326727145, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [4.5012337831, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [3.2185538958, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [2.2159410209, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2286079297, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2166300804, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>To celebrate our anniversary, the boyfriend and I </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">To celebrate our anniversary, the boyfriend and I </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    To celebrate our anniversary, the boyfriend and I ventured out to Mastro's City Hall for dinner.  Do not let the businesslike exterior fool you...this is a beautiful, fine dining restaurant.  <br /><br /><br /><br />Upon entering the restaurant, we were greeted by the hostess and escorted to our table.  Didn't have a chance to check out the patio or bar, but I will say the dining room is gorgeous.  Low, but not dark, lighting.  Music piped in from the piano in the lounge, I believe??  Tables that seem packed in the room but have plenty of room between to allow you to move around.  We were seated at a two top, which I usually do not like, especially when there are fours available.  I understand why restaurants do this, but the tables are usually so small that we run out of room quickly.  This table, however, had more than enough space.  As the hostess seated us, she asked us what color napkin we'd prefer, black or white.  Never experienced that before.  I'm sure there is some sort of fancy-schmancy etiquette rule about which napkin is better, but we aren't really fancy-schmancy people.  We stuck with the white napkins that were already on the table.  <br /><br /><br /><br />Next we were given menus and greeted by the server who asked about a drink order.  I asked for water while I perused the wine list and the bf had a jack and coke.  What the waiter returned with was a water and a glass of jack (nearly full) and a bottle of coke.  A jack with a splash of coke just like he likes them.  The bf was happy.  <br /><br /><br /><br />Let me cover the service aspect of our evening.  Our server was awesome.  Very professional, educated and willing to educate us first timers on the menu and specials.  He made an excellent wine recommendation and helped us choose the apps for our seafood tower.  Additionally, it was also election night and we debated even going out as opposed to staying in and watching the returns.  But, the server kept us updated with results on a regular basis from the bar tv.  Yay!  Back up staff was generally good about filling water, clearing tables, etc.  But sometimes it felt like we were being rushed.  Staff approached the table to see if we were finished when we were obviously still eating.  Like actually chewing with food still on the plate.  Nothing too major, but I would expect better here.<br /><br /><br /><br />Ok, food...We had the seafood tower (shrimp, oysters, lobster), filets, asparagus and....wait for it, wait for it....the lobster mashed potatoes!  The seafood tower made a dramatic entrance complete with dry ice.  Again the server was very accommodating and helpful.  He made great recommendations and basically was able to create this dish as we wanted it.  Everything was delicious and the creamy mustard sauce was phenomenal.  I would choose that over cocktail sauce anytime.  I had the petite filet and the bf had the regular.  Both were cooked perfectly and melted in our mouths.  Also, the bf's steak seemed much larger than 12 oz.  Asparagus was bright green, firm but tender.  If you read the reviews here, people are raving about the potatoes.  With good reason...they are delectable.  Ridiculously good.  Seriously, my mouth is watering right now.  Do not fret if you don't see them on the menu.  They are a special item that they almost always have.  We paired a bottle of Cab with our entree which was very nice as well.  After dinner was cleared, we gladly boxed up our leftover mashers (seriously it could serve 4 easily).  I thought we were ready to go, but out came a slice of delicious chocolate cake as a treat for our anniversary.  We didn't order this, they just brought it out.  Regardless of what kind of restaurant you are at, this is always a nice touch.  Even with our best efforts there was no way we were going to finish the cake so after a few bites that went in a box as well.  <br /><br /><br /><br />In spite of the earlier rushed feeling, once we finished our meal we were left alone to finish our drinks.  This was easily one of the best meals I've ever had.  It is spendy, so we won't be back often.  But we will be back again and be recommending it to all our friends.  <br /><br /><br /><br />ps...the bf paid so I can't really complain, but those take home boxes??  They made it home, but I've never seen them again. :)
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

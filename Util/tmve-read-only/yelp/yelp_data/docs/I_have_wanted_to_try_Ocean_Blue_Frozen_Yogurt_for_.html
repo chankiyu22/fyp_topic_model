@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[18.6470134607, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [6.2182851838, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.2252746765, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [4.2164063552, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [2.6627530061, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.3464585633, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [2.1915480393, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [1.2195574755, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [1.2160864836, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [1.2159328888, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I have wanted to try Ocean Blue Frozen Yogurt for </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I have wanted to try Ocean Blue Frozen Yogurt for </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I have wanted to try Ocean Blue Frozen Yogurt for quite a while because I have heard good things about it from friends. I finally had the change to go down there last night. <br /><br /><br /><br />Ocean Blue is a self-serve frozen yogurt place.  You can mix all the topping and combine flavors if you want.  The total cost is 38 cents per ounce.  It is weighed at the end when you pay, and includes both the yogurt and the toppings. <br /><br /><br /><br />Overall, it was a good experience.  When I first walked in I liked the decor--it was modern and clean, which was a major plus.   They had 12 different flavors of frozen yogurt, which they told me they rotate out every week, so there are new flavors all the time.  They also have 30 different toppings to pick from: everything from fresh fruit to candy pieces and three types of Ghirardelli chocolate sauces to use. <br /><br /><br /><br />A really awesome thing about this place is the frozen yogurt is gluten-free.  They say it's less calories than a large apple per serving and it tastes great.<br /><br /><br /><br />*Also,  if you bring your student ID card or bring back one of THEIR water bottles to recycle you get 15% off your total purchase.<br /><br /><br /><br />The only part that frustrated me about this place was the staff.  They were friendly and nice, but a little bit on the incompetent side, which is why I am giving them three out of five stars. <br /><br /><br /><br />      - My friend paid for her yogurt first and also purchased a water bottle.  She had her student ID card with her so she got a discount.  The employee asked me if I had a student ID card.  I said no because my friend had given me her old water bottle from her last visit to recycle and get the 15% discount.  Well, when he said my total I was a little surprised.  It seemed expensive, but I had never been there before so I gave him my card and he swiped it.  Then my friend stepped in and said there was no way that total was right. The employee looked baffled and then looked at my empty water bottle and saw the coupon, which I assumed he already knew about.  The other girl at the counter didn't know about the coupon on their water bottles either which was probably the reason for the confusion.  It turns out he charged me for an empty/used water bottle and also didn't give me the 15% discount.  He said there was no way to give refunds, so they gave me a coupon for next time.  <br /><br /><br /><br />I will definitely give this place another try, I just hope next time the employees are a little less inept.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[36.4221722564, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [12.8857440001, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [7.938685623, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [6.6483953234, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [5.2295626489, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [4.2386862147, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [4.2001402427, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.1015644363, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [2.2750105881, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2193547994, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I can't believe the reviews that this place has re</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I can't believe the reviews that this place has re</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I can't believe the reviews that this place has received so far!  WOW!!<br /><br /><br /><br />I concede, yes it is very expensive when compared to other gyms, but a BMW is expense when compared to a Ford....<br /><br /><br /><br />In my life I've belonged to The Courthouse (tiny gym), LA Fitness, ASU Student Rec Center, Q Fitness (now 24 hour fitness) and the YMCA and I can honestly say that all pale in comparison to this facility.  Quick disclaimer: Not all LifeTime Fitness centers are the same!  The one in Gilbert is great, but not as amazing as this facility.  When I moved to MN (home of LifeTime Fitness) I actually plotted out where we would live based on the proximity to one of their gyms.  The closest one to me is in no way comparable to the facility in Tempe and as a result we are no longer members.  If I lived even remotely close to a facility like this one I would join again in a heartbeat.  Now on to the review.<br /><br /><br /><br />My wife actually signed us up under the family plan without me around.  When she told me how much it was (~$90/month for the entire family) I was a bit put back.  But after my first visit I felt the money was well spent and that we were even getting a deal!<br /><br /><br /><br />I often describe this facility as a "country club".  Everything about this place is just amazing.<br /><br /><br /><br />Locker Rooms - Incredibly well appointed with a ton of space, a lounge, sauna and steam room.  The lockers are large and their card/key system saves a lot of time for those of us that always forget to bring a lock with them.<br /><br /><br /><br />Cardio - There's no way anyone can complain about this!  Even at peak times there are almost always machines available in every category (treadmill, bike, elliptical, etc).  The machines are well maintained and the abundance of large screen TVs will keep you distracted from your achy legs.<br /><br /><br /><br />Weight Machines - You name it, they have it.  There are more here than I would ever use, but if you want to work that little muscle that connects those two things that you n ever use, they probably have a machine here to do it.<br /><br /><br /><br />Free Weights - They have a ton of free weights with some set-ups that I have yet to find in other facilities.  Plenty of space to workout and plenty of weights for everyone to use.<br /><br /><br /><br />Basketball - Two full size courts that are open and clean.  Great courts to play on.<br /><br /><br /><br />Squash - Probably my one complaint is that they have squash courts and no racquetball courts.  Of course most would argue that squash is more technical than racquetball and I should get some skill and stop bitching.<br /><br /><br /><br />Rock Climbing - Probably one of the most underused aspects of the gym.  I rarely saw people on this, but is was a heck of a set-up!<br /><br /><br /><br />Tennis - This was extra and since I'm not much of a tennis player I didn't sign up for this feature, but it seemed like a nice facility.<br /><br /><br /><br />Pool - Indoor and outdoor pools, so you can swim all year long.  The outdoor pool had some AMAZING "scenery" during the warmer months.  I wouldn't go so far as to compare it to a Vegas hotel pool, but it was darn impressive!<br /><br /><br /><br />Kid Zone - This is one of the things that sold it for us.  The facility for kids was outstanding, with separate areas set up for different ages and an abundance of activities and areas for all kids.  Indoor, lower hood basketball.  Outdoor play area.  Huge indoor "jungle gym".  Computers.  Crafts.  This truly was an amazing part of the gym.  And the great thing is, if you want to relax instead of work out, this aspect of the gym becomes even more helpful!  You want to get a haircut and a massage?  Drop the kids off and head to the spa!  You want to sit back and relax?  Drop the kids off and head to the pool or hot tub.  The kids look forward to it and it's great for the parents!<br /><br /><br /><br />Spa - My wife used this more than me and was happy with the experiences that she had here.  We didn't use it as much as we could have, but no complaints.<br /><br /><br /><br />Cafe - Decent food for a little cafe in a gym.  I ate many a breakfast there on my way to work after a cardio session.  <br /><br /><br /><br />Overall I just don't think that I've ever been in a better gym.  Yes it's expensive, but even at a higher price I feel as if I always got a good deal for the money I spent.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

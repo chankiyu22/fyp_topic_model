@@ -1,0 +1,864 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+    <script language="JavaScript" src="../js/bottom_bar_chart.js"></script>
+
+    <script type="text/JavaScript">
+    <!--
+    function init() {
+        browser_adjust();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Yelp Terms</title>
+<link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+  <body onload="init()">
+
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+<div id="top"></div>
+<div id="header">
+<h1>Yelp Terms</h1>
+<h2>List of Terms by Frequency</h2>
+<hr noshade>
+</div>
+<div id="list">
+<div ><table onmouseover="show_count_bar()" onmouseout="hide_count_bar()">
+<tr>
+<td title="152769" onclick="window.location.href='../terms/Goods.html'" onmouseover="count_adjust(101.0)">Goods</td>
+<td title="141908" onclick="window.location.href='../terms/Food.html'" onmouseover="count_adjust(93.8905733493)">Food</td>
+<td title="78198" onclick="window.location.href='../terms/Go.html'" onmouseover="count_adjust(52.1870863853)">Go</td>
+<td title="71792" onclick="window.location.href='../terms/Service.html'" onmouseover="count_adjust(47.9938272817)">Service</td>
+<td title="40163" onclick="window.location.href='../terms/Chicken.html'" onmouseover="count_adjust(27.290019572)">Chicken</td>
+<td title="39006" onclick="window.location.href='../terms/Bars.html'" onmouseover="count_adjust(26.5326669678)">Bars</td>
+<td title="34630" onclick="window.location.href='../terms/Day.html'" onmouseover="count_adjust(23.6682114827)">Day</td>
+<td title="34521" onclick="window.location.href='../terms/Pizza.html'" onmouseover="count_adjust(23.5968619288)">Pizza</td>
+</tr>
+<tr>
+<td title="32971" onclick="window.location.href='../terms/Salad.html'" onmouseover="count_adjust(22.5822581807)">Salad</td>
+<td title="29703" onclick="window.location.href='../terms/Cheese.html'" onmouseover="count_adjust(20.4430807297)">Cheese</td>
+<td title="27952" onclick="window.location.href='../terms/New.html'" onmouseover="count_adjust(19.2969057859)">New</td>
+<td title="26167" onclick="window.location.href='../terms/Burgers.html'" onmouseover="count_adjust(18.1284750178)">Burgers</td>
+<td title="24045" onclick="window.location.href='../terms/Beer.html'" onmouseover="count_adjust(16.7394497575)">Beer</td>
+<td title="23659" onclick="window.location.href='../terms/Flavor.html'" onmouseover="count_adjust(16.486780695)">Flavor</td>
+<td title="22947" onclick="window.location.href='../terms/Stores.html'" onmouseover="count_adjust(16.020717554)">Stores</td>
+<td title="22236" onclick="window.location.href='../terms/Small.html'" onmouseover="count_adjust(15.5553089959)">Small</td>
+</tr>
+<tr>
+<td title="21799" onclick="window.location.href='../terms/Rooms.html'" onmouseover="count_adjust(15.2692561973)">Rooms</td>
+<td title="21114" onclick="window.location.href='../terms/Hot.html'" onmouseover="count_adjust(14.8208667989)">Hot</td>
+<td title="20717" onclick="window.location.href='../terms/Special.html'" onmouseover="count_adjust(14.5609973228)">Special</td>
+<td title="20048" onclick="window.location.href='../terms/Home.html'" onmouseover="count_adjust(14.1230812534)">Home</td>
+<td title="19605" onclick="window.location.href='../terms/Wine.html'" onmouseover="count_adjust(13.8331009563)">Wine</td>
+<td title="18643" onclick="window.location.href='../terms/Meat.html'" onmouseover="count_adjust(13.2033920494)">Meat</td>
+<td title="18120" onclick="window.location.href='../terms/Breakfast.html'" onmouseover="count_adjust(12.8610451073)">Breakfast</td>
+<td title="18067" onclick="window.location.href='../terms/Coffee.html'" onmouseover="count_adjust(12.826352205)">Coffee</td>
+</tr>
+<tr>
+<td title="15903" onclick="window.location.href='../terms/Check.html'" onmouseover="count_adjust(11.4098344559)">Check</td>
+<td title="14896" onclick="window.location.href='../terms/Sushi.html'" onmouseover="count_adjust(10.7506693112)">Sushi</td>
+<td title="14470" onclick="window.location.href='../terms/Plates.html'" onmouseover="count_adjust(10.4718169262)">Plates</td>
+<td title="14421" onclick="window.location.href='../terms/Live.html'" onmouseover="count_adjust(10.4397423561)">Live</td>
+<td title="13334" onclick="window.location.href='../terms/Soup.html'" onmouseover="count_adjust(9.72821056628)">Soup</td>
+<td title="13270" onclick="window.location.href='../terms/Used.html'" onmouseover="count_adjust(9.68631725023)">Used</td>
+<td title="13235" onclick="window.location.href='../terms/Shops.html'" onmouseover="count_adjust(9.66340684301)">Shops</td>
+<td title="12987" onclick="window.location.href='../terms/Cream.html'" onmouseover="count_adjust(9.50107024331)">Cream</td>
+</tr>
+<tr>
+<td title="12832" onclick="window.location.href='../terms/Kids.html'" onmouseover="count_adjust(9.39960986849)">Kids</td>
+<td title="12681" onclick="window.location.href='../terms/Parking.html'" onmouseover="count_adjust(9.30076782593)">Parking</td>
+<td title="12662" onclick="window.location.href='../terms/Desserts.html'" onmouseover="count_adjust(9.28833074773)">Desserts</td>
+<td title="12362" onclick="window.location.href='../terms/Chips.html'" onmouseover="count_adjust(9.09195582873)">Chips</td>
+<td title="12048" onclick="window.location.href='../terms/Parts.html'" onmouseover="count_adjust(8.88641674685)">Parts</td>
+<td title="12035" onclick="window.location.href='../terms/Mexican.html'" onmouseover="count_adjust(8.87790716703)">Mexican</td>
+<td title="11924" onclick="window.location.href='../terms/Dog.html'" onmouseover="count_adjust(8.805248447)">Dog</td>
+<td title="11695" onclick="window.location.href='../terms/Family.html'" onmouseover="count_adjust(8.6553489255)">Family</td>
+</tr>
+<tr>
+<td title="11347" onclick="window.location.href='../terms/Door.html'" onmouseover="count_adjust(8.42755401947)">Door</td>
+<td title="11116" onclick="window.location.href='../terms/Local.html'" onmouseover="count_adjust(8.27634533184)">Local</td>
+<td title="11038" onclick="window.location.href='../terms/Fish.html'" onmouseover="count_adjust(8.2252878529)">Fish</td>
+<td title="11026" onclick="window.location.href='../terms/High.html'" onmouseover="count_adjust(8.21743285614)">High</td>
+<td title="10936" onclick="window.location.href='../terms/Music.html'" onmouseover="count_adjust(8.15852038044)">Music</td>
+<td title="10714" onclick="window.location.href='../terms/Size.html'" onmouseover="count_adjust(8.01320294039)">Size</td>
+<td title="10672" onclick="window.location.href='../terms/Restaurants.html'" onmouseover="count_adjust(7.98571045173)">Restaurants</td>
+<td title="10587" onclick="window.location.href='../terms/Ice.html'" onmouseover="count_adjust(7.93007089135)">Ice</td>
+</tr>
+<tr>
+<td title="10555" onclick="window.location.href='../terms/Fast.html'" onmouseover="count_adjust(7.90912423332)">Fast</td>
+<td title="10494" onclick="window.location.href='../terms/Car.html'" onmouseover="count_adjust(7.86919466646)">Car</td>
+<td title="10405" onclick="window.location.href='../terms/Care.html'" onmouseover="count_adjust(7.81093677382)">Care</td>
+<td title="9682" onclick="window.location.href='../terms/Tea.html'" onmouseover="count_adjust(7.33767321904)">Tea</td>
+<td title="9358" onclick="window.location.href='../terms/Thai.html'" onmouseover="count_adjust(7.12558830653)">Thai</td>
+<td title="9314" onclick="window.location.href='../terms/Real.html'" onmouseover="count_adjust(7.09678665174)">Real</td>
+<td title="8998" onclick="window.location.href='../terms/Game.html'" onmouseover="count_adjust(6.88993840373)">Game</td>
+<td title="8828" onclick="window.location.href='../terms/Decor.html'" onmouseover="count_adjust(6.77865928297)">Decor</td>
+</tr>
+<tr>
+<td title="8719" onclick="window.location.href='../terms/Plus.html'" onmouseover="count_adjust(6.70730972907)">Plus</td>
+<td title="8546" onclick="window.location.href='../terms/Hotels.html'" onmouseover="count_adjust(6.59406685911)">Hotels</td>
+<td title="8271" onclick="window.location.href='../terms/Street.html'" onmouseover="count_adjust(6.4140565167)">Street</td>
+<td title="7683" onclick="window.location.href='../terms/Sandwiches.html'" onmouseover="count_adjust(6.02916167547)">Sandwiches</td>
+<td title="7421" onclick="window.location.href='../terms/Party.html'" onmouseover="count_adjust(5.85766091288)">Party</td>
+<td title="7354" onclick="window.location.href='../terms/Shared.html'" onmouseover="count_adjust(5.81380384764)">Shared</td>
+<td title="7196" onclick="window.location.href='../terms/Kitchen.html'" onmouseover="count_adjust(5.71037972364)">Kitchen</td>
+<td title="6997" onclick="window.location.href='../terms/Wings.html'" onmouseover="count_adjust(5.58011769403)">Wings</td>
+</tr>
+<tr>
+<td title="6955" onclick="window.location.href='../terms/Pools.html'" onmouseover="count_adjust(5.55262520538)">Pools</td>
+<td title="6850" onclick="window.location.href='../terms/Italian.html'" onmouseover="count_adjust(5.48389398373)">Italian</td>
+<td title="6791" onclick="window.location.href='../terms/Glass.html'" onmouseover="count_adjust(5.44527358299)">Glass</td>
+<td title="6551" onclick="window.location.href='../terms/Chinese.html'" onmouseover="count_adjust(5.2881736478)">Chinese</td>
+<td title="6396" onclick="window.location.href='../terms/Cards.html'" onmouseover="count_adjust(5.18671327298)">Cards</td>
+<td title="6318" onclick="window.location.href='../terms/Sitting.html'" onmouseover="count_adjust(5.13565579404)">Sitting</td>
+<td title="6198" onclick="window.location.href='../terms/Spaces.html'" onmouseover="count_adjust(5.05710582644)">Spaces</td>
+<td title="6088" onclick="window.location.href='../terms/Parks.html'" onmouseover="count_adjust(4.98510168948)">Parks</td>
+</tr>
+<tr>
+<td title="6058" onclick="window.location.href='../terms/Chefs.html'" onmouseover="count_adjust(4.96546419758)">Chefs</td>
+<td title="5979" onclick="window.location.href='../terms/Dry.html'" onmouseover="count_adjust(4.91375213558)">Dry</td>
+<td title="5718" onclick="window.location.href='../terms/Change.html'" onmouseover="count_adjust(4.74290595605)">Change</td>
+<td title="5705" onclick="window.location.href='../terms/Shopping.html'" onmouseover="count_adjust(4.73439637623)">Shopping</td>
+<td title="5673" onclick="window.location.href='../terms/French.html'" onmouseover="count_adjust(4.7134497182)">French</td>
+<td title="5668" onclick="window.location.href='../terms/Watch.html'" onmouseover="count_adjust(4.71017680289)">Watch</td>
+<td title="5487" onclick="window.location.href='../terms/Life.html'" onmouseover="count_adjust(4.59169726842)">Life</td>
+<td title="5440" onclick="window.location.href='../terms/Books.html'" onmouseover="count_adjust(4.56093186445)">Books</td>
+</tr>
+<tr>
+<td title="5195" onclick="window.location.href='../terms/Event.html'" onmouseover="count_adjust(4.40055901394)">Event</td>
+<td title="5058" onclick="window.location.href='../terms/Office.html'" onmouseover="count_adjust(4.31088113426)">Office</td>
+<td title="4936" onclick="window.location.href='../terms/Markets.html'" onmouseover="count_adjust(4.23102200054)">Markets</td>
+<td title="4834" onclick="window.location.href='../terms/Eye.html'" onmouseover="count_adjust(4.16425452808)">Eye</td>
+<td title="4817" onclick="window.location.href='../terms/Clubs.html'" onmouseover="count_adjust(4.153126616)">Clubs</td>
+<td title="4760" onclick="window.location.href='../terms/Buffets.html'" onmouseover="count_adjust(4.11581538139)">Buffets</td>
+<td title="4733" onclick="window.location.href='../terms/Vegetarian.html'" onmouseover="count_adjust(4.09814163868)">Vegetarian</td>
+<td title="4688" onclick="window.location.href='../terms/Fruits.html'" onmouseover="count_adjust(4.06868540083)">Fruits</td>
+</tr>
+<tr>
+<td title="4683" onclick="window.location.href='../terms/Spices.html'" onmouseover="count_adjust(4.06541248552)">Spices</td>
+<td title="4670" onclick="window.location.href='../terms/Outdoor.html'" onmouseover="count_adjust(4.05690290569)">Outdoor</td>
+<td title="4644" onclick="window.location.href='../terms/Phones.html'" onmouseover="count_adjust(4.03988374605)">Phones</td>
+<td title="4637" onclick="window.location.href='../terms/Veggies.html'" onmouseover="count_adjust(4.0353016646)">Veggies</td>
+<td title="4602" onclick="window.location.href='../terms/Cocktail.html'" onmouseover="count_adjust(4.01239125739)">Cocktail</td>
+<td title="4530" onclick="window.location.href='../terms/Oil.html'" onmouseover="count_adjust(3.96526127683)">Oil</td>
+<td title="4529" onclick="window.location.href='../terms/Cafes.html'" onmouseover="count_adjust(3.96460669377)">Cafes</td>
+<td title="4469" onclick="window.location.href='../terms/Schools.html'" onmouseover="count_adjust(3.92533170997)">Schools</td>
+</tr>
+<tr>
+<td title="4461" onclick="window.location.href='../terms/Centers.html'" onmouseover="count_adjust(3.92009504546)">Centers</td>
+<td title="4457" onclick="window.location.href='../terms/Stands.html'" onmouseover="count_adjust(3.91747671321)">Stands</td>
+<td title="4357" onclick="window.location.href='../terms/Middle.html'" onmouseover="count_adjust(3.85201840688)">Middle</td>
+<td title="4203" onclick="window.location.href='../terms/Hair.html'" onmouseover="count_adjust(3.75121261512)">Hair</td>
+<td title="4191" onclick="window.location.href='../terms/Yogurt.html'" onmouseover="count_adjust(3.74335761836)">Yogurt</td>
+<td title="4132" onclick="window.location.href='../terms/Blues.html'" onmouseover="count_adjust(3.70473721763)">Blues</td>
+<td title="4013" onclick="window.location.href='../terms/Art.html'" onmouseover="count_adjust(3.62684183309)">Art</td>
+<td title="3950" onclick="window.location.href='../terms/Frozen.html'" onmouseover="count_adjust(3.58560310011)">Frozen</td>
+</tr>
+<tr>
+<td title="3907" onclick="window.location.href='../terms/Sports.html'" onmouseover="count_adjust(3.55745602838)">Sports</td>
+<td title="3871" onclick="window.location.href='../terms/Building.html'" onmouseover="count_adjust(3.5338910381)">Building</td>
+<td title="3765" onclick="window.location.href='../terms/Asian.html'" onmouseover="count_adjust(3.46450523339)">Asian</td>
+<td title="3723" onclick="window.location.href='../terms/Seafood.html'" onmouseover="count_adjust(3.43701274473)">Seafood</td>
+<td title="3722" onclick="window.location.href='../terms/Airports.html'" onmouseover="count_adjust(3.43635816167)">Airports</td>
+<td title="3699" onclick="window.location.href='../terms/Window.html'" onmouseover="count_adjust(3.42130275121)">Window</td>
+<td title="3580" onclick="window.location.href='../terms/Brunch.html'" onmouseover="count_adjust(3.34340736668)">Brunch</td>
+<td title="3480" onclick="window.location.href='../terms/Modern.html'" onmouseover="count_adjust(3.27794906035)">Modern</td>
+</tr>
+<tr>
+<td title="3431" onclick="window.location.href='../terms/Guest.html'" onmouseover="count_adjust(3.24587449024)">Guest</td>
+<td title="3416" onclick="window.location.href='../terms/Gifts.html'" onmouseover="count_adjust(3.23605574429)">Gifts</td>
+<td title="3315" onclick="window.location.href='../terms/Tires.html'" onmouseover="count_adjust(3.1699428549)">Tires</td>
+<td title="3295" onclick="window.location.href='../terms/Indian.html'" onmouseover="count_adjust(3.15685119363)">Indian</td>
+<td title="3237" onclick="window.location.href='../terms/Grocery.html'" onmouseover="count_adjust(3.11888537596)">Grocery</td>
+<td title="3158" onclick="window.location.href='../terms/American.html'" onmouseover="count_adjust(3.06717331396)">American</td>
+<td title="3099" onclick="window.location.href='../terms/Bed.html'" onmouseover="count_adjust(3.02855291322)">Bed</td>
+<td title="3042" onclick="window.location.href='../terms/Bagels.html'" onmouseover="count_adjust(2.99124167861)">Bagels</td>
+</tr>
+<tr>
+<td title="3039" onclick="window.location.href='../terms/Shoe.html'" onmouseover="count_adjust(2.98927792942)">Shoe</td>
+<td title="3011" onclick="window.location.href='../terms/Nail.html'" onmouseover="count_adjust(2.97094960365)">Nail</td>
+<td title="2989" onclick="window.location.href='../terms/Resorts.html'" onmouseover="count_adjust(2.95654877626)">Resorts</td>
+<td title="2981" onclick="window.location.href='../terms/Traditional.html'" onmouseover="count_adjust(2.95131211175)">Traditional</td>
+<td title="2949" onclick="window.location.href='../terms/Vegan.html'" onmouseover="count_adjust(2.93036545372)">Vegan</td>
+<td title="2934" onclick="window.location.href='../terms/Diners.html'" onmouseover="count_adjust(2.92054670777)">Diners</td>
+<td title="2862" onclick="window.location.href='../terms/Personal.html'" onmouseover="count_adjust(2.87341672722)">Personal</td>
+<td title="2814" onclick="window.location.href='../terms/Professional.html'" onmouseover="count_adjust(2.84199674018)">Professional</td>
+</tr>
+<tr>
+<td title="2794" onclick="window.location.href='../terms/Baby.html'" onmouseover="count_adjust(2.82890507891)">Baby</td>
+<td title="2778" onclick="window.location.href='../terms/Donuts.html'" onmouseover="count_adjust(2.8184317499)">Donuts</td>
+<td title="2773" onclick="window.location.href='../terms/Air.html'" onmouseover="count_adjust(2.81515883458)">Air</td>
+<td title="2753" onclick="window.location.href='../terms/Spas.html'" onmouseover="count_adjust(2.80206717331)">Spas</td>
+<td title="2726" onclick="window.location.href='../terms/Credit.html'" onmouseover="count_adjust(2.7843934306)">Credit</td>
+<td title="2611" onclick="window.location.href='../terms/Massage.html'" onmouseover="count_adjust(2.70911637832)">Massage</td>
+<td title="2584" onclick="window.location.href='../terms/Greek.html'" onmouseover="count_adjust(2.69144263561)">Greek</td>
+<td title="2579" onclick="window.location.href='../terms/Bikes.html'" onmouseover="count_adjust(2.6881697203)">Bikes</td>
+</tr>
+<tr>
+<td title="2555" onclick="window.location.href='../terms/Interior.html'" onmouseover="count_adjust(2.67245972678)">Interior</td>
+<td title="2552" onclick="window.location.href='../terms/Delis.html'" onmouseover="count_adjust(2.67049597759)">Delis</td>
+<td title="2520" onclick="window.location.href='../terms/Gyms.html'" onmouseover="count_adjust(2.64954931956)">Gyms</td>
+<td title="2510" onclick="window.location.href='../terms/Driving.html'" onmouseover="count_adjust(2.64300348893)">Driving</td>
+<td title="2422" onclick="window.location.href='../terms/Garden.html'" onmouseover="count_adjust(2.58540017936)">Garden</td>
+<td title="2412" onclick="window.location.href='../terms/Dive.html'" onmouseover="count_adjust(2.57885434872)">Dive</td>
+<td title="2404" onclick="window.location.href='../terms/Juice.html'" onmouseover="count_adjust(2.57361768422)">Juice</td>
+<td title="2383" onclick="window.location.href='../terms/General.html'" onmouseover="count_adjust(2.55987143989)">General</td>
+</tr>
+<tr>
+<td title="2371" onclick="window.location.href='../terms/Stations.html'" onmouseover="count_adjust(2.55201644313)">Stations</td>
+<td title="2358" onclick="window.location.href='../terms/Gelato.html'" onmouseover="count_adjust(2.5435068633)">Gelato</td>
+<td title="2287" onclick="window.location.href='../terms/Cooking.html'" onmouseover="count_adjust(2.49703146581)">Cooking</td>
+<td title="2248" onclick="window.location.href='../terms/Children.html'" onmouseover="count_adjust(2.47150272634)">Children</td>
+<td title="2237" onclick="window.location.href='../terms/Discount.html'" onmouseover="count_adjust(2.46430231264)">Discount</td>
+<td title="2219" onclick="window.location.href='../terms/Wash.html'" onmouseover="count_adjust(2.4525198175)">Wash</td>
+<td title="2208" onclick="window.location.href='../terms/Women.html'" onmouseover="count_adjust(2.44531940381)">Women</td>
+<td title="2206" onclick="window.location.href='../terms/Screen.html'" onmouseover="count_adjust(2.44401023768)">Screen</td>
+</tr>
+<tr>
+<td title="2198" onclick="window.location.href='../terms/Japanese.html'" onmouseover="count_adjust(2.43877357317)">Japanese</td>
+<td title="2168" onclick="window.location.href='../terms/Vietnamese.html'" onmouseover="count_adjust(2.41913608127)">Vietnamese</td>
+<td title="2154" onclick="window.location.href='../terms/Training.html'" onmouseover="count_adjust(2.40997191839)">Training</td>
+<td title="2153" onclick="window.location.href='../terms/Systems.html'" onmouseover="count_adjust(2.40931733532)">Systems</td>
+<td title="2126" onclick="window.location.href='../terms/Management.html'" onmouseover="count_adjust(2.39164359261)">Management</td>
+<td title="2125" onclick="window.location.href='../terms/Dance.html'" onmouseover="count_adjust(2.39098900955)">Dance</td>
+<td title="2120" onclick="window.location.href='../terms/Men.html'" onmouseover="count_adjust(2.38771609423)">Men</td>
+<td title="2095" onclick="window.location.href='../terms/Delivery.html'" onmouseover="count_adjust(2.37135151765)">Delivery</td>
+</tr>
+<tr>
+<td title="2068" onclick="window.location.href='../terms/Mountain.html'" onmouseover="count_adjust(2.35367777494)">Mountain</td>
+<td title="2061" onclick="window.location.href='../terms/Mini.html'" onmouseover="count_adjust(2.3490956935)">Mini</td>
+<td title="2003" onclick="window.location.href='../terms/Teams.html'" onmouseover="count_adjust(2.31112987583)">Teams</td>
+<td title="2001" onclick="window.location.href='../terms/Wedding.html'" onmouseover="count_adjust(2.3098207097)">Wedding</td>
+<td title="1989" onclick="window.location.href='../terms/Salons.html'" onmouseover="count_adjust(2.30196571294)">Salons</td>
+<td title="1947" onclick="window.location.href='../terms/Classes.html'" onmouseover="count_adjust(2.27447322428)">Classes</td>
+<td title="1936" onclick="window.location.href='../terms/Pets.html'" onmouseover="count_adjust(2.26727281058)">Pets</td>
+<td title="1933" onclick="window.location.href='../terms/Candy.html'" onmouseover="count_adjust(2.26530906139)">Candy</td>
+</tr>
+<tr>
+<td title="1905" onclick="window.location.href='../terms/Design.html'" onmouseover="count_adjust(2.24698073562)">Design</td>
+<td title="1901" onclick="window.location.href='../terms/Adult.html'" onmouseover="count_adjust(2.24436240337)">Adult</td>
+<td title="1867" onclick="window.location.href='../terms/Animal.html'" onmouseover="count_adjust(2.22210657921)">Animal</td>
+<td title="1834" onclick="window.location.href='../terms/Keys.html'" onmouseover="count_adjust(2.20050533812)">Keys</td>
+<td title="1826" onclick="window.location.href='../terms/Lighting.html'" onmouseover="count_adjust(2.19526867362)">Lighting</td>
+<td title="1813" onclick="window.location.href='../terms/Fashion.html'" onmouseover="count_adjust(2.1867590938)">Fashion</td>
+<td title="1799" onclick="window.location.href='../terms/Stadiums.html'" onmouseover="count_adjust(2.17759493091)">Stadiums</td>
+<td title="1797" onclick="window.location.href='../terms/Sum.html'" onmouseover="count_adjust(2.17628576478)">Sum</td>
+</tr>
+<tr>
+<td title="1775" onclick="window.location.href='../terms/Specialty.html'" onmouseover="count_adjust(2.16188493739)">Specialty</td>
+<td title="1764" onclick="window.location.href='../terms/Furniture.html'" onmouseover="count_adjust(2.15468452369)">Furniture</td>
+<td title="1760" onclick="window.location.href='../terms/Wear.html'" onmouseover="count_adjust(2.15206619144)">Wear</td>
+<td title="1733" onclick="window.location.href='../terms/Trucks.html'" onmouseover="count_adjust(2.13439244873)">Trucks</td>
+<td title="1692" onclick="window.location.href='../terms/Skin.html'" onmouseover="count_adjust(2.10755454313)">Skin</td>
+<td title="1685" onclick="window.location.href='../terms/Dim.html'" onmouseover="count_adjust(2.10297246169)">Dim</td>
+<td title="1673" onclick="window.location.href='../terms/Tours.html'" onmouseover="count_adjust(2.09511746493)">Tours</td>
+<td title="1670" onclick="window.location.href='../terms/Services.html'" onmouseover="count_adjust(2.09315371574)">Services</td>
+</tr>
+<tr>
+<td title="1648" onclick="window.location.href='../terms/Raw.html'" onmouseover="count_adjust(2.07875288835)">Raw</td>
+<td title="1638" onclick="window.location.href='../terms/Pubs.html'" onmouseover="count_adjust(2.07220705771)">Pubs</td>
+<td title="1630" onclick="window.location.href='../terms/Golf.html'" onmouseover="count_adjust(2.06697039321)">Golf</td>
+<td title="1620" onclick="window.location.href='../terms/Gas.html'" onmouseover="count_adjust(2.06042456257)">Gas</td>
+<td title="1618" onclick="window.location.href='../terms/Tree.html'" onmouseover="count_adjust(2.05911539645)">Tree</td>
+<td title="1606" onclick="window.location.href='../terms/Doctors.html'" onmouseover="count_adjust(2.05126039969)">Doctors</td>
+<td title="1605" onclick="window.location.href='../terms/Body.html'" onmouseover="count_adjust(2.05060581663)">Body</td>
+<td title="1565" onclick="window.location.href='../terms/Museums.html'" onmouseover="count_adjust(2.02442249409)">Museums</td>
+</tr>
+<tr>
+<td title="1502" onclick="window.location.href='../terms/Repair.html'" onmouseover="count_adjust(1.9831837611)">Repair</td>
+<td title="1501" onclick="window.location.href='../terms/Private.html'" onmouseover="count_adjust(1.98252917804)">Private</td>
+<td title="1490" onclick="window.location.href='../terms/Cleaning.html'" onmouseover="count_adjust(1.97532876434)">Cleaning</td>
+<td title="1487" onclick="window.location.href='../terms/Travel.html'" onmouseover="count_adjust(1.97336501515)">Travel</td>
+<td title="1440" onclick="window.location.href='../terms/Self.html'" onmouseover="count_adjust(1.94259961118)">Self</td>
+<td title="1419" onclick="window.location.href='../terms/Herbs.html'" onmouseover="count_adjust(1.92885336685)">Herbs</td>
+<td title="1407" onclick="window.location.href='../terms/Yoga.html'" onmouseover="count_adjust(1.92099837009)">Yoga</td>
+<td title="1398" onclick="window.location.href='../terms/Community.html'" onmouseover="count_adjust(1.91510712252)">Community</td>
+</tr>
+<tr>
+<td title="1388" onclick="window.location.href='../terms/Department.html'" onmouseover="count_adjust(1.90856129189)">Department</td>
+<td title="1387" onclick="window.location.href='../terms/Korean.html'" onmouseover="count_adjust(1.90790670882)">Korean</td>
+<td title="1384" onclick="window.location.href='../terms/Comfort.html'" onmouseover="count_adjust(1.90594295963)">Comfort</td>
+<td title="1365" onclick="window.location.href='../terms/Post.html'" onmouseover="count_adjust(1.89350588143)">Post</td>
+<td title="1345" onclick="window.location.href='../terms/Health.html'" onmouseover="count_adjust(1.88041422016)">Health</td>
+<td title="1334" onclick="window.location.href='../terms/Clothing.html'" onmouseover="count_adjust(1.87321380647)">Clothing</td>
+<td title="1313" onclick="window.location.href='../terms/Security.html'" onmouseover="count_adjust(1.85946756214)">Security</td>
+<td title="1312" onclick="window.location.href='../terms/Studios.html'" onmouseover="count_adjust(1.85881297907)">Studios</td>
+</tr>
+<tr>
+<td title="1296" onclick="window.location.href='../terms/Child.html'" onmouseover="count_adjust(1.84833965006)">Child</td>
+<td title="1273" onclick="window.location.href='../terms/Irish.html'" onmouseover="count_adjust(1.8332842396)">Irish</td>
+<td title="1246" onclick="window.location.href='../terms/IT.html'" onmouseover="count_adjust(1.81561049689)">IT</td>
+<td title="1239" onclick="window.location.href='../terms/Public.html'" onmouseover="count_adjust(1.81102841545)">Public</td>
+<td title="1235" onclick="window.location.href='../terms/DJs.html'" onmouseover="count_adjust(1.8084100832)">DJs</td>
+<td title="1215" onclick="window.location.href='../terms/Flowers.html'" onmouseover="count_adjust(1.79531842193)">Flowers</td>
+<td title="1174" onclick="window.location.href='../terms/Crafts.html'" onmouseover="count_adjust(1.76848051634)">Crafts</td>
+<td title="1169" onclick="window.location.href='../terms/Property.html'" onmouseover="count_adjust(1.76520760102)">Property</td>
+</tr>
+<tr>
+<td title="1161" onclick="window.location.href='../terms/Weight.html'" onmouseover="count_adjust(1.75997093651)">Weight</td>
+<td title="1158" onclick="window.location.href='../terms/Shades.html'" onmouseover="count_adjust(1.75800718732)">Shades</td>
+<td title="1153" onclick="window.location.href='../terms/Equipment.html'" onmouseover="count_adjust(1.75473427201)">Equipment</td>
+<td title="1143" onclick="window.location.href='../terms/Internet.html'" onmouseover="count_adjust(1.74818844137)">Internet</td>
+<td title="1118" onclick="window.location.href='../terms/Fitness.html'" onmouseover="count_adjust(1.73182386479)">Fitness</td>
+<td title="1108" onclick="window.location.href='../terms/Entertainment.html'" onmouseover="count_adjust(1.72527803416)">Entertainment</td>
+<td title="1106" onclick="window.location.href='../terms/Artists.html'" onmouseover="count_adjust(1.72396886803)">Artists</td>
+<td title="1100" onclick="window.location.href='../terms/Apartments.html'" onmouseover="count_adjust(1.72004136965)">Apartments</td>
+</tr>
+<tr>
+<td title="1093" onclick="window.location.href='../terms/Planning.html'" onmouseover="count_adjust(1.71545928821)">Planning</td>
+<td title="1083" onclick="window.location.href='../terms/Banks.html'" onmouseover="count_adjust(1.70891345757)">Banks</td>
+<td title="1080" onclick="window.location.href='../terms/Video.html'" onmouseover="count_adjust(1.70694970838)">Video</td>
+<td title="1072" onclick="window.location.href='../terms/Spanish.html'" onmouseover="count_adjust(1.70171304388)">Spanish</td>
+<td title="1071" onclick="window.location.href='../terms/Toy.html'" onmouseover="count_adjust(1.70105846081)">Toy</td>
+<td title="1068" onclick="window.location.href='../terms/Vintage.html'" onmouseover="count_adjust(1.69909471162)">Vintage</td>
+<td title="1059" onclick="window.location.href='../terms/Farmers.html'" onmouseover="count_adjust(1.69320346405)">Farmers</td>
+<td title="1041" onclick="window.location.href='../terms/Gay.html'" onmouseover="count_adjust(1.68142096891)">Gay</td>
+</tr>
+<tr>
+<td title="1039" onclick="window.location.href='../terms/Tax.html'" onmouseover="count_adjust(1.68011180279)">Tax</td>
+<td title="1011" onclick="window.location.href='../terms/Records.html'" onmouseover="count_adjust(1.66178347701)">Records</td>
+<td title="1009" onclick="window.location.href='../terms/Control.html'" onmouseover="count_adjust(1.66047431089)">Control</td>
+<td title="1002" onclick="window.location.href='../terms/Garage.html'" onmouseover="count_adjust(1.65589222944)">Garage</td>
+<td title="1001" onclick="window.location.href='../terms/Fondue.html'" onmouseover="count_adjust(1.65523764638)">Fondue</td>
+<td title="997" onclick="window.location.href='../terms/Bus.html'" onmouseover="count_adjust(1.65261931413)">Bus</td>
+<td title="975" onclick="window.location.href='../terms/Dentists.html'" onmouseover="count_adjust(1.63821848673)">Dentists</td>
+<td title="959" onclick="window.location.href='../terms/Computer.html'" onmouseover="count_adjust(1.62774515772)">Computer</td>
+</tr>
+<tr>
+<td title="947" onclick="window.location.href='../terms/Rental.html'" onmouseover="count_adjust(1.61989016096)">Rental</td>
+<td title="946" onclick="window.location.href='../terms/Lakes.html'" onmouseover="count_adjust(1.6192355779)">Lakes</td>
+<td title="936" onclick="window.location.href='../terms/Boot.html'" onmouseover="count_adjust(1.61268974727)">Boot</td>
+<td title="926" onclick="window.location.href='../terms/Hats.html'" onmouseover="count_adjust(1.60614391663)">Hats</td>
+<td title="926" onclick="window.location.href='../terms/Practice.html'" onmouseover="count_adjust(1.60614391663)">Practice</td>
+<td title="911" onclick="window.location.href='../terms/Hawaiian.html'" onmouseover="count_adjust(1.59632517068)">Hawaiian</td>
+<td title="909" onclick="window.location.href='../terms/Southern.html'" onmouseover="count_adjust(1.59501600456)">Southern</td>
+<td title="901" onclick="window.location.href='../terms/Cleaners.html'" onmouseover="count_adjust(1.58977934005)">Cleaners</td>
+</tr>
+<tr>
+<td title="899" onclick="window.location.href='../terms/Karaoke.html'" onmouseover="count_adjust(1.58847017392)">Karaoke</td>
+<td title="872" onclick="window.location.href='../terms/Theatre.html'" onmouseover="count_adjust(1.57079643121)">Theatre</td>
+<td title="868" onclick="window.location.href='../terms/Tub.html'" onmouseover="count_adjust(1.56817809896)">Tub</td>
+<td title="868" onclick="window.location.href='../terms/Mediterranean.html'" onmouseover="count_adjust(1.56817809896)">Mediterranean</td>
+<td title="859" onclick="window.location.href='../terms/Vendors.html'" onmouseover="count_adjust(1.56228685139)">Vendors</td>
+<td title="843" onclick="window.location.href='../terms/Zoos.html'" onmouseover="count_adjust(1.55181352238)">Zoos</td>
+<td title="838" onclick="window.location.href='../terms/Insurance.html'" onmouseover="count_adjust(1.54854060706)">Insurance</td>
+<td title="836" onclick="window.location.href='../terms/Polish.html'" onmouseover="count_adjust(1.54723144093)">Polish</td>
+</tr>
+<tr>
+<td title="833" onclick="window.location.href='../terms/Champagne.html'" onmouseover="count_adjust(1.54526769174)">Champagne</td>
+<td title="828" onclick="window.location.href='../terms/Bowling.html'" onmouseover="count_adjust(1.54199477643)">Bowling</td>
+<td title="827" onclick="window.location.href='../terms/Soul.html'" onmouseover="count_adjust(1.54134019336)">Soul</td>
+<td title="824" onclick="window.location.href='../terms/Jewelry.html'" onmouseover="count_adjust(1.53937644417)">Jewelry</td>
+<td title="821" onclick="window.location.href='../terms/Cajun.html'" onmouseover="count_adjust(1.53741269498)">Cajun</td>
+<td title="821" onclick="window.location.href='../terms/Mongolian.html'" onmouseover="count_adjust(1.53741269498)">Mongolian</td>
+<td title="820" onclick="window.location.href='../terms/Ear.html'" onmouseover="count_adjust(1.53675811192)">Ear</td>
+<td title="818" onclick="window.location.href='../terms/Film.html'" onmouseover="count_adjust(1.53544894579)">Film</td>
+</tr>
+<tr>
+<td title="813" onclick="window.location.href='../terms/Social.html'" onmouseover="count_adjust(1.53217603048)">Social</td>
+<td title="798" onclick="window.location.href='../terms/German.html'" onmouseover="count_adjust(1.52235728453)">German</td>
+<td title="791" onclick="window.location.href='../terms/Tapas.html'" onmouseover="count_adjust(1.51777520308)">Tapas</td>
+<td title="790" onclick="window.location.href='../terms/Shaved.html'" onmouseover="count_adjust(1.51712062002)">Shaved</td>
+<td title="752" onclick="window.location.href='../terms/T-Shirt.html'" onmouseover="count_adjust(1.49224646362)">T-Shirt</td>
+<td title="752" onclick="window.location.href='../terms/Eastern.html'" onmouseover="count_adjust(1.49224646362)">Eastern</td>
+<td title="749" onclick="window.location.href='../terms/Outlet.html'" onmouseover="count_adjust(1.49028271443)">Outlet</td>
+<td title="738" onclick="window.location.href='../terms/Convenience.html'" onmouseover="count_adjust(1.48308230073)">Convenience</td>
+</tr>
+<tr>
+<td title="735" onclick="window.location.href='../terms/Cuban.html'" onmouseover="count_adjust(1.48111855154)">Cuban</td>
+<td title="698" onclick="window.location.href='../terms/Lessons.html'" onmouseover="count_adjust(1.4568989782)">Lessons</td>
+<td title="695" onclick="window.location.href='../terms/Carpet.html'" onmouseover="count_adjust(1.45493522901)">Carpet</td>
+<td title="691" onclick="window.location.href='../terms/Leather.html'" onmouseover="count_adjust(1.45231689675)">Leather</td>
+<td title="690" onclick="window.location.href='../terms/Supplies.html'" onmouseover="count_adjust(1.45166231369)">Supplies</td>
+<td title="686" onclick="window.location.href='../terms/Bath.html'" onmouseover="count_adjust(1.44904398144)">Bath</td>
+<td title="683" onclick="window.location.href='../terms/Halls.html'" onmouseover="count_adjust(1.44708023225)">Halls</td>
+<td title="683" onclick="window.location.href='../terms/Accessories.html'" onmouseover="count_adjust(1.44708023225)">Accessories</td>
+</tr>
+<tr>
+<td title="680" onclick="window.location.href='../terms/Fusion.html'" onmouseover="count_adjust(1.44511648306)">Fusion</td>
+<td title="666" onclick="window.location.href='../terms/Law.html'" onmouseover="count_adjust(1.43595232017)">Law</td>
+<td title="652" onclick="window.location.href='../terms/Teachers.html'" onmouseover="count_adjust(1.42678815728)">Teachers</td>
+<td title="641" onclick="window.location.href='../terms/Print.html'" onmouseover="count_adjust(1.41958774359)">Print</td>
+<td title="631" onclick="window.location.href='../terms/Beauty.html'" onmouseover="count_adjust(1.41304191295)">Beauty</td>
+<td title="623" onclick="window.location.href='../terms/Casinos.html'" onmouseover="count_adjust(1.40780524845)">Casinos</td>
+<td title="621" onclick="window.location.href='../terms/Auto.html'" onmouseover="count_adjust(1.40649608232)">Auto</td>
+<td title="620" onclick="window.location.href='../terms/Session.html'" onmouseover="count_adjust(1.40584149926)">Session</td>
+</tr>
+<tr>
+<td title="610" onclick="window.location.href='../terms/Houses.html'" onmouseover="count_adjust(1.39929566862)">Houses</td>
+<td title="606" onclick="window.location.href='../terms/Jazz.html'" onmouseover="count_adjust(1.39667733637)">Jazz</td>
+<td title="599" onclick="window.location.href='../terms/Hiking.html'" onmouseover="count_adjust(1.39209525493)">Hiking</td>
+<td title="595" onclick="window.location.href='../terms/Cheesesteaks.html'" onmouseover="count_adjust(1.38947692267)">Cheesesteaks</td>
+<td title="594" onclick="window.location.href='../terms/Stylists.html'" onmouseover="count_adjust(1.38882233961)">Stylists</td>
+<td title="591" onclick="window.location.href='../terms/Nose.html'" onmouseover="count_adjust(1.38685859042)">Nose</td>
+<td title="574" onclick="window.location.href='../terms/Swimming.html'" onmouseover="count_adjust(1.37573067834)">Swimming</td>
+<td title="570" onclick="window.location.href='../terms/Gear.html'" onmouseover="count_adjust(1.37311234609)">Gear</td>
+</tr>
+<tr>
+<td title="553" onclick="window.location.href='../terms/Smoothies.html'" onmouseover="count_adjust(1.36198443401)">Smoothies</td>
+<td title="543" onclick="window.location.href='../terms/Spirits.html'" onmouseover="count_adjust(1.35543860338)">Spirits</td>
+<td title="540" onclick="window.location.href='../terms/Boat.html'" onmouseover="count_adjust(1.35347485419)">Boat</td>
+<td title="516" onclick="window.location.href='../terms/Arenas.html'" onmouseover="count_adjust(1.33776486067)">Arenas</td>
+<td title="512" onclick="window.location.href='../terms/Gluten-Free.html'" onmouseover="count_adjust(1.33514652842)">Gluten-Free</td>
+<td title="498" onclick="window.location.href='../terms/Horse.html'" onmouseover="count_adjust(1.32598236553)">Horse</td>
+<td title="498" onclick="window.location.href='../terms/Barbers.html'" onmouseover="count_adjust(1.32598236553)">Barbers</td>
+<td title="488" onclick="window.location.href='../terms/Buildings.html'" onmouseover="count_adjust(1.3194365349)">Buildings</td>
+</tr>
+<tr>
+<td title="486" onclick="window.location.href='../terms/Junk.html'" onmouseover="count_adjust(1.31812736877)">Junk</td>
+<td title="483" onclick="window.location.href='../terms/Sporting.html'" onmouseover="count_adjust(1.31616361958)">Sporting</td>
+<td title="483" onclick="window.location.href='../terms/European.html'" onmouseover="count_adjust(1.31616361958)">European</td>
+<td title="473" onclick="window.location.href='../terms/Riding.html'" onmouseover="count_adjust(1.30961778895)">Riding</td>
+<td title="473" onclick="window.location.href='../terms/Tattoo.html'" onmouseover="count_adjust(1.30961778895)">Tattoo</td>
+<td title="462" onclick="window.location.href='../terms/Activities.html'" onmouseover="count_adjust(1.30241737525)">Activities</td>
+<td title="461" onclick="window.location.href='../terms/Instruments.html'" onmouseover="count_adjust(1.30176279219)">Instruments</td>
+<td title="460" onclick="window.location.href='../terms/Medical.html'" onmouseover="count_adjust(1.30110820913)">Medical</td>
+</tr>
+<tr>
+<td title="457" onclick="window.location.href='../terms/Supply.html'" onmouseover="count_adjust(1.29914445994)">Supply</td>
+<td title="453" onclick="window.location.href='../terms/Guns.html'" onmouseover="count_adjust(1.29652612768)">Guns</td>
+<td title="449" onclick="window.location.href='../terms/Pharmacy.html'" onmouseover="count_adjust(1.29390779543)">Pharmacy</td>
+<td title="446" onclick="window.location.href='../terms/Comic.html'" onmouseover="count_adjust(1.29194404624)">Comic</td>
+<td title="444" onclick="window.location.href='../terms/Piano.html'" onmouseover="count_adjust(1.29063488011)">Piano</td>
+<td title="438" onclick="window.location.href='../terms/Radio.html'" onmouseover="count_adjust(1.28670738173)">Radio</td>
+<td title="418" onclick="window.location.href='../terms/Fabric.html'" onmouseover="count_adjust(1.27361572047)">Fabric</td>
+<td title="416" onclick="window.location.href='../terms/Ethnic.html'" onmouseover="count_adjust(1.27230655434)">Ethnic</td>
+</tr>
+<tr>
+<td title="403" onclick="window.location.href='../terms/Mass.html'" onmouseover="count_adjust(1.26379697452)">Mass</td>
+<td title="393" onclick="window.location.href='../terms/Makeup.html'" onmouseover="count_adjust(1.25725114388)">Makeup</td>
+<td title="391" onclick="window.location.href='../terms/Web.html'" onmouseover="count_adjust(1.25594197776)">Web</td>
+<td title="390" onclick="window.location.href='../terms/Trainers.html'" onmouseover="count_adjust(1.25528739469)">Trainers</td>
+<td title="386" onclick="window.location.href='../terms/Thrift.html'" onmouseover="count_adjust(1.25266906244)">Thrift</td>
+<td title="386" onclick="window.location.href='../terms/Ethiopian.html'" onmouseover="count_adjust(1.25266906244)">Ethiopian</td>
+<td title="381" onclick="window.location.href='../terms/Rinks.html'" onmouseover="count_adjust(1.24939614712)">Rinks</td>
+<td title="377" onclick="window.location.href='../terms/Surgery.html'" onmouseover="count_adjust(1.24677781487)">Surgery</td>
+</tr>
+<tr>
+<td title="372" onclick="window.location.href='../terms/Conditioning.html'" onmouseover="count_adjust(1.24350489955)">Conditioning</td>
+<td title="367" onclick="window.location.href='../terms/Filipino.html'" onmouseover="count_adjust(1.24023198424)">Filipino</td>
+<td title="353" onclick="window.location.href='../terms/DVDs.html'" onmouseover="count_adjust(1.23106782135)">DVDs</td>
+<td title="352" onclick="window.location.href='../terms/Arcades.html'" onmouseover="count_adjust(1.23041323829)">Arcades</td>
+<td title="351" onclick="window.location.href='../terms/Marketing.html'" onmouseover="count_adjust(1.22975865522)">Marketing</td>
+<td title="344" onclick="window.location.href='../terms/Loss.html'" onmouseover="count_adjust(1.22517657378)">Loss</td>
+<td title="336" onclick="window.location.href='../terms/Instruction.html'" onmouseover="count_adjust(1.21993990927)">Instruction</td>
+<td title="331" onclick="window.location.href='../terms/Venues.html'" onmouseover="count_adjust(1.21666699396)">Venues</td>
+</tr>
+<tr>
+<td title="331" onclick="window.location.href='../terms/Dealers.html'" onmouseover="count_adjust(1.21666699396)">Dealers</td>
+<td title="329" onclick="window.location.href='../terms/Tennis.html'" onmouseover="count_adjust(1.21535782783)">Tennis</td>
+<td title="329" onclick="window.location.href='../terms/Vinyl.html'" onmouseover="count_adjust(1.21535782783)">Vinyl</td>
+<td title="318" onclick="window.location.href='../terms/Active.html'" onmouseover="count_adjust(1.20815741414)">Active</td>
+<td title="315" onclick="window.location.href='../terms/Laundry.html'" onmouseover="count_adjust(1.20619366495)">Laundry</td>
+<td title="314" onclick="window.location.href='../terms/Latin.html'" onmouseover="count_adjust(1.20553908188)">Latin</td>
+<td title="314" onclick="window.location.href='../terms/Advertising.html'" onmouseover="count_adjust(1.20553908188)">Advertising</td>
+<td title="313" onclick="window.location.href='../terms/Comedy.html'" onmouseover="count_adjust(1.20488449882)">Comedy</td>
+</tr>
+<tr>
+<td title="312" onclick="window.location.href='../terms/Climbing.html'" onmouseover="count_adjust(1.20422991576)">Climbing</td>
+<td title="303" onclick="window.location.href='../terms/Talent.html'" onmouseover="count_adjust(1.19833866819)">Talent</td>
+<td title="302" onclick="window.location.href='../terms/Luggage.html'" onmouseover="count_adjust(1.19768408512)">Luggage</td>
+<td title="301" onclick="window.location.href='../terms/British.html'" onmouseover="count_adjust(1.19702950206)">British</td>
+<td title="297" onclick="window.location.href='../terms/Washing.html'" onmouseover="count_adjust(1.19441116981)">Washing</td>
+<td title="291" onclick="window.location.href='../terms/Physical.html'" onmouseover="count_adjust(1.19048367143)">Physical</td>
+<td title="284" onclick="window.location.href='../terms/Barbeque.html'" onmouseover="count_adjust(1.18590158998)">Barbeque</td>
+<td title="282" onclick="window.location.href='../terms/Agents.html'" onmouseover="count_adjust(1.18459242386)">Agents</td>
+</tr>
+<tr>
+<td title="282" onclick="window.location.href='../terms/Musical.html'" onmouseover="count_adjust(1.18459242386)">Musical</td>
+<td title="277" onclick="window.location.href='../terms/Camps.html'" onmouseover="count_adjust(1.18131950854)">Camps</td>
+<td title="277" onclick="window.location.href='../terms/Blinds.html'" onmouseover="count_adjust(1.18131950854)">Blinds</td>
+<td title="274" onclick="window.location.href='../terms/Shipping.html'" onmouseover="count_adjust(1.17935575935)">Shipping</td>
+<td title="266" onclick="window.location.href='../terms/Soccer.html'" onmouseover="count_adjust(1.17411909484)">Soccer</td>
+<td title="266" onclick="window.location.href='../terms/Caribbean.html'" onmouseover="count_adjust(1.17411909484)">Caribbean</td>
+<td title="263" onclick="window.location.href='../terms/Uniforms.html'" onmouseover="count_adjust(1.17215534565)">Uniforms</td>
+<td title="260" onclick="window.location.href='../terms/Hardware.html'" onmouseover="count_adjust(1.17019159646)">Hardware</td>
+</tr>
+<tr>
+<td title="260" onclick="window.location.href='../terms/Russian.html'" onmouseover="count_adjust(1.17019159646)">Russian</td>
+<td title="258" onclick="window.location.href='../terms/Airlines.html'" onmouseover="count_adjust(1.16888243034)">Airlines</td>
+<td title="258" onclick="window.location.href='../terms/Television.html'" onmouseover="count_adjust(1.16888243034)">Television</td>
+<td title="254" onclick="window.location.href='../terms/Hookah.html'" onmouseover="count_adjust(1.16626409808)">Hookah</td>
+<td title="253" onclick="window.location.href='../terms/Balloons.html'" onmouseover="count_adjust(1.16560951502)">Balloons</td>
+<td title="253" onclick="window.location.href='../terms/Florists.html'" onmouseover="count_adjust(1.16560951502)">Florists</td>
+<td title="253" onclick="window.location.href='../terms/Computers.html'" onmouseover="count_adjust(1.16560951502)">Computers</td>
+<td title="250" onclick="window.location.href='../terms/Cinema.html'" onmouseover="count_adjust(1.16364576583)">Cinema</td>
+</tr>
+<tr>
+<td title="248" onclick="window.location.href='../terms/Estate.html'" onmouseover="count_adjust(1.1623365997)">Estate</td>
+<td title="245" onclick="window.location.href='../terms/Boarding.html'" onmouseover="count_adjust(1.16037285051)">Boarding</td>
+<td title="244" onclick="window.location.href='../terms/Throat.html'" onmouseover="count_adjust(1.15971826745)">Throat</td>
+<td title="239" onclick="window.location.href='../terms/Persian.html'" onmouseover="count_adjust(1.15644535213)">Persian</td>
+<td title="236" onclick="window.location.href='../terms/Playgrounds.html'" onmouseover="count_adjust(1.15448160294)">Playgrounds</td>
+<td title="234" onclick="window.location.href='../terms/Brazilian.html'" onmouseover="count_adjust(1.15317243682)">Brazilian</td>
+<td title="229" onclick="window.location.href='../terms/Mobile.html'" onmouseover="count_adjust(1.1498995215)">Mobile</td>
+<td title="225" onclick="window.location.href='../terms/Vehicles.html'" onmouseover="count_adjust(1.14728118925)">Vehicles</td>
+</tr>
+<tr>
+<td title="225" onclick="window.location.href='../terms/Electronics.html'" onmouseover="count_adjust(1.14728118925)">Electronics</td>
+<td title="222" onclick="window.location.href='../terms/Landscaping.html'" onmouseover="count_adjust(1.14531744006)">Landscaping</td>
+<td title="221" onclick="window.location.href='../terms/Unions.html'" onmouseover="count_adjust(1.14466285699)">Unions</td>
+<td title="219" onclick="window.location.href='../terms/Fishing.html'" onmouseover="count_adjust(1.14335369087)">Fishing</td>
+<td title="216" onclick="window.location.href='../terms/Skate.html'" onmouseover="count_adjust(1.14138994168)">Skate</td>
+<td title="215" onclick="window.location.href='../terms/Medicine.html'" onmouseover="count_adjust(1.14073535861)">Medicine</td>
+<td title="215" onclick="window.location.href='../terms/Landscape.html'" onmouseover="count_adjust(1.14073535861)">Landscape</td>
+<td title="213" onclick="window.location.href='../terms/Bridal.html'" onmouseover="count_adjust(1.13942619249)">Bridal</td>
+</tr>
+<tr>
+<td title="213" onclick="window.location.href='../terms/Costumes.html'" onmouseover="count_adjust(1.13942619249)">Costumes</td>
+<td title="211" onclick="window.location.href='../terms/Windshield.html'" onmouseover="count_adjust(1.13811702636)">Windshield</td>
+<td title="210" onclick="window.location.href='../terms/Therapy.html'" onmouseover="count_adjust(1.1374624433)">Therapy</td>
+<td title="210" onclick="window.location.href='../terms/Education.html'" onmouseover="count_adjust(1.1374624433)">Education</td>
+<td title="205" onclick="window.location.href='../terms/Formal.html'" onmouseover="count_adjust(1.13418952798)">Formal</td>
+<td title="203" onclick="window.location.href='../terms/Media.html'" onmouseover="count_adjust(1.13288036185)">Media</td>
+<td title="203" onclick="window.location.href='../terms/Tanning.html'" onmouseover="count_adjust(1.13288036185)">Tanning</td>
+<td title="203" onclick="window.location.href='../terms/Tex-Mex.html'" onmouseover="count_adjust(1.13288036185)">Tex-Mex</td>
+</tr>
+<tr>
+<td title="199" onclick="window.location.href='../terms/Groomers.html'" onmouseover="count_adjust(1.1302620296)">Groomers</td>
+<td title="198" onclick="window.location.href='../terms/Fixtures.html'" onmouseover="count_adjust(1.12960744654)">Fixtures</td>
+<td title="197" onclick="window.location.href='../terms/Performing.html'" onmouseover="count_adjust(1.12895286347)">Performing</td>
+<td title="194" onclick="window.location.href='../terms/Turkish.html'" onmouseover="count_adjust(1.12698911428)">Turkish</td>
+<td title="192" onclick="window.location.href='../terms/Botanical.html'" onmouseover="count_adjust(1.12567994816)">Botanical</td>
+<td title="192" onclick="window.location.href='../terms/Installation.html'" onmouseover="count_adjust(1.12567994816)">Installation</td>
+<td title="185" onclick="window.location.href='../terms/Ranges.html'" onmouseover="count_adjust(1.12109786671)">Ranges</td>
+<td title="185" onclick="window.location.href='../terms/Photography.html'" onmouseover="count_adjust(1.12109786671)">Photography</td>
+</tr>
+<tr>
+<td title="184" onclick="window.location.href='../terms/Laser.html'" onmouseover="count_adjust(1.12044328365)">Laser</td>
+<td title="183" onclick="window.location.href='../terms/Urgent.html'" onmouseover="count_adjust(1.11978870059)">Urgent</td>
+<td title="183" onclick="window.location.href='../terms/Alterations.html'" onmouseover="count_adjust(1.11978870059)">Alterations</td>
+<td title="179" onclick="window.location.href='../terms/Injury.html'" onmouseover="count_adjust(1.11717036833)">Injury</td>
+<td title="178" onclick="window.location.href='../terms/Steakhouses.html'" onmouseover="count_adjust(1.11651578527)">Steakhouses</td>
+<td title="176" onclick="window.location.href='../terms/Pilates.html'" onmouseover="count_adjust(1.11520661914)">Pilates</td>
+<td title="176" onclick="window.location.href='../terms/Breweries.html'" onmouseover="count_adjust(1.11520661914)">Breweries</td>
+<td title="176" onclick="window.location.href='../terms/Production.html'" onmouseover="count_adjust(1.11520661914)">Production</td>
+</tr>
+<tr>
+<td title="175" onclick="window.location.href='../terms/Storage.html'" onmouseover="count_adjust(1.11455203608)">Storage</td>
+<td title="168" onclick="window.location.href='../terms/Mental.html'" onmouseover="count_adjust(1.10996995464)">Mental</td>
+<td title="168" onclick="window.location.href='../terms/Transportation.html'" onmouseover="count_adjust(1.10996995464)">Transportation</td>
+<td title="165" onclick="window.location.href='../terms/Landmarks.html'" onmouseover="count_adjust(1.10800620545)">Landmarks</td>
+<td title="162" onclick="window.location.href='../terms/Removal.html'" onmouseover="count_adjust(1.10604245626)">Removal</td>
+<td title="162" onclick="window.location.href='../terms/Nightlife.html'" onmouseover="count_adjust(1.10604245626)">Nightlife</td>
+<td title="161" onclick="window.location.href='../terms/Extensions.html'" onmouseover="count_adjust(1.10538787319)">Extensions</td>
+<td title="160" onclick="window.location.href='../terms/Kosher.html'" onmouseover="count_adjust(1.10473329013)">Kosher</td>
+</tr>
+<tr>
+<td title="155" onclick="window.location.href='../terms/Racing.html'" onmouseover="count_adjust(1.10146037481)">Racing</td>
+<td title="154" onclick="window.location.href='../terms/Amateur.html'" onmouseover="count_adjust(1.10080579175)">Amateur</td>
+<td title="151" onclick="window.location.href='../terms/Biking.html'" onmouseover="count_adjust(1.09884204256)">Biking</td>
+<td title="151" onclick="window.location.href='../terms/Plumbing.html'" onmouseover="count_adjust(1.09884204256)">Plumbing</td>
+<td title="150" onclick="window.location.href='../terms/Galleries.html'" onmouseover="count_adjust(1.0981874595)">Galleries</td>
+<td title="149" onclick="window.location.href='../terms/Graphic.html'" onmouseover="count_adjust(1.09753287643)">Graphic</td>
+<td title="145" onclick="window.location.href='../terms/Taxis.html'" onmouseover="count_adjust(1.09491454418)">Taxis</td>
+<td title="144" onclick="window.location.href='../terms/Ballet.html'" onmouseover="count_adjust(1.09425996112)">Ballet</td>
+</tr>
+<tr>
+<td title="143" onclick="window.location.href='../terms/Consignment.html'" onmouseover="count_adjust(1.09360537805)">Consignment</td>
+<td title="141" onclick="window.location.href='../terms/Testing.html'" onmouseover="count_adjust(1.09229621193)">Testing</td>
+<td title="139" onclick="window.location.href='../terms/Appliances.html'" onmouseover="count_adjust(1.0909870458)">Appliances</td>
+<td title="138" onclick="window.location.href='../terms/African.html'" onmouseover="count_adjust(1.09033246274)">African</td>
+<td title="138" onclick="window.location.href='../terms/Financial.html'" onmouseover="count_adjust(1.09033246274)">Financial</td>
+<td title="137" onclick="window.location.href='../terms/Historical.html'" onmouseover="count_adjust(1.08967787967)">Historical</td>
+<td title="136" onclick="window.location.href='../terms/Piercing.html'" onmouseover="count_adjust(1.08902329661)">Piercing</td>
+<td title="135" onclick="window.location.href='../terms/Disc.html'" onmouseover="count_adjust(1.08836871355)">Disc</td>
+</tr>
+<tr>
+<td title="132" onclick="window.location.href='../terms/Motor.html'" onmouseover="count_adjust(1.08640496436)">Motor</td>
+<td title="131" onclick="window.location.href='../terms/Wigs.html'" onmouseover="count_adjust(1.08575038129)">Wigs</td>
+<td title="131" onclick="window.location.href='../terms/Heating.html'" onmouseover="count_adjust(1.08575038129)">Heating</td>
+<td title="131" onclick="window.location.href='../terms/Brokers.html'" onmouseover="count_adjust(1.08575038129)">Brokers</td>
+<td title="131" onclick="window.location.href='../terms/Antiques.html'" onmouseover="count_adjust(1.08575038129)">Antiques</td>
+<td title="131" onclick="window.location.href='../terms/Motorcycle.html'" onmouseover="count_adjust(1.08575038129)">Motorcycle</td>
+<td title="130" onclick="window.location.href='../terms/Bakeries.html'" onmouseover="count_adjust(1.08509579823)">Bakeries</td>
+<td title="124" onclick="window.location.href='../terms/Shelters.html'" onmouseover="count_adjust(1.08116829985)">Shelters</td>
+</tr>
+<tr>
+<td title="124" onclick="window.location.href='../terms/Flooring.html'" onmouseover="count_adjust(1.08116829985)">Flooring</td>
+<td title="122" onclick="window.location.href='../terms/Opera.html'" onmouseover="count_adjust(1.07985913372)">Opera</td>
+<td title="121" onclick="window.location.href='../terms/Hobby.html'" onmouseover="count_adjust(1.07920455066)">Hobby</td>
+<td title="121" onclick="window.location.href='../terms/Walkers.html'" onmouseover="count_adjust(1.07920455066)">Walkers</td>
+<td title="121" onclick="window.location.href='../terms/Lounges.html'" onmouseover="count_adjust(1.07920455066)">Lounges</td>
+<td title="121" onclick="window.location.href='../terms/Peruvian.html'" onmouseover="count_adjust(1.07920455066)">Peruvian</td>
+<td title="120" onclick="window.location.href='../terms/Contractors.html'" onmouseover="count_adjust(1.0785499676)">Contractors</td>
+<td title="119" onclick="window.location.href='../terms/Religious.html'" onmouseover="count_adjust(1.07789538453)">Religious</td>
+</tr>
+<tr>
+<td title="117" onclick="window.location.href='../terms/Printing.html'" onmouseover="count_adjust(1.07658621841)">Printing</td>
+<td title="114" onclick="window.location.href='../terms/Watches.html'" onmouseover="count_adjust(1.07462246922)">Watches</td>
+<td title="113" onclick="window.location.href='../terms/Stereo.html'" onmouseover="count_adjust(1.07396788615)">Stereo</td>
+<td title="112" onclick="window.location.href='../terms/Technical.html'" onmouseover="count_adjust(1.07331330309)">Technical</td>
+<td title="110" onclick="window.location.href='../terms/Cambodian.html'" onmouseover="count_adjust(1.07200413696)">Cambodian</td>
+<td title="109" onclick="window.location.href='../terms/Chiropractors.html'" onmouseover="count_adjust(1.0713495539)">Chiropractors</td>
+<td title="106" onclick="window.location.href='../terms/Rehearsal.html'" onmouseover="count_adjust(1.06938580471)">Rehearsal</td>
+<td title="106" onclick="window.location.href='../terms/Aquariums.html'" onmouseover="count_adjust(1.06938580471)">Aquariums</td>
+</tr>
+<tr>
+<td title="100" onclick="window.location.href='../terms/Skating.html'" onmouseover="count_adjust(1.06545830633)">Skating</td>
+<td title="99" onclick="window.location.href='../terms/Elementary.html'" onmouseover="count_adjust(1.06480372327)">Elementary</td>
+<td title="94" onclick="window.location.href='../terms/Government.html'" onmouseover="count_adjust(1.06153080795)">Government</td>
+<td title="93" onclick="window.location.href='../terms/Taiwanese.html'" onmouseover="count_adjust(1.06087622489)">Taiwanese</td>
+<td title="93" onclick="window.location.href='../terms/Amusement.html'" onmouseover="count_adjust(1.06087622489)">Amusement</td>
+<td title="92" onclick="window.location.href='../terms/Tobacco.html'" onmouseover="count_adjust(1.06022164183)">Tobacco</td>
+<td title="92" onclick="window.location.href='../terms/Festivals.html'" onmouseover="count_adjust(1.06022164183)">Festivals</td>
+<td title="90" onclick="window.location.href='../terms/Barre.html'" onmouseover="count_adjust(1.0589124757)">Barre</td>
+</tr>
+<tr>
+<td title="90" onclick="window.location.href='../terms/Pest.html'" onmouseover="count_adjust(1.0589124757)">Pest</td>
+<td title="90" onclick="window.location.href='../terms/Lawyers.html'" onmouseover="count_adjust(1.0589124757)">Lawyers</td>
+<td title="89" onclick="window.location.href='../terms/Funeral.html'" onmouseover="count_adjust(1.05825789264)">Funeral</td>
+<td title="89" onclick="window.location.href='../terms/Departments.html'" onmouseover="count_adjust(1.05825789264)">Departments</td>
+<td title="87" onclick="window.location.href='../terms/Movers.html'" onmouseover="count_adjust(1.05694872651)">Movers</td>
+<td title="86" onclick="window.location.href='../terms/Shuttles.html'" onmouseover="count_adjust(1.05629414345)">Shuttles</td>
+<td title="86" onclick="window.location.href='../terms/Libraries.html'" onmouseover="count_adjust(1.05629414345)">Libraries</td>
+<td title="85" onclick="window.location.href='../terms/Internal.html'" onmouseover="count_adjust(1.05563956038)">Internal</td>
+</tr>
+<tr>
+<td title="85" onclick="window.location.href='../terms/Architects.html'" onmouseover="count_adjust(1.05563956038)">Architects</td>
+<td title="84" onclick="window.location.href='../terms/Dentistry.html'" onmouseover="count_adjust(1.05498497732)">Dentistry</td>
+<td title="83" onclick="window.location.href='../terms/Creole.html'" onmouseover="count_adjust(1.05433039426)">Creole</td>
+<td title="76" onclick="window.location.href='../terms/Mags.html'" onmouseover="count_adjust(1.04974831281)">Mags</td>
+<td title="76" onclick="window.location.href='../terms/Surgeons.html'" onmouseover="count_adjust(1.04974831281)">Surgeons</td>
+<td title="76" onclick="window.location.href='../terms/Cosmetics.html'" onmouseover="count_adjust(1.04974831281)">Cosmetics</td>
+<td title="75" onclick="window.location.href='../terms/Automotive.html'" onmouseover="count_adjust(1.04909372975)">Automotive</td>
+<td title="75" onclick="window.location.href='../terms/Bookstores.html'" onmouseover="count_adjust(1.04909372975)">Bookstores</td>
+</tr>
+<tr>
+<td title="73" onclick="window.location.href='../terms/Leisure.html'" onmouseover="count_adjust(1.04778456362)">Leisure</td>
+<td title="72" onclick="window.location.href='../terms/Cosmetic.html'" onmouseover="count_adjust(1.04712998056)">Cosmetic</td>
+<td title="71" onclick="window.location.href='../terms/Diving.html'" onmouseover="count_adjust(1.0464753975)">Diving</td>
+<td title="70" onclick="window.location.href='../terms/Lingerie.html'" onmouseover="count_adjust(1.04582081443)">Lingerie</td>
+<td title="68" onclick="window.location.href='../terms/Pawn.html'" onmouseover="count_adjust(1.04451164831)">Pawn</td>
+<td title="67" onclick="window.location.href='../terms/Detailing.html'" onmouseover="count_adjust(1.04385706524)">Detailing</td>
+<td title="67" onclick="window.location.href='../terms/Scandinavian.html'" onmouseover="count_adjust(1.04385706524)">Scandinavian</td>
+<td title="65" onclick="window.location.href='../terms/Framing.html'" onmouseover="count_adjust(1.04254789912)">Framing</td>
+</tr>
+<tr>
+<td title="65" onclick="window.location.href='../terms/Gardening.html'" onmouseover="count_adjust(1.04254789912)">Gardening</td>
+<td title="64" onclick="window.location.href='../terms/Sewing.html'" onmouseover="count_adjust(1.04189331605)">Sewing</td>
+<td title="63" onclick="window.location.href='../terms/Carpeting.html'" onmouseover="count_adjust(1.04123873299)">Carpeting</td>
+<td title="61" onclick="window.location.href='../terms/Inspectors.html'" onmouseover="count_adjust(1.03992956686)">Inspectors</td>
+<td title="61" onclick="window.location.href='../terms/Veterinarians.html'" onmouseover="count_adjust(1.03992956686)">Veterinarians</td>
+<td title="60" onclick="window.location.href='../terms/Burmese.html'" onmouseover="count_adjust(1.0392749838)">Burmese</td>
+<td title="60" onclick="window.location.href='../terms/Pakistani.html'" onmouseover="count_adjust(1.0392749838)">Pakistani</td>
+<td title="59" onclick="window.location.href='../terms/Oral.html'" onmouseover="count_adjust(1.03862040074)">Oral</td>
+</tr>
+<tr>
+<td title="59" onclick="window.location.href='../terms/Gastropubs.html'" onmouseover="count_adjust(1.03862040074)">Gastropubs</td>
+<td title="59" onclick="window.location.href='../terms/Pediatricians.html'" onmouseover="count_adjust(1.03862040074)">Pediatricians</td>
+<td title="57" onclick="window.location.href='../terms/RV.html'" onmouseover="count_adjust(1.03731123461)">RV</td>
+<td title="55" onclick="window.location.href='../terms/Dermatologists.html'" onmouseover="count_adjust(1.03600206848)">Dermatologists</td>
+<td title="54" onclick="window.location.href='../terms/Solar.html'" onmouseover="count_adjust(1.03534748542)">Solar</td>
+<td title="54" onclick="window.location.href='../terms/Recreation.html'" onmouseover="count_adjust(1.03534748542)">Recreation</td>
+<td title="54" onclick="window.location.href='../terms/Locksmiths.html'" onmouseover="count_adjust(1.03534748542)">Locksmiths</td>
+<td title="54" onclick="window.location.href='../terms/Non-Profit.html'" onmouseover="count_adjust(1.03534748542)">Non-Profit</td>
+</tr>
+<tr>
+<td title="53" onclick="window.location.href='../terms/Lebanese.html'" onmouseover="count_adjust(1.03469290236)">Lebanese</td>
+<td title="53" onclick="window.location.href='../terms/Mortgage.html'" onmouseover="count_adjust(1.03469290236)">Mortgage</td>
+<td title="53" onclick="window.location.href='../terms/Reflexology.html'" onmouseover="count_adjust(1.03469290236)">Reflexology</td>
+<td title="52" onclick="window.location.href='../terms/Recording.html'" onmouseover="count_adjust(1.03403831929)">Recording</td>
+<td title="52" onclick="window.location.href='../terms/Hospitals.html'" onmouseover="count_adjust(1.03403831929)">Hospitals</td>
+<td title="52" onclick="window.location.href='../terms/Diagnostic.html'" onmouseover="count_adjust(1.03403831929)">Diagnostic</td>
+<td title="52" onclick="window.location.href='../terms/Organizations.html'" onmouseover="count_adjust(1.03403831929)">Organizations</td>
+<td title="50" onclick="window.location.href='../terms/Mattresses.html'" onmouseover="count_adjust(1.03272915317)">Mattresses</td>
+</tr>
+<tr>
+<td title="50" onclick="window.location.href='../terms/Employment.html'" onmouseover="count_adjust(1.03272915317)">Employment</td>
+<td title="49" onclick="window.location.href='../terms/Maternity.html'" onmouseover="count_adjust(1.0320745701)">Maternity</td>
+<td title="49" onclick="window.location.href='../terms/Providers.html'" onmouseover="count_adjust(1.0320745701)">Providers</td>
+<td title="48" onclick="window.location.href='../terms/Divorce.html'" onmouseover="count_adjust(1.03141998704)">Divorce</td>
+<td title="48" onclick="window.location.href='../terms/Horseback.html'" onmouseover="count_adjust(1.03141998704)">Horseback</td>
+<td title="45" onclick="window.location.href='../terms/Limos.html'" onmouseover="count_adjust(1.02945623785)">Limos</td>
+<td title="45" onclick="window.location.href='../terms/Relations.html'" onmouseover="count_adjust(1.02945623785)">Relations</td>
+<td title="44" onclick="window.location.href='../terms/Wholesale.html'" onmouseover="count_adjust(1.02880165479)">Wholesale</td>
+</tr>
+<tr>
+<td title="43" onclick="window.location.href='../terms/Karts.html'" onmouseover="count_adjust(1.02814707172)">Karts</td>
+<td title="43" onclick="window.location.href='../terms/Towing.html'" onmouseover="count_adjust(1.02814707172)">Towing</td>
+<td title="43" onclick="window.location.href='../terms/Preschools.html'" onmouseover="count_adjust(1.02814707172)">Preschools</td>
+<td title="43" onclick="window.location.href='../terms/Accountants.html'" onmouseover="count_adjust(1.02814707172)">Accountants</td>
+<td title="42" onclick="window.location.href='../terms/Eyelash.html'" onmouseover="count_adjust(1.02749248866)">Eyelash</td>
+<td title="42" onclick="window.location.href='../terms/Painters.html'" onmouseover="count_adjust(1.02749248866)">Painters</td>
+<td title="41" onclick="window.location.href='../terms/Halal.html'" onmouseover="count_adjust(1.0268379056)">Halal</td>
+<td title="41" onclick="window.location.href='../terms/Archery.html'" onmouseover="count_adjust(1.0268379056)">Archery</td>
+</tr>
+<tr>
+<td title="40" onclick="window.location.href='../terms/Holistic.html'" onmouseover="count_adjust(1.02618332253)">Holistic</td>
+<td title="40" onclick="window.location.href='../terms/Optometrists.html'" onmouseover="count_adjust(1.02618332253)">Optometrists</td>
+<td title="39" onclick="window.location.href='../terms/Churches.html'" onmouseover="count_adjust(1.02552873947)">Churches</td>
+<td title="39" onclick="window.location.href='../terms/Knitting.html'" onmouseover="count_adjust(1.02552873947)">Knitting</td>
+<td title="38" onclick="window.location.href='../terms/Ammo.html'" onmouseover="count_adjust(1.02487415641)">Ammo</td>
+<td title="38" onclick="window.location.href='../terms/Photographers.html'" onmouseover="count_adjust(1.02487415641)">Photographers</td>
+<td title="35" onclick="window.location.href='../terms/Hauling.html'" onmouseover="count_adjust(1.02291040722)">Hauling</td>
+<td title="35" onclick="window.location.href='../terms/Pediatric.html'" onmouseover="count_adjust(1.02291040722)">Pediatric</td>
+</tr>
+<tr>
+<td title="35" onclick="window.location.href='../terms/Do-It-Yourself.html'" onmouseover="count_adjust(1.02291040722)">Do-It-Yourself</td>
+<td title="33" onclick="window.location.href='../terms/Psychics.html'" onmouseover="count_adjust(1.02160124109)">Psychics</td>
+<td title="33" onclick="window.location.href='../terms/Handyman.html'" onmouseover="count_adjust(1.02160124109)">Handyman</td>
+<td title="33" onclick="window.location.href='../terms/Argentine.html'" onmouseover="count_adjust(1.02160124109)">Argentine</td>
+<td title="33" onclick="window.location.href='../terms/Electricians.html'" onmouseover="count_adjust(1.02160124109)">Electricians</td>
+<td title="32" onclick="window.location.href='../terms/Wineries.html'" onmouseover="count_adjust(1.02094665803)">Wineries</td>
+<td title="32" onclick="window.location.href='../terms/Cardiologists.html'" onmouseover="count_adjust(1.02094665803)">Cardiologists</td>
+<td title="31" onclick="window.location.href='../terms/Investing.html'" onmouseover="count_adjust(1.02029207496)">Investing</td>
+</tr>
+<tr>
+<td title="30" onclick="window.location.href='../terms/Advising.html'" onmouseover="count_adjust(1.0196374919)">Advising</td>
+<td title="29" onclick="window.location.href='../terms/Boating.html'" onmouseover="count_adjust(1.01898290884)">Boating</td>
+<td title="26" onclick="window.location.href='../terms/Temples.html'" onmouseover="count_adjust(1.01701915965)">Temples</td>
+<td title="25" onclick="window.location.href='../terms/Martial.html'" onmouseover="count_adjust(1.01636457658)">Martial</td>
+<td title="24" onclick="window.location.href='../terms/Acupuncture.html'" onmouseover="count_adjust(1.01570999352)">Acupuncture</td>
+<td title="23" onclick="window.location.href='../terms/Agencies.html'" onmouseover="count_adjust(1.01505541046)">Agencies</td>
+<td title="23" onclick="window.location.href='../terms/Stationery.html'" onmouseover="count_adjust(1.01505541046)">Stationery</td>
+<td title="23" onclick="window.location.href='../terms/Orthodontists.html'" onmouseover="count_adjust(1.01505541046)">Orthodontists</td>
+</tr>
+<tr>
+<td title="22" onclick="window.location.href='../terms/HVAC.html'" onmouseover="count_adjust(1.01440082739)">HVAC</td>
+<td title="22" onclick="window.location.href='../terms/Imaging.html'" onmouseover="count_adjust(1.01440082739)">Imaging</td>
+<td title="20" onclick="window.location.href='../terms/Lasik.html'" onmouseover="count_adjust(1.01309166127)">Lasik</td>
+<td title="20" onclick="window.location.href='../terms/Bankruptcy.html'" onmouseover="count_adjust(1.01309166127)">Bankruptcy</td>
+<td title="19" onclick="window.location.href='../terms/Smog.html'" onmouseover="count_adjust(1.0124370782)">Smog</td>
+<td title="19" onclick="window.location.href='../terms/Roofing.html'" onmouseover="count_adjust(1.0124370782)">Roofing</td>
+<td title="19" onclick="window.location.href='../terms/Colleges.html'" onmouseover="count_adjust(1.0124370782)">Colleges</td>
+<td title="19" onclick="window.location.href='../terms/Rehabilitation.html'" onmouseover="count_adjust(1.0124370782)">Rehabilitation</td>
+</tr>
+<tr>
+<td title="18" onclick="window.location.href='../terms/Investigation.html'" onmouseover="count_adjust(1.01178249514)">Investigation</td>
+<td title="18" onclick="window.location.href='../terms/Nutritionists.html'" onmouseover="count_adjust(1.01178249514)">Nutritionists</td>
+<td title="17" onclick="window.location.href='../terms/Kayaking.html'" onmouseover="count_adjust(1.01112791208)">Kayaking</td>
+<td title="17" onclick="window.location.href='../terms/Nurseries.html'" onmouseover="count_adjust(1.01112791208)">Nurseries</td>
+<td title="16" onclick="window.location.href='../terms/Rifle.html'" onmouseover="count_adjust(1.01047332901)">Rifle</td>
+<td title="16" onclick="window.location.href='../terms/Afghan.html'" onmouseover="count_adjust(1.01047332901)">Afghan</td>
+<td title="16" onclick="window.location.href='../terms/Naturopathic.html'" onmouseover="count_adjust(1.01047332901)">Naturopathic</td>
+<td title="16" onclick="window.location.href='../terms/Universities.html'" onmouseover="count_adjust(1.01047332901)">Universities</td>
+</tr>
+<tr>
+<td title="15" onclick="window.location.href='../terms/Hindu.html'" onmouseover="count_adjust(1.00981874595)">Hindu</td>
+<td title="15" onclick="window.location.href='../terms/Swimwear.html'" onmouseover="count_adjust(1.00981874595)">Swimwear</td>
+<td title="15" onclick="window.location.href='../terms/Counseling.html'" onmouseover="count_adjust(1.00981874595)">Counseling</td>
+<td title="14" onclick="window.location.href='../terms/Basque.html'" onmouseover="count_adjust(1.00916416289)">Basque</td>
+<td title="14" onclick="window.location.href='../terms/Eyewear.html'" onmouseover="count_adjust(1.00916416289)">Eyewear</td>
+<td title="14" onclick="window.location.href='../terms/Couriers.html'" onmouseover="count_adjust(1.00916416289)">Couriers</td>
+<td title="12" onclick="window.location.href='../terms/Caterers.html'" onmouseover="count_adjust(1.00785499676)">Caterers</td>
+<td title="11" onclick="window.location.href='../terms/Iranian.html'" onmouseover="count_adjust(1.0072004137)">Iranian</td>
+</tr>
+<tr>
+<td title="11" onclick="window.location.href='../terms/Laboratory.html'" onmouseover="count_adjust(1.0072004137)">Laboratory</td>
+<td title="11" onclick="window.location.href='../terms/Campgrounds.html'" onmouseover="count_adjust(1.0072004137)">Campgrounds</td>
+<td title="11" onclick="window.location.href='../terms/Cosmetology.html'" onmouseover="count_adjust(1.0072004137)">Cosmetology</td>
+<td title="10" onclick="window.location.href='../terms/Fertility.html'" onmouseover="count_adjust(1.00654583063)">Fertility</td>
+<td title="9" onclick="window.location.href='../terms/Podiatrists.html'" onmouseover="count_adjust(1.00589124757)">Podiatrists</td>
+<td title="8" onclick="window.location.href='../terms/Gardeners.html'" onmouseover="count_adjust(1.00523666451)">Gardeners</td>
+<td title="8" onclick="window.location.href='../terms/Opticians.html'" onmouseover="count_adjust(1.00523666451)">Opticians</td>
+<td title="8" onclick="window.location.href='../terms/Neurologist.html'" onmouseover="count_adjust(1.00523666451)">Neurologist</td>
+</tr>
+<tr>
+<td title="8" onclick="window.location.href='../terms/Gynecologists.html'" onmouseover="count_adjust(1.00523666451)">Gynecologists</td>
+<td title="7" onclick="window.location.href='../terms/Endodontists.html'" onmouseover="count_adjust(1.00458208144)">Endodontists</td>
+<td title="6" onclick="window.location.href='../terms/Rafting.html'" onmouseover="count_adjust(1.00392749838)">Rafting</td>
+<td title="6" onclick="window.location.href='../terms/Charters.html'" onmouseover="count_adjust(1.00392749838)">Charters</td>
+<td title="6" onclick="window.location.href='../terms/Midwives.html'" onmouseover="count_adjust(1.00392749838)">Midwives</td>
+<td title="5" onclick="window.location.href='../terms/Tutoring.html'" onmouseover="count_adjust(1.00327291532)">Tutoring</td>
+<td title="5" onclick="window.location.href='../terms/Allergists.html'" onmouseover="count_adjust(1.00327291532)">Allergists</td>
+<td title="5" onclick="window.location.href='../terms/Litigation.html'" onmouseover="count_adjust(1.00327291532)">Litigation</td>
+</tr>
+<tr>
+<td title="5" onclick="window.location.href='../terms/Chocolatiers.html'" onmouseover="count_adjust(1.00327291532)">Chocolatiers</td>
+<td title="4" onclick="window.location.href='../terms/Skydiving.html'" onmouseover="count_adjust(1.00261833225)">Skydiving</td>
+<td title="4" onclick="window.location.href='../terms/Drugstores.html'" onmouseover="count_adjust(1.00261833225)">Drugstores</td>
+<td title="4" onclick="window.location.href='../terms/Psychiatrists.html'" onmouseover="count_adjust(1.00261833225)">Psychiatrists</td>
+<td title="2" onclick="window.location.href='../terms/Laotian.html'" onmouseover="count_adjust(1.00130916613)">Laotian</td>
+<td title="2" onclick="window.location.href='../terms/Creperies.html'" onmouseover="count_adjust(1.00130916613)">Creperies</td>
+<td title="2" onclick="window.location.href='../terms/Videographers.html'" onmouseover="count_adjust(1.00130916613)">Videographers</td>
+<td title="2" onclick="window.location.href='../terms/Ophthalmologists.html'" onmouseover="count_adjust(1.00130916613)">Ophthalmologists</td>
+</tr>
+<tr>
+<td title="1" onclick="window.location.href='../terms/Vocational.html'" onmouseover="count_adjust(1.00065458306)">Vocational</td>
+<td title="1" onclick="window.location.href='../terms/Matchmakers.html'" onmouseover="count_adjust(1.00065458306)">Matchmakers</td>
+<td title="1" onclick="window.location.href='../terms/Orthopedists.html'" onmouseover="count_adjust(1.00065458306)">Orthopedists</td>
+<td title="1" onclick="window.location.href='../terms/Periodontists.html'" onmouseover="count_adjust(1.00065458306)">Periodontists</td>
+<td title="0" onclick="window.location.href='../terms/s.html'" onmouseover="count_adjust(1.0)">s</td>
+<td title="0" onclick="window.location.href='../terms/of.html'" onmouseover="count_adjust(1.0)">of</td>
+<td title="0" onclick="window.location.href='../terms/Dogs.html'" onmouseover="count_adjust(1.0)">Dogs</td>
+<td title="0" onclick="window.location.href='../terms/Arts.html'" onmouseover="count_adjust(1.0)">Arts</td>
+</tr>
+<tr>
+<td title="0" onclick="window.location.href='../terms/Pet.html'" onmouseover="count_adjust(1.0)">Pet</td>
+<td title="0" onclick="window.location.href='../terms/Gun.html'" onmouseover="count_adjust(1.0)">Gun</td>
+<td title="0" onclick="window.location.href='../terms/Bike.html'" onmouseover="count_adjust(1.0)">Bike</td>
+<td title="0" onclick="window.location.href='../terms/Gift.html'" onmouseover="count_adjust(1.0)">Gift</td>
+<td title="0" onclick="window.location.href='../terms/Pool.html'" onmouseover="count_adjust(1.0)">Pool</td>
+<td title="0" onclick="window.location.href='../terms/Videos.html'" onmouseover="count_adjust(1.0)">Videos</td>
+<td title="0" onclick="window.location.href='../terms/Phone.html'" onmouseover="count_adjust(1.0)">Phone</td>
+<td title="0" onclick="window.location.href='../terms/Truck.html'" onmouseover="count_adjust(1.0)">Truck</td>
+</tr>
+<tr>
+<td title="0" onclick="window.location.href='../terms/Store.html'" onmouseover="count_adjust(1.0)">Store</td>
+<td title="0" onclick="window.location.href='../terms/Offices.html'" onmouseover="count_adjust(1.0)">Offices</td>
+<td title="0" onclick="window.location.href='../terms/Gardens.html'" onmouseover="count_adjust(1.0)">Gardens</td>
+<td title="0" onclick="window.location.href='../terms/Center.html'" onmouseover="count_adjust(1.0)">Center</td>
+<td title="0" onclick="window.location.href='../terms/Market.html'" onmouseover="count_adjust(1.0)">Market</td>
+<td title="0" onclick="window.location.href='../terms/Rentals.html'" onmouseover="count_adjust(1.0)">Rentals</td>
+<td title="0" onclick="window.location.href='../terms/School.html'" onmouseover="count_adjust(1.0)">School</td>
+<td title="0" onclick="window.location.href='../terms/Windows.html'" onmouseover="count_adjust(1.0)">Windows</td>
+</tr>
+<tr>
+<td title="0" onclick="window.location.href='../terms/Notaries.html'" onmouseover="count_adjust(1.0)">Notaries</td>
+<td title="0" onclick="window.location.href='../terms/Airport.html'" onmouseover="count_adjust(1.0)">Airport</td>
+<td title="0" onclick="window.location.href='../terms/Cemeteries.html'" onmouseover="count_adjust(1.0)">Cemeteries</td>
+<td title="0" onclick="window.location.href='../terms/Astrologers.html'" onmouseover="count_adjust(1.0)">Astrologers</td>
+<td title="0" onclick="window.location.href='../terms/Obstetricians.html'" onmouseover="count_adjust(1.0)">Obstetricians</td>
+<td title="0" onclick="window.location.href='../terms/Reupholstery.html'" onmouseover="count_adjust(1.0)">Reupholstery</td>
+<td class="blank"></td><td class="blank"></td></tr>
+</table></div>
+
+</div>
+<div onmouseover="show_count_bar()" onmouseout="hide_count_bar()"><table class="hidden"><tr><td class="count"></td><td class="total"></td>
+</tr></table></div>
+
+<div id="footer">
+<br>
+<hr noshade>
+</div>
+  </body>
+</html>

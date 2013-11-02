@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[6.2568379979, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [5.2256796775, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [5.215889186, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [4.2160541364, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [4.2090544883, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [4.1475836001, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"], [3.2167985198, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2355258114, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.21984944, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [1.2160432755, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>BEST CARNE ASADA (GRILLED SLICED STEAK), HACIENDA-</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">BEST CARNE ASADA (GRILLED SLICED STEAK), HACIENDA-</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    BEST CARNE ASADA (GRILLED SLICED STEAK), HACIENDA-STYLE HOSPITALITY. A MEXICAN FOOD EXPERIENCE IN THE THEME-PARK STYLE.<br /><br /><br /><br />--colorful, tasteful, vibrant ambiance in the country-hacienda style; kudos to the designers with an eye for detail;<br /><br />--dining room draws natural light from the delightful patio windows to the vaulted ceilings above;<br /><br />--this place and the adjacent ranch market are a "must-do" for tourists (bring your out-of-towners here);<br /><br /><br /><br />--Don't miss the Parrilla (grilled platter); one "portion" serves two; choose three meats and voice your tortilla preference;<br /><br />--grilled vegetables include nopales (cactus), Mexican zucchini squash, jalapenos (consumed whole, took me to five hiccups before my stomach settled), and baby onion stalks (not the typical pile-o-fajita yellows);<br /><br />--both rice and beans served family style, and perfectly flavored. I could just sit and eat bowl after bowl of those beans;<br /><br />--juicy, perfectly cooked shrimp; "asada" goodness knows no bounds;<br /><br />--guacamole is plentiful (no melon-ball scoops of yesterday at $3/ea here!) and freshly made to order; NOW THAT'S what I'm TALKing about !!!<br /><br />--table salsa is spicy with lots of freshly chopped chilis and pureed onions; really good burn;<br /><br />--try the horchata (rice milk and cinnamon sugary goodness) or any of the featured Aguas Frescas.<br /><br />--no fuss over separate checks (and that was for our table of 10!)<br /><br /><br /><br />--pork was a bit dry; is "gamey" possible in pork?<br /><br />--server forgot our desserts and we gave up after 20 minutes (shucks! they were sitting right there on the pass!); the manager refunded us promptly and then packaged them to-go.<br /><br /><br /><br />After so many recent disappointments on rock-hard rubbery shrimp, I _finally_ found a place that grills properly, excellent marinade, and with the freshest ingredients. If you get the impression that you are amidst a food operation staffed by thousands, you are correct: several hundred are working in the kitchens next door making tortillas, cheese, asada, aguas and more!<br /><br /><br /><br />If you don't have a filthy-rich Mexican relative with a hacienda (Mexican mansion) across the border, this may be the closest you'll get without an invitation. The mostly-abandoned courtyard is centered with a gigantic fountain, lined with what could be booths for a seasonal market, bodas, or other festival. In the corner a lush garden with a somewhat secret door leading to la sala, the grand room.<br /><br /><br /><br />Don't miss the Ranch Market next door; you won't see retail food sold in this quantity anywhere else in town. Take your camera.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

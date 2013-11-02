@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[26.4083381022, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [13.5858872459, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [7.204980884, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [6.7502530456, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [3.2185257996, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [3.2154618117, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [3.118226996, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [2.2229176453, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.2184387923, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2162858103, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>I've been there on off nights and now on a Friday </title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">I've been there on off nights and now on a Friday </td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    I've been there on off nights and now on a Friday night.  I was optimistic about liking this place, but now I just don't want to go there.  It fails in every important regard except pretense.<br /><br />It tries to be semi-fancy with a Bauhaus style minimalist interior decor, carefully plated dainty portions, but the service is abysmal.  Tables are packed in as tight as they can be fit and it's very difficult to move between them.<br /><br />Friday, friends mostly got drinks from the bar and the whole evening, no one came by our table -- not even once.  Yet going to the bar is battle.  It's more like a college bar on game night.  I watched for 20 minutes as the bartenders huddled around the two restaurant computer terminals, waiting their turn and talking, running in and out, avoiding making eye contact with anyone, and occasionally turning around and randomly serving who happened to be right there.  By bad luck, I watched two sets of people surrounding the whole bar get served and didn't get served myself.  You could tell me to suck it up, but I know that in bars on corners, in sketchy music halls, dives, and nicer places, all over Phoenix, there are bartenders who know how to manage crowds with grace.  Good servers are hard to find, especially when you're apparently hiring based on looks.  They have a bunch of inexperienced kids.  While waiting at the bar for 20 minutes, I was asked approximately six times to move so that dirty dishes could be unloaded in front of me, or a server could squeeze by behind or in front of me, but at no point, despite me gesticulating and trying to make eye contact, was I offered a beer.  At no visit on any night has the wait staff been professional or competent.  I imagine ever trying to ask questions about what's on tap or what's coming in would be met with awkward confusion.  This is what I expect of  Mill Avenue on a Friday night.<br /><br />I love beer and I especially love good beer, and this establishment is on in a long string of places opening up across the valley that pretends to deal in that.  Another reviewer complained that they were confused by the beers and their hard to pronounce names, which is funny, because they've taken the step of numbering all of the taps and having people order by number.  The wait staff doesn't know the names of the beers or anything about them either.  And the beers are almost entirely non-extraordinary.  It's mostly stuff that you can get at Safeway in a bottle, year round, which admitted is better than some places with lots of taps where most of the taps are Coors, Bud, etc (that's the only star this place gets from me).  It's not that the beers are bad per se, but things like Oak Creek Brewing Company's Nutbrown and Four Peaks Brewing's Kiltlifter are $5 beers.  Those are also the sort of beer that's often on happy hour.  They're fine drinkin' beers, but charging $7 for them and being uppity about it only makes them seem better to people who have no idea what's going on.  This makes the facade of snottiness but actual ignorance, and the other reviewer's consternation, even more amusing. <br /><br />A bar behind a Walmart attached to an ice hockey den in my neighborhood, the Icehouse Tavern, has better beers and a better selection, though in bottles.  The Icehouse Tavern also has chill, friendly service that's expertly executed.  Wound-be hipsters looking to enjoy a good beer and praise an interesting venue would do well to go there instead.  Boulders on Broadway in Tempe has better beers on tap and friendly, sane service, even when it's crazy.  Popago Brewing in Scottsdale has better beers on tap and knows theirs beers and though the service isn't fantastic, it's genuine and they know their stuff.  Taste of Tops in Tempe is five stars across the board -- beer, service, ambiance (okay, maybe only four on ambiance -- but still vastly better).  The Filmbar across the street from Angel's Trumpet has some good beers and ambiance and feels a lot less like a college bar where the inexperienced serve the inexperienced in droves.  The Roosevelt, not far away, though often packed, has great ambiance (it's an old brick house in a historic neighborhood), some good beers, though fewer taps, and significantly more accomplished servers.<br /><br />Places like Angels Trump House are able to pack a crowd, but that's it.  They do a disservice to good beer by pretentiously, rudely, and amateurishly serving mostly mediocre brews.  As an apparently independent outfit, I would expect better, not worse, than miserable, cynical attempts at beer snobbery for the sake of it, such as Yard House.  I fear that places like this will just keep awesome establishments that deal in craft beer from setting up in Phoenix.
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>

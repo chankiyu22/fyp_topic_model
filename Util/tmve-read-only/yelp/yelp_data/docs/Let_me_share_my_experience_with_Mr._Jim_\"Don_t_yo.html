@@ -1,0 +1,134 @@
+<html>
+<head>
+    <script language="JavaScript" src="http://code.jquery.com/jquery-1.4.4.js"></script>
+    <script language="JavaScript" src="../js/pie.js"></script>
+    <script language="JavaScript" src="../js/browser_adjust.js"></script>
+    <script language="JavaScript" src="../js/search.js"></script>
+
+
+    <script type="text/JavaScript">
+    <!--
+
+    var array = [[6.2158816237, "../topics/{New,_Small,_Home}.html", "{New,_Small,_Home}"], [3.2184572269, "../topics/{Day,_Salad,_Hot}.html", "{Day,_Salad,_Hot}"], [3.1886072685, "../topics/{Pizza,_Live,_Shops}.html", "{Pizza,_Live,_Shops}"], [2.2349746871, "../topics/{Stores,_Used,_Kids}.html", "{Stores,_Used,_Kids}"], [2.2217148465, "../topics/{Service,_Rooms,_Parts}.html", "{Service,_Rooms,_Parts}"], [2.2159049944, "../topics/{Goods,_Cheese,_Breakfast}.html", "{Goods,_Cheese,_Breakfast}"], [1.2159772289, "../topics/{Burgers,_Beer,_Wine}.html", "{Burgers,_Beer,_Wine}"], [1.2159350138, "../topics/{Chicken,_Flavor,_Meat}.html", "{Chicken,_Flavor,_Meat}"], [1.2159316227, "../topics/{Go,_Bars,_Goods}.html", "{Go,_Bars,_Goods}"], [1.2159316204, "../topics/{Food,_Special,_Sushi}.html", "{Food,_Special,_Sushi}"]];
+    var elements = generate_pie_elements(array);
+    var piec = null;
+    function init() {
+        browser_adjust();
+        
+        // create pie chart
+        piec = new PieChart(elements);
+        piec.initialize();
+
+    }
+
+    function highlight(i) {
+        piec.highlight(i);
+    }
+    
+    function unhighlight() {
+        piec.unhighlight();
+    }
+    //-->
+    </script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    
+    <title>Let me share my experience with Mr. Jim \"Don't yo</title>
+
+    <link href="../styling.css" rel="stylesheet" type="text/css">
+</head>
+
+<body onLoad="init()">
+<div id="navigation">
+<hr noshade>
+<table><tr>
+    <td class="navtext">Browse&nbsp;&#x25B8;</td> 
+    <td class="linked"><a>Topics</a>
+      <ul> 
+        <li><a href="../browse/topic-list.html">List of Terms</a></li> 
+        <li><a href="../browse/topic-graph.html">Term Distributions</a></li> 
+        <li><a href="../browse/topic-presence.html">Relative Presence</a></li>
+      </ul> 
+    </td> 
+    <td class="linked"><a>Documents</a>
+      <ul>
+        <li><a href="../browse/doc-graph.html">Topic Distributions</a></li>
+      </ul> 
+    </td>
+    <td class="linked"><a>Terms</a>
+      <ul> 
+        <li><a href="../browse/term-list.html">List by Frequency</a></li> 
+        <li><a href="../browse/term-graph.html">Topic Distributions</a></li> 
+       </ul> 
+    </td>
+    <td class="linked"><a>About</a>
+      <ul>
+        <li><a href="http://www.cs.princeton.edu/~blei/lda-c/">LDA</a></li>
+      </ul> 
+    </td>
+    
+    </td>
+    <td></td>
+    <td class="searchbar"> Search&nbsp;&#x25B8;</td>
+    <td class="searchbar"><input type="text" name="search" size="20" onkeypress="handleKeyPress(event)"><span onclick="doSearch()"></span>
+    </td>
+</tr></table>
+</div>
+
+    <div id="top"></div>
+
+    <h1 id="header">
+        <table><tr>
+            <td id="title">Let me share my experience with Mr. Jim \"Don't yo</td>
+        </tr></table>
+
+        <hr noshade>
+    </h1>
+
+    <div id="main">
+        <table><tr>
+            <td width="210px">
+                <table class="dark">
+                <tr><td><canvas id="canvas" width="200" height="200"></canvas></td></tr>
+                <tr class="title">
+                    <td>related topics</td>
+                </tr>
+                <tr class="list"><td id="{New,_Small,_Home}" onmouseover="highlight(0)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{New,_Small,_Home}.html'">{New, Small, Home}</td></tr>
+<tr class="list"><td id="{Day,_Salad,_Hot}" onmouseover="highlight(1)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Day,_Salad,_Hot}.html'">{Day, Salad, Hot}</td></tr>
+<tr class="list"><td id="{Pizza,_Live,_Shops}" onmouseover="highlight(2)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Pizza,_Live,_Shops}.html'">{Pizza, Live, Shops}</td></tr>
+<tr class="list"><td id="{Stores,_Used,_Kids}" onmouseover="highlight(3)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Stores,_Used,_Kids}.html'">{Stores, Used, Kids}</td></tr>
+<tr class="list"><td id="{Service,_Rooms,_Parts}" onmouseover="highlight(4)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Service,_Rooms,_Parts}.html'">{Service, Rooms, Parts}</td></tr>
+<tr class="list"><td id="{Goods,_Cheese,_Breakfast}" onmouseover="highlight(5)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Goods,_Cheese,_Breakfast}.html'">{Goods, Cheese, Breakfast}</td></tr>
+<tr class="list"><td id="{Burgers,_Beer,_Wine}" onmouseover="highlight(6)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Burgers,_Beer,_Wine}.html'">{Burgers, Beer, Wine}</td></tr>
+<tr class="list"><td id="{Chicken,_Flavor,_Meat}" onmouseover="highlight(7)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Chicken,_Flavor,_Meat}.html'">{Chicken, Flavor, Meat}</td></tr>
+<tr class="list"><td id="{Go,_Bars,_Goods}" onmouseover="highlight(8)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Go,_Bars,_Goods}.html'">{Go, Bars, Goods}</td></tr>
+<tr class="list"><td id="{Food,_Special,_Sushi}" onmouseover="highlight(9)" onmouseout="unhighlight()" onclick="window.location.href='../topics/{Food,_Special,_Sushi}.html'">{Food, Special, Sushi}</td></tr>
+
+                </table>
+            </td>
+
+            <td>
+                <table class="light">
+                <tr class="doc"><td>
+                    Let me share my experience with Mr. Jim "Don't you understand English?" Tanner, the apparent owner of Tanner Tile and Materials. And let me add that I would never, ever recommend anyone do business with him.<br /><br /><br /><br />This past Monday morning I called to check on the status of my tile order (a nearly $2,000 order) for the remodel of my home. The tile, according to Mr. Tanner, was supposed to arrive the previous Friday afternoon but I never received a call as promised. <br /><br /><br /><br />When I called to check on its status I spoke to Pablo, who informed my tile would now be in three days later, on Wednesday. I asked to speak with Mr. Tanner, since I had ordered it from him and wanted to confirm exactly when it would be in Wednesday so I could reschedule the installation. That's all I wanted. And that is when all hell broke loose.<br /><br /><br /><br />When I asked Mr. Tanner about my tile order, he first began lecturing me about truck deliveries and how he had no control over them, and how "I needed to understand" how things worked. I was rather taken aback, considering I just asked about the status of my tile. Then halfway through this lecture about the trucking industry, Mr. Tanner pauses, and says 'Oh, wait, your tile was delivered Saturday afternoon.' <br /><br /><br /><br />Not exactly sure if he was speaking to me or someone inside the store, I said, "So you have my tile there now?" To which he thundered: "Do you not understand English? What did I just say? What did I just say!? Don't you understand plain English?'<br /><br /><br /><br />Wow. Where did this come from? So again, calmly, I say, "Alright, so just so I'm clear, my tile IS there now, rather than coming in Wednesday?" To which Mr. Tanner responds: "Apparently you don't understand English. I can't talk to you. What about this don't you get? I can't talk to someone who doesn't understand English," ...and then put me on hold. <br /><br /><br /><br />What? Hello? <br /><br /><br /><br />Pablo eventually picked up the phone and was nice enough to set up my delivery. At the end he (ironically) said, "You speak English fine. I thought he said you didn't speak English?"<br /><br /><br /><br />Let me clarify, Mr. Tanner. I do "understand" English. In fact, I hold two degrees in it, taught it at the university level, and have had careers as both a newspaper and magazine editor. More so, I understand how business is done and not done. You can be assured that I will use my 'understanding of English' to make sure everyone I know who may need tile will know exactly how you treat your customers - especially this customer who merely called to find out when their order would be delivered.<br /><br /><br /><br />(P.S. - Check this out about Tanner (and his response) on the BBB site: http://www.bbb.org/central-northern-western-arizona/Business-Reviews/floor-materials-retail/tanner-materials-company-llc-in-phoenix-az-24000322/Customer-Reviews)
+                </td></tr>
+                </table>
+            </td>
+
+            <td width="25%">
+                <table class="dark">
+                <tr class="title">
+                    <td>related documents</td>
+                </tr>
+                
+                </table>
+            </td>
+        </tr></table>
+    </div>
+
+    <div id="footer">
+        <br>
+        <hr noshade>
+    </div>
+</body>
+</html>
